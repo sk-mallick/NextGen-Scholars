@@ -1,0 +1,1833 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+        <title>The Scholars Academy | Educational Excellence</title>
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet">
+
+        <!-- Tailwind CSS -->
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <!-- Lucide Icons -->
+        <script src="https://unpkg.com/lucide@latest"></script>
+
+        <!-- Tailwind Config -->
+        <script>
+        tailwind.config = {
+            darkMode: 'class', 
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            base: 'var(--bg-base)',       
+                            card: 'var(--bg-card)',       
+                            muted: 'var(--bg-muted)',     
+                            text: 'var(--text-main)',     
+                            'text-muted': 'var(--text-muted)', 
+                            border: 'var(--border-color)', 
+                            emerald: '#10b981',           
+                            cyan: '#22d3ee',             
+                        }
+                    },
+                    // PROFESSIONAL UI ANIMATIONS: Extended Animation Config
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards',
+                        'slide-up': 'slideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(24px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    },
+                    screens: {
+                        'xs': '375px',
+                    }
+                }
+            }
+        }
+    </script>
+
+        <style>
+        /* PROFESSIONAL UI ANIMATIONS & COLOR REFINEMENT */
+        :root {
+            /* Palette */
+            --bg-base: #F1F5F9;         
+            --bg-card: #FFFFFF;         
+            --bg-muted: #E2E8F0;        
+            --text-main: #0F172A;       
+            --text-muted: #475569;      
+            --border-color: rgba(15, 23, 42, 0.12);
+            --glass-bg: rgba(255, 255, 255, 0.90);
+            --glass-border: rgba(255, 255, 255, 0.6);
+            
+            /* Animation Variables */
+            --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+            --duration-fast: 200ms;
+            --duration-normal: 400ms;
+            --duration-slow: 600ms;
+            
+            --sat: env(safe-area-inset-top);
+            --sab: env(safe-area-inset-bottom);
+            --sal: env(safe-area-inset-left);
+            --sar: env(safe-area-inset-right);
+        }
+
+        .dark {
+            --bg-base: #0b1220;         
+            --bg-card: #111827;         
+            --bg-muted: #0f1623;        
+            --text-main: #F8FAFC;       
+            --text-muted: #94A3B8;      
+            --border-color: rgba(255, 255, 255, 0.08);
+            --glass-bg: rgba(11, 18, 32, 0.75);
+            --glass-border: rgba(255, 255, 255, 0.08);
+        }
+
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            transition: background-color 0.5s var(--ease-premium), color 0.5s var(--ease-premium);
+            overflow-x: hidden;
+            min-height: 100dvh;
+            padding-left: var(--sal);
+            padding-right: var(--sar);
+        }
+
+        h1, h2, h3, h4, h5, h6 { font-family: 'Plus Jakarta Sans', sans-serif; }
+        p { letter-spacing: 0.2px; }
+        button { letter-spacing: 0.4px; }
+        h1, h2, h3 { letter-spacing: -0.3px; }
+
+        /* --- MOTION UTILITIES --- */
+
+        /* 1. Scroll Reveal Class (Used by IntersectionObserver) */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.8s var(--ease-premium), transform 0.8s var(--ease-premium);
+            will-change: opacity, transform;
+        }
+        .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 2. Micro-Interactions: Card Hover Lift */
+        .hover-lift {
+            transition: transform 0.4s var(--ease-premium), box-shadow 0.4s var(--ease-premium), border-color 0.3s ease, background-color 0.3s ease;
+            will-change: transform, box-shadow;
+        }
+        /* Only lift on non-touch devices to prevent stuck states */
+        @media (hover: hover) {
+            .hover-lift:hover {
+                transform: translateY(-6px);
+            }
+        }
+
+        /* 3. Button Active Press */
+        .btn-press {
+            transition: transform 0.1s ease-out, background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .btn-press:active {
+            transform: scale(0.97);
+        }
+
+        /* 4. Page Transitions */
+        .page-transition { 
+            animation: fadeInPage 0.5s var(--ease-premium) forwards; 
+        }
+        @keyframes fadeInPage {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 5. Nav Items Underline Animation */
+        .nav-item span {
+            transform-origin: left;
+            transition: width 0.3s var(--ease-premium);
+        }
+
+        /* --- COMPONENTS --- */
+
+        .glass-nav {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s var(--ease-premium);
+        }
+
+        .glass-card {
+            background: var(--bg-card);
+            background: linear-gradient(145deg, #FFFFFF 0%, #F8FAFC 100%);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+
+        .dark .glass-card {
+            background: linear-gradient(145deg, rgba(17, 24, 39, 0.8) 0%, rgba(11, 18, 32, 0.9) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: none;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(16, 185, 129, 0.3);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+        }
+        .dark .glass-card:hover {
+            background: rgba(17, 24, 39, 0.95);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Gradient Text */
+        .text-gradient {
+            background: linear-gradient(135deg, #10b981 0%, #22d3ee 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: gradientMove 5s ease infinite;
+        }
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .section-gradient {
+            background: linear-gradient(to bottom, var(--bg-base), var(--bg-muted));
+        }
+
+        /* Theme Toggle Icon Animation */
+        .theme-icon {
+            transition: transform 0.5s var(--ease-premium), opacity 0.3s ease;
+        }
+        .theme-btn:hover .theme-icon {
+            transform: rotate(15deg);
+        }
+
+        /* Modal Animation */
+        #lightbox, #success-modal {
+            transition: opacity 0.3s ease;
+        }
+        .modal-content {
+            transform: scale(0.95);
+            opacity: 0;
+            transition: transform 0.4s var(--ease-premium), opacity 0.4s ease;
+        }
+        .modal-open .modal-content {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        /* Form styling */
+        input, textarea, select {
+            background-color: var(--bg-muted);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            transition: all 0.2s;
+        }
+        .dark input, .dark textarea, .dark select {
+            background-color: rgba(31, 41, 55, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #10b981;
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15); /* Softer focus ring */
+            background-color: var(--bg-card);
+            transform: translateY(-1px); /* Micro-interaction focus */
+        }
+        
+        option { background-color: var(--bg-card); color: var(--text-main); }
+        .safe-pb { padding-bottom: calc(1rem + var(--sab)); }
+        .safe-pt { padding-top: calc(1rem + var(--sat)); }
+    </style>
+    </head>
+    <body class="antialiased">
+
+        <!-- Navigation -->
+        <div
+            class="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 pt-4 sm:pt-6 pb-2 transition-all pointer-events-none">
+            <nav
+                class="glass-nav w-full max-w-6xl rounded-full px-4 sm:px-6 py-3 flex items-center justify-between pointer-events-auto">
+
+                <!-- Logo -->
+                <a href="#home" onclick="navigateTo('home')"
+                    class="flex items-center gap-2 sm:gap-3 group cursor-pointer shrink-0">
+                    <!-- UPDATED LOGO: Implemented logo1.png with responsive sizing and hover effect -->
+                    <img src="logo1.png" 
+                         alt="The Scholars Academy" 
+                         class="h-8 sm:h-10 w-auto object-contain transition-transform duration-500 group-hover:scale-105">
+                    
+                    <!-- Text Restored -->
+                    <div>
+                        <h1
+                            class="text-base sm:text-lg font-bold font-heading text-brand-text tracking-tight leading-none transition-colors">The
+                            Scholars</h1>
+                        <p
+                            class="text-[9px] sm:text-[10px] text-brand-emerald font-semibold tracking-widest uppercase leading-none mt-0.5">Academy</p>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex items-center gap-4 lg:gap-8">
+                    <a href="#home" onclick="navigateTo('home')"
+                        class="nav-item text-brand-text-muted hover:text-brand-text font-medium tracking-wide text-[14px] lg:text-[15px] transition-colors relative group py-2">Home
+                        <span
+                            class="absolute bottom-1 left-0 w-0 h-0.5 bg-brand-emerald transition-all group-hover:w-full"></span></a>
+                    <a href="#about" onclick="navigateTo('about')"
+                        class="nav-item text-brand-text-muted hover:text-brand-text font-medium tracking-wide text-[14px] lg:text-[15px] transition-colors relative group py-2">About
+                        <span
+                            class="absolute bottom-1 left-0 w-0 h-0.5 bg-brand-emerald transition-all group-hover:w-full"></span></a>
+                    <a href="#courses" onclick="navigateTo('courses')"
+                        class="nav-item text-brand-text-muted hover:text-brand-text font-medium tracking-wide text-[14px] lg:text-[15px] transition-colors relative group py-2">Courses
+                        <span
+                            class="absolute bottom-1 left-0 w-0 h-0.5 bg-brand-emerald transition-all group-hover:w-full"></span></a>
+                    <a href="#gallery" onclick="navigateTo('gallery')"
+                        class="nav-item text-brand-text-muted hover:text-brand-text font-medium tracking-wide text-[14px] lg:text-[15px] transition-colors relative group py-2">Gallery
+                        <span
+                            class="absolute bottom-1 left-0 w-0 h-0.5 bg-brand-emerald transition-all group-hover:w-full"></span></a>
+                    <a href="#contact" onclick="navigateTo('contact')"
+                        class="nav-item text-brand-text-muted hover:text-brand-text font-medium tracking-wide text-[14px] lg:text-[15px] transition-colors relative group py-2">Contact
+                        <span
+                            class="absolute bottom-1 left-0 w-0 h-0.5 bg-brand-emerald transition-all group-hover:w-full"></span></a>
+                </div>
+
+                <!-- CTA & Theme Toggle -->
+                <div class="hidden md:flex items-center gap-3 lg:gap-4">
+                    
+                    <!-- Theme Toggle -->
+                    <button onclick="toggleTheme()" class="theme-btn p-2 rounded-full text-brand-text-muted hover:bg-brand-muted transition-colors border border-transparent hover:border-brand-border" aria-label="Toggle Theme">
+                        <div class="theme-icon">
+                            <i data-lucide="moon" class="w-5 h-5 hidden dark:block"></i>
+                            <i data-lucide="sun" class="w-5 h-5 block dark:hidden text-amber-500"></i>
+                        </div>
+                    </button>
+
+                    <a href="tel:+919876543210"
+                        class="group flex items-center gap-2 px-3 lg:px-4 py-2 rounded-full border border-brand-border hover:border-brand-emerald/50 bg-brand-muted hover:bg-brand-card transition-all font-medium tracking-wide text-[13px] lg:text-[14px] text-brand-text btn-press">
+                        <div
+                            class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                        <span
+                            class="group-hover:text-brand-emerald transition-colors whitespace-nowrap">+91
+                            98765 43210</span>
+                    </a>
+
+                    <a href="#admission" onclick="navigateTo('admission')"
+                        class="bg-gradient-to-r from-brand-emerald to-teal-500 hover:to-brand-emerald text-white px-4 lg:px-6 py-2.5 rounded-full font-semibold tracking-wide shadow-lg shadow-brand-emerald/20 transition-all transform hover:-translate-y-0.5 cursor-pointer text-[14px] lg:text-[15px] whitespace-nowrap btn-press">
+                        Enroll Now
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn"
+                    class="md:hidden p-2 text-brand-text-muted hover:text-brand-text focus:outline-none transition-transform active:scale-90"
+                    aria-label="Toggle Menu">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </nav>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="fixed top-20 sm:top-24 left-4 right-4 z-40 glass-nav rounded-3xl shadow-2xl p-2 md:hidden origin-top mt-[env(safe-area-inset-top)] bg-white/95 dark:bg-[#0b1220]/95 transition-all duration-300 ease-out">
+            <div class="flex flex-col space-y-1">
+                <a href="#home" onclick="navigateTo('home')"
+                    class="text-brand-text-muted font-medium tracking-wide text-[15px] hover:text-brand-text hover:bg-brand-muted px-4 py-3 rounded-xl transition-colors">Home</a>
+                <a href="#about" onclick="navigateTo('about')"
+                    class="text-brand-text-muted font-medium tracking-wide text-[15px] hover:text-brand-text hover:bg-brand-muted px-4 py-3 rounded-xl transition-colors">About</a>
+                <a href="#courses" onclick="navigateTo('courses')"
+                    class="text-brand-text-muted font-medium tracking-wide text-[15px] hover:text-brand-text hover:bg-brand-muted px-4 py-3 rounded-xl transition-colors">Courses</a>
+                <a href="#gallery" onclick="navigateTo('gallery')"
+                    class="text-brand-text-muted font-medium tracking-wide text-[15px] hover:text-brand-text hover:bg-brand-muted px-4 py-3 rounded-xl transition-colors">Gallery</a>
+                <a href="#contact" onclick="navigateTo('contact')"
+                    class="text-brand-text-muted font-medium tracking-wide text-[15px] hover:text-brand-text hover:bg-brand-muted px-4 py-3 rounded-xl transition-colors">Contact</a>
+
+                <div class="h-px bg-brand-border my-2 mx-2"></div>
+
+                <!-- Mobile Theme Toggle -->
+                <button onclick="toggleTheme()" class="flex items-center gap-2 text-brand-text-muted font-medium tracking-wide text-[15px] hover:bg-brand-muted px-4 py-3 rounded-xl transition-colors w-full text-left">
+                     <i data-lucide="moon" class="w-4 h-4 hidden dark:block"></i>
+                     <i data-lucide="sun" class="w-4 h-4 block dark:hidden text-amber-500"></i>
+                     <span>Toggle Theme</span>
+                </button>
+
+                <a href="tel:+919876543210"
+                    class="flex items-center justify-center gap-2 text-brand-text font-medium tracking-wide text-[15px] hover:bg-brand-muted px-4 py-3 rounded-xl transition-colors btn-press">
+                    <i data-lucide="phone"
+                        class="w-4 h-4 text-brand-emerald"></i> Call Now
+                </a>
+                <a href="#admission" onclick="navigateTo('admission')"
+                    class="bg-brand-emerald text-white text-center py-3 rounded-xl font-bold tracking-wide text-[15px] mx-2 mb-1 shadow-lg shadow-brand-emerald/20 btn-press">Enroll
+                    Now</a>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <main class="pt-24 sm:pt-28 safe-pb">
+
+            <!-- ================= HOME PAGE ================= -->
+            <div id="home-page" class="page-view block">
+                <!-- HERO SECTION -->
+                <div
+                    class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-20 grid lg:grid-cols-12 gap-12 items-center z-10">
+                    <div
+                        class="lg:col-span-6 flex flex-col justify-center text-center lg:text-left">
+                        <div class="flex justify-center lg:justify-start reveal-on-scroll">
+                            <span
+                                class="inline-block w-fit px-4 py-2 bg-brand-emerald/10 text-brand-emerald rounded-full text-xs font-bold tracking-wider uppercase mb-6 border border-brand-emerald/20 hover:bg-brand-emerald/20 transition-colors cursor-default">
+                                Excellence in Education Since 2009
+                            </span>
+                        </div>
+                        <h1
+                            class="reveal-on-scroll text-4xl xs:text-5xl lg:text-6xl font-heading font-extrabold text-brand-text leading-[1.12] mb-6" style="transition-delay: 100ms;">
+                            Shape Your Future at <span
+                                class="text-gradient block sm:inline">The
+                                Scholars Academy</span>
+                        </h1>
+                        <p
+                            class="reveal-on-scroll text-[16px] sm:text-[18px] text-brand-text-muted leading-relaxed font-normal mb-8 sm:mb-10 max-w-2xl mx-auto lg:mx-0" style="transition-delay: 200ms;">
+                            Where potential meets excellence. Join thousands of
+                            successful students who achieved their dreams with
+                            our expert guidance and personal care.
+                        </p>
+
+                        <div
+                            class="reveal-on-scroll flex flex-col xs:flex-row gap-4 justify-center lg:justify-start" style="transition-delay: 300ms;">
+                            <a href="#admission"
+                                onclick="navigateTo('admission')"
+                                class="bg-brand-emerald hover:bg-emerald-400 text-white px-6 py-3.5 rounded-full text-[15px] font-bold shadow-lg shadow-brand-emerald/25 flex items-center justify-center gap-2 cursor-pointer transition-transform hover:-translate-y-1 w-full xs:w-auto min-w-[160px] btn-press">
+                                Start Your Journey <i data-lucide="arrow-right"
+                                    class="w-5 h-5"></i>
+                            </a>
+                            <a href="#courses" onclick="navigateTo('courses')"
+                                class="border border-brand-border text-brand-text-muted hover:border-brand-text hover:text-brand-text px-6 py-3.5 rounded-full text-[15px] font-semibold tracking-wide flex items-center justify-center gap-2 cursor-pointer transition-colors w-full xs:w-auto min-w-[160px] btn-press">
+                                <i data-lucide="play" class="w-5 h-5"></i> View
+                                Courses
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Hero Image -->
+                    <div
+                        class="reveal-on-scroll lg:col-span-6 relative mt-8 lg:mt-0"
+                        style="transition-delay: 400ms;">
+                        <div
+                            class="absolute -inset-1 bg-gradient-to-r from-brand-emerald to-brand-cyan rounded-2xl blur opacity-30 animate-pulse-slow"></div>
+
+                        <div class="relative w-full mx-auto max-w-[580px] hover-lift">
+                            <div
+                                class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border border-brand-border">
+                                <img
+                                    src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&q=80"
+                                    alt="Students"
+                                    class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
+                            </div>
+
+                            <!-- Floating Badge -->
+                            <div
+                                class="absolute -bottom-6 left-1/2 -translate-x-1/2 lg:translate-x-0 lg:left-[-2.5rem] z-20 glass-card bg-brand-base/95 backdrop-blur-xl p-4 rounded-2xl border border-brand-border shadow-2xl flex items-center gap-4 w-[90%] sm:w-auto min-w-[240px] animate-fade-in" style="animation-delay: 800ms; opacity: 0;">
+                                <div class="flex -space-x-3 shrink-0">
+                                    <div
+                                        class="w-10 h-10 rounded-full bg-brand-emerald border-2 border-brand-base flex items-center justify-center text-white text-[11px] font-bold">A</div>
+                                    <div
+                                        class="w-10 h-10 rounded-full bg-brand-cyan border-2 border-brand-base flex items-center justify-center text-white text-[11px] font-bold">B</div>
+                                    <div
+                                        class="w-10 h-10 rounded-full bg-purple-500 border-2 border-brand-base flex items-center justify-center text-white text-[11px] font-bold">C</div>
+                                    <div
+                                        class="w-10 h-10 rounded-full bg-brand-muted border-2 border-brand-base flex items-center justify-center text-brand-text text-[9px] font-bold flex-col leading-none"><span
+                                            class="block mt-0.5">+2k</span></div>
+                                </div>
+                                <div class="flex flex-col justify-center">
+                                    <div
+                                        class="flex text-yellow-400 gap-0.5 mb-0.5">
+                                        <i data-lucide="star"
+                                            class="w-3.5 h-3.5 fill-current"></i>
+                                        <i data-lucide="star"
+                                            class="w-3.5 h-3.5 fill-current"></i>
+                                        <i data-lucide="star"
+                                            class="w-3.5 h-3.5 fill-current"></i>
+                                        <i data-lucide="star"
+                                            class="w-3.5 h-3.5 fill-current"></i>
+                                        <i data-lucide="star"
+                                            class="w-3.5 h-3.5 fill-current"></i>
+                                    </div>
+                                    <span
+                                        class="text-xs text-brand-text-muted font-medium tracking-wide whitespace-nowrap">Trusted
+                                        by 2.5k+ students</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats -->
+                <section
+                    class="py-12 sm:py-16 section-gradient border-y border-brand-border mt-8 lg:mt-0">
+                    <div
+                        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center"
+                        id="stats-container">
+                        <!-- JS Injected -->
+                    </div>
+                </section>
+
+                <!-- Why Choose Us -->
+                <section class="py-16 sm:py-24 bg-brand-base">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="text-center mb-12 sm:mb-16 reveal-on-scroll">
+                            <span
+                                class="inline-block px-4 py-2 bg-brand-emerald/10 text-brand-emerald rounded-full text-xs font-bold uppercase tracking-wider mb-4">Why
+                                Choose Us</span>
+                            <h2
+                                class="text-[28px] sm:text-[36px] font-heading font-bold text-brand-text mb-4">What
+                                Makes Us Different</h2>
+                            <p
+                                class="text-[16px] sm:text-[18px] text-brand-text-muted leading-relaxed font-normal max-w-2xl mx-auto">We
+                                don't just teach, we transform. Our unique
+                                approach ensures every student reaches their
+                                full potential.</p>
+                        </div>
+                        <div
+                            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+                            id="features-container">
+                            <!-- JS Injected -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Courses Preview -->
+                <section
+                    class="py-16 sm:py-24 section-gradient border-y border-brand-border relative overflow-hidden">
+                    <div
+                        class="absolute top-0 right-0 w-96 h-96 bg-brand-cyan/5 rounded-full blur-[100px] animate-pulse-slow"></div>
+                    <div
+                        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                        <div
+                            class="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 reveal-on-scroll">
+                            <div class="text-center md:text-left">
+                                <span
+                                    class="inline-block px-4 py-2 bg-brand-emerald/10 text-brand-emerald rounded-full text-xs font-bold uppercase tracking-wider mb-4">Our
+                                    Programs</span>
+                                <h2
+                                    class="text-[28px] sm:text-[36px] font-heading font-bold text-brand-text mb-4">Courses
+                                    We Offer</h2>
+                                <p
+                                    class="text-[16px] sm:text-[18px] text-brand-text-muted leading-relaxed font-normal max-w-xl mx-auto md:mx-0">Comprehensive
+                                    programs designed for academic excellence at
+                                    every level.</p>
+                            </div>
+                            <div class="flex justify-center md:justify-end">
+                                <a href="#courses"
+                                    onclick="navigateTo('courses')"
+                                    class="mt-6 md:mt-0 px-6 py-3 rounded-full border border-brand-border text-brand-text-muted hover:border-brand-emerald hover:text-brand-emerald font-semibold tracking-wide transition-colors flex items-center gap-2 btn-press">
+                                    View All Courses <i
+                                        data-lucide="arrow-right"
+                                        class="w-4 h-4"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div
+                            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+                            id="home-courses-grid">
+                            <!-- JS Injected -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Testimonials -->
+                <section
+                    class="py-16 sm:py-24 bg-brand-base relative overflow-hidden">
+                    <div
+                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-emerald/5 rounded-full blur-[120px]"></div>
+                    <div
+                        class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="text-center mb-12 sm:mb-16 reveal-on-scroll">
+                            <span
+                                class="inline-block px-4 py-2 bg-brand-emerald/10 text-brand-emerald rounded-full text-xs font-bold uppercase tracking-wider mb-4">Success
+                                Stories</span>
+                            <h2
+                                class="text-[28px] sm:text-[36px] font-heading font-bold text-brand-text mb-4">What
+                                Our Students Say</h2>
+                            <p
+                                class="text-[16px] sm:text-[18px] text-brand-text-muted leading-relaxed font-normal max-w-2xl mx-auto">Hear
+                                from our students and parents about their
+                                transformative journey with us.</p>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8"
+                            id="testimonials-grid">
+                            <!-- JS Injected -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CTA -->
+                <section
+                    class="py-16 sm:py-24 bg-brand-card border-t border-brand-border">
+                    <div
+                        class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal-on-scroll">
+                        <h2
+                            class="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-brand-text mb-6">Ready
+                            to Start Your Success Story?</h2>
+                        <p
+                            class="text-[16px] sm:text-[18px] text-brand-text-muted leading-relaxed font-normal mb-8 max-w-2xl mx-auto">Take
+                            the first step towards academic excellence. Enroll
+                            now and join thousands of successful students.</p>
+                        <div
+                            class="flex flex-col xs:flex-row gap-4 justify-center">
+                            <a href="#admission"
+                                onclick="navigateTo('admission')"
+                                class="bg-gradient-to-r from-brand-emerald to-teal-500 hover:to-brand-emerald text-white px-8 py-4 rounded-full text-base sm:text-lg font-semibold tracking-wide shadow-lg shadow-brand-emerald/20 flex items-center justify-center gap-2 transition-transform hover:-translate-y-0.5 btn-press">
+                                Enroll Now <i data-lucide="arrow-right"
+                                    class="w-5 h-5"></i>
+                            </a>
+                            <a href="#contact" onclick="navigateTo('contact')"
+                                class="border border-brand-border text-brand-text-muted hover:border-brand-text hover:text-brand-text px-8 py-4 rounded-full text-base sm:text-lg font-semibold tracking-wide transition-colors btn-press">Get
+                                in Touch</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- ================= ABOUT PAGE ================= -->
+            <div id="about-page" class="page-view hidden">
+                <section
+                    class="py-16 sm:py-24 section-gradient relative overflow-hidden text-center">
+                    <div class="absolute inset-0 z-0">
+                        <div
+                            class="absolute top-20 left-10 w-72 h-72 bg-brand-emerald/5 rounded-full blur-[100px] animate-pulse-slow"></div>
+                    </div>
+                    <div class="relative max-w-7xl mx-auto px-4 z-10 reveal-on-scroll">
+                        <span
+                            class="inline-block px-4 py-2 bg-brand-emerald/10 text-brand-emerald rounded-full text-xs font-bold uppercase tracking-wider mb-6 font-sans">About
+                            Us</span>
+                        <h1
+                            class="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-brand-text mb-6">Our
+                            Story of Educational Excellence</h1>
+                        <p
+                            class="text-[16px] sm:text-[18px] text-brand-text-muted leading-relaxed font-normal max-w-3xl mx-auto font-sans">For
+                            over 15 years, The Scholars Academy has been
+                            transforming students into achievers through
+                            dedicated teaching and personalized guidance.</p>
+                    </div>
+                </section>
+
+                <section
+                    class="py-16 sm:py-24 bg-brand-base border-y border-brand-border">
+                    <div
+                        class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 sm:gap-16 items-center">
+                        <div class="reveal-on-scroll">
+                            <span
+                                class="inline-block px-4 py-2 bg-brand-emerald/10 text-brand-emerald rounded-full text-xs font-bold uppercase tracking-wider mb-4 font-sans">Our
+                                Mission</span>
+                            <h2
+                                class="text-[28px] sm:text-[36px] font-heading font-bold text-brand-text mb-6">Nurturing
+                                Excellence, Building Futures</h2>
+                            <p
+                                class="text-[16px] sm:text-[18px] text-brand-text-muted leading-relaxed font-normal mb-6 font-sans">Our
+                                mission is to provide quality education that
+                                empowers students to achieve academic excellence
+                                while developing critical thinking skills and
+                                building strong character.</p>
+                            
+                            <!-- UPDATED: Quote Card with enforced border thickness -->
+                            <div
+                                class="glass-card rounded-2xl p-6 !border-l-4 border-brand-emerald hover-lift">
+                                <i data-lucide="quote"
+                                    class="w-8 h-8 text-brand-emerald mb-4"></i>
+                                <p
+                                    class="text-brand-text-muted italic text-lg font-normal font-sans">"Education is not the filling of a pail, but the lighting of a fire. We ignite the passion for learning in every student."</p>
+                                <p
+                                    class="text-brand-emerald mt-4 font-bold text-sm font-sans">—
+                                    Dr. Rajesh Kumar, Founder</p>
+                            </div>
+                        </div>
+                        <div class="relative reveal-on-scroll" style="transition-delay: 200ms;">
+                            <div
+                                class="absolute -inset-2 bg-brand-emerald/20 rounded-2xl blur-lg"></div>
+                            <img
+                                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80"
+                                class="relative rounded-2xl shadow-2xl w-full border border-brand-border hover:scale-[1.02] transition-transform duration-500"
+                                alt="Mission">
+                            <div
+                                class="absolute -bottom-8 -left-2 sm:-left-8 glass-card bg-brand-base/95 rounded-2xl p-4 sm:p-6 shadow-xl flex items-center gap-4 border border-brand-border max-w-[calc(100%-1rem)] animate-fade-in" style="animation-delay: 600ms; opacity: 0;">
+                                <div
+                                    class="w-12 h-12 sm:w-14 sm:h-14 bg-brand-emerald/20 rounded-xl flex items-center justify-center shrink-0"><i
+                                        data-lucide="trophy"
+                                        class="w-6 h-6 sm:w-7 sm:h-7 text-brand-emerald"></i></div>
+                                <div>
+                                    <p
+                                        class="text-2xl sm:text-3xl font-bold text-brand-text font-heading">95%</p>
+                                    <p
+                                        class="text-xs sm:text-sm text-brand-text-muted font-medium font-sans">Student
+                                        Success Rate</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section
+                    class="py-16 sm:py-24 bg-brand-card border-y border-brand-border">
+                    <div class="max-w-7xl mx-auto px-4">
+                        <div class="text-center mb-16 reveal-on-scroll">
+                            <h2
+                                class="text-[28px] sm:text-[36px] font-heading font-bold text-brand-text mb-4">The
+                                Pillars We Stand On</h2>
+                            <p
+                                class="text-[16px] sm:text-[18px] text-brand-text-muted leading-relaxed font-normal font-sans">Our
+                                core values guide everything we do.</p>
+                        </div>
+                        <div
+                            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+                            id="values-grid">
+                            <!-- JS Injected -->
+                        </div>
+                    </div>
+                </section>
+
+                <section class="py-16 sm:py-24 bg-brand-base">
+                    <div class="max-w-7xl mx-auto px-4">
+                        <div class="text-center mb-16 reveal-on-scroll">
+                            <span
+                                class="inline-block px-4 py-2 bg-brand-emerald/10 text-brand-emerald rounded-full text-xs font-bold uppercase tracking-wider mb-4 font-sans">Our
+                                Journey</span>
+                            <h2
+                                class="text-[28px] sm:text-[36px] font-heading font-bold text-brand-text">Milestones
+                                of Excellence</h2>
+                        </div>
+                        <div class="relative max-w-4xl mx-auto space-y-12"
+                            id="timeline-container">
+                            <div
+                                class="absolute left-1/2 top-0 bottom-0 w-px bg-brand-border hidden md:block -translate-x-1/2"></div>
+                            <!-- JS Injected -->
+                        </div>
+                    </div>
+                </section>
+
+                <section
+                    class="py-16 sm:py-24 section-gradient border-t border-brand-border">
+                    <div class="max-w-7xl mx-auto px-4">
+                        <div class="text-center mb-16 reveal-on-scroll">
+                            <h2
+                                class="text-[28px] sm:text-[36px] font-heading font-bold text-brand-text mb-4">Meet
+                                Our Expert Teachers</h2>
+                            <p
+                                class="text-[16px] sm:text-[18px] text-brand-text-muted leading-relaxed font-normal font-sans">Mentors
+                                who guide you to success.</p>
+                        </div>
+                        <div
+                            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+                            id="faculty-grid">
+                            <!-- JS Injected -->
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- ================= COURSES PAGE ================= -->
+            <div id="courses-page" class="page-view hidden">
+                <section
+                    class="py-16 sm:py-24 section-gradient relative overflow-hidden text-center">
+                    <div class="absolute inset-0 z-0">
+                        <div
+                            class="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-brand-emerald/5 rounded-full blur-[100px] animate-pulse-slow"></div>
+                    </div>
+                    <div class="relative max-w-4xl mx-auto px-4 z-10 reveal-on-scroll">
+                        <span
+                            class="inline-block px-4 py-2 bg-brand-emerald/10 text-brand-emerald rounded-full text-xs font-bold uppercase tracking-wider mb-6">Our
+                            Programs</span>
+                        <h1
+                            class="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-brand-text mb-6">Courses
+                            Designed for Success</h1>
+                        <p
+                            class="text-[16px] sm:text-[18px] text-brand-text-muted leading-relaxed font-normal">Comprehensive
+                            programs for foundation, boards, and competitive
+                            exams.</p>
+                    </div>
+                </section>
+
+                <section class="py-12 sm:py-16 bg-brand-base">
+                    <div class="max-w-7xl mx-auto px-4">
+                        <!-- Filters -->
+                        <div
+                            class="flex justify-center flex-wrap gap-2 mb-12 font-sans overflow-x-auto no-scrollbar pb-2 reveal-on-scroll">
+                            <button onclick="filterCourses('all')"
+                                class="course-filter-btn px-6 py-2.5 rounded-lg font-medium tracking-wide text-[14px] sm:text-[15px] transition-all bg-brand-emerald text-white whitespace-nowrap btn-press"
+                                data-cat="all">All Courses</button>
+                            <button onclick="filterCourses('foundation')"
+                                class="course-filter-btn px-6 py-2.5 rounded-lg font-medium tracking-wide text-[14px] sm:text-[15px] transition-all text-brand-text-muted hover:text-brand-text hover:bg-brand-muted whitespace-nowrap btn-press"
+                                data-cat="foundation">Foundation</button>
+                            <button onclick="filterCourses('board')"
+                                class="course-filter-btn px-6 py-2.5 rounded-lg font-medium tracking-wide text-[14px] sm:text-[15px] transition-all text-brand-text-muted hover:text-brand-text hover:bg-brand-muted whitespace-nowrap btn-press"
+                                data-cat="board">Board Prep</button>
+                            <button onclick="filterCourses('competitive')"
+                                class="course-filter-btn px-6 py-2.5 rounded-lg font-medium tracking-wide text-[14px] sm:text-[15px] transition-all text-brand-text-muted hover:text-brand-text hover:bg-brand-muted whitespace-nowrap btn-press"
+                                data-cat="competitive">Competitive</button>
+                        </div>
+
+                        <!-- Course Grid -->
+                        <div class="space-y-6" id="courses-list-container">
+                            <!-- JS Injected: All 8 courses -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Fee Note -->
+                <section class="py-16 bg-brand-card border-t border-brand-border">
+                    <div class="max-w-4xl mx-auto px-4 text-center reveal-on-scroll">
+                        <div
+                            class="glass-card rounded-3xl p-6 sm:p-8 md:p-12 text-brand-text relative overflow-hidden bg-brand-muted dark:bg-transparent hover-lift">
+                            <div
+                                class="absolute top-0 right-0 w-32 h-32 bg-brand-emerald/10 rounded-full blur-2xl"></div>
+                            <i data-lucide="graduation-cap"
+                                class="w-16 h-16 mx-auto mb-6 text-brand-emerald"></i>
+                            <h3
+                                class="text-[24px] sm:text-[28px] md:text-[36px] font-heading font-bold mb-4">Affordable
+                                Quality Education</h3>
+                            <p
+                                class="text-[16px] sm:text-[18px] text-brand-text-muted mb-8 max-w-2xl mx-auto font-normal">We
+                                believe quality education should be accessible
+                                to all. Contact us for detailed fee structure
+                                and flexible payment options.</p>
+                            <div
+                                class="flex flex-col sm:flex-row gap-4 justify-center">
+                                <a href="#contact"
+                                    onclick="navigateTo('contact')"
+                                    class="bg-brand-emerald text-white px-8 py-3 rounded-full font-semibold tracking-wide hover:bg-emerald-400 transition-colors btn-press">Get
+                                    Fee Details</a>
+                                <a href="tel:+919876543210"
+                                    class="border border-brand-border text-brand-text px-8 py-3 rounded-full font-semibold tracking-wide hover:bg-brand-muted transition-colors btn-press">Call:
+                                    +91 98765 43210</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- ================= GALLERY PAGE ================= -->
+            <div id="gallery-page" class="page-view hidden">
+                <section
+                    class="py-16 sm:py-24 section-gradient relative overflow-hidden text-center">
+                    <div class="absolute inset-0 z-0">
+                        <div
+                            class="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] bg-brand-cyan/5 rounded-full blur-[100px] animate-pulse-slow"></div>
+                    </div>
+                    <div class="relative max-w-4xl mx-auto px-4 z-10 reveal-on-scroll">
+                        <span
+                            class="inline-block px-4 py-2 bg-brand-emerald/10 text-brand-emerald rounded-full text-xs font-bold uppercase tracking-wider mb-6 font-sans">Our
+                            Memories</span>
+                        <h1
+                            class="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-brand-text mb-6">Capturing
+                            Moments</h1>
+                        <p
+                            class="text-[16px] sm:text-[18px] text-brand-text-muted leading-relaxed font-normal font-sans">Explore
+                            our journey through pictures - from classroom
+                            learning to celebrations.</p>
+                    </div>
+                </section>
+
+                <!-- Stats -->
+                <section class="py-12 bg-brand-base border-y border-brand-border">
+                    <div
+                        class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
+                        id="gallery-stats">
+                        <!-- JS Injected -->
+                    </div>
+                </section>
+
+                <section class="py-16 bg-brand-base">
+                    <div class="max-w-7xl mx-auto px-4">
+                        <!-- Filters -->
+                        <div class="flex justify-center flex-wrap gap-2 mb-12 reveal-on-scroll">
+                            <div
+                                class="glass-card p-1 rounded-xl flex flex-wrap justify-center gap-1 w-full sm:w-auto">
+                                <button onclick="filterGallery('all')"
+                                    class="gallery-filter-btn px-4 py-2 rounded-lg font-medium tracking-wide text-[14px] sm:text-[15px] transition-all bg-brand-emerald text-white flex items-center gap-2 grow sm:grow-0 justify-center btn-press"
+                                    data-cat="all"><i data-lucide="camera"
+                                        class="w-4 h-4"></i> All</button>
+                                <button onclick="filterGallery('classroom')"
+                                    class="gallery-filter-btn px-4 py-2 rounded-lg font-medium tracking-wide text-[14px] sm:text-[15px] transition-all text-brand-text-muted hover:text-brand-text hover:bg-brand-muted flex items-center gap-2 grow sm:grow-0 justify-center btn-press"
+                                    data-cat="classroom"><i data-lucide="users"
+                                        class="w-4 h-4"></i> Classrooms</button>
+                                <button onclick="filterGallery('activities')"
+                                    class="gallery-filter-btn px-4 py-2 rounded-lg font-medium tracking-wide text-[14px] sm:text-[15px] transition-all text-brand-text-muted hover:text-brand-text hover:bg-brand-muted flex items-center gap-2 grow sm:grow-0 justify-center btn-press"
+                                    data-cat="activities"><i
+                                        data-lucide="calendar"
+                                        class="w-4 h-4"></i> Activities</button>
+                                <button onclick="filterGallery('results')"
+                                    class="gallery-filter-btn px-4 py-2 rounded-lg font-medium tracking-wide text-[14px] sm:text-[15px] transition-all text-brand-text-muted hover:text-brand-text hover:bg-brand-muted flex items-center gap-2 grow sm:grow-0 justify-center btn-press"
+                                    data-cat="results"><i data-lucide="trophy"
+                                        class="w-4 h-4"></i> Results</button>
+                                <button onclick="filterGallery('events')"
+                                    class="gallery-filter-btn px-4 py-2 rounded-lg font-medium tracking-wide text-[14px] sm:text-[15px] transition-all text-brand-text-muted hover:text-brand-text hover:bg-brand-muted flex items-center gap-2 grow sm:grow-0 justify-center btn-press"
+                                    data-cat="events"><i data-lucide="play"
+                                        class="w-4 h-4"></i> Events</button>
+                            </div>
+                        </div>
+
+                        <!-- Gallery Grid -->
+                        <div
+                            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+                            id="gallery-grid">
+                            <!-- JS Injected -->
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- ================= ADMISSION PAGE ================= -->
+            <div id="admission-page" class="page-view hidden">
+                <section
+                    class="py-16 sm:py-24 section-gradient relative overflow-hidden">
+                    <div class="absolute inset-0 z-0">
+                        <div
+                            class="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-brand-emerald/5 rounded-full blur-[100px] animate-pulse-slow"></div>
+                    </div>
+                    <div
+                        class="relative max-w-7xl mx-auto px-4 text-center z-10 reveal-on-scroll">
+                        <span
+                            class="inline-block px-4 py-2 bg-brand-emerald/10 text-brand-emerald rounded-full text-xs font-bold uppercase tracking-wider mb-6 font-sans">Admission
+                            Open 2024-25</span>
+                        <h1
+                            class="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-brand-text mb-6">Begin
+                            Your Success Journey</h1>
+                        <p
+                            class="text-[16px] sm:text-[18px] text-brand-text-muted leading-relaxed font-normal max-w-3xl mx-auto font-sans">Fill
+                            out the enquiry form below and take the first step
+                            towards academic excellence.</p>
+                    </div>
+                </section>
+
+                <section class="py-12 sm:py-24 bg-brand-base">
+                    <div
+                        class="max-w-7xl mx-auto px-4 grid lg:grid-cols-3 gap-12">
+                        <!-- Form -->
+                        <div class="lg:col-span-2 reveal-on-scroll">
+                            <div
+                                class="glass-card rounded-2xl overflow-hidden shadow-xl hover-lift">
+                                <div
+                                    class="bg-brand-card dark:bg-[#0f1623] p-6 border-b border-brand-border">
+                                    <h2
+                                        class="text-[24px] sm:text-[28px] font-bold font-heading text-brand-text flex items-center gap-3"><i
+                                            data-lucide="graduation-cap"
+                                            class="w-8 h-8 text-brand-emerald"></i>
+                                        Admission Enquiry Form</h2>
+                                    <p
+                                        class="text-brand-text-muted mt-1 font-normal text-sm sm:text-base">Please
+                                        fill in the details below.</p>
+                                </div>
+                                <div class="p-4 sm:p-8">
+                                    <form id="admission-form"
+                                        onsubmit="handleFormSubmit(event, 'admission')"
+                                        class="space-y-6 font-sans">
+                                        <!-- Student Details -->
+                                        <div class="space-y-4">
+                                            <h3
+                                                class="text-lg font-semibold text-brand-text flex items-center gap-2"><i
+                                                    data-lucide="user"
+                                                    class="text-brand-emerald"></i>
+                                                Student Details</h3>
+                                            <div
+                                                class="grid md:grid-cols-2 gap-6">
+                                                <div class="space-y-2">
+                                                    <label
+                                                        class="block text-sm font-medium text-brand-text-muted">Student
+                                                        Name *</label>
+                                                    <input type="text" required
+                                                        placeholder="Full Name"
+                                                        class="w-full p-3 rounded-lg text-[15px] font-normal focus:bg-brand-card transition-colors">
+                                                </div>
+                                                <div class="space-y-2">
+                                                    <label
+                                                        class="block text-sm font-medium text-brand-text-muted">Parent
+                                                        Name *</label>
+                                                    <input type="text" required
+                                                        placeholder="Parent Name"
+                                                        class="w-full p-3 rounded-lg text-[15px] font-normal focus:bg-brand-card transition-colors">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Contact -->
+                                        <div class="space-y-4">
+                                            <h3
+                                                class="text-lg font-semibold text-brand-text flex items-center gap-2"><i
+                                                    data-lucide="phone"
+                                                    class="text-brand-emerald"></i>
+                                                Contact Details</h3>
+                                            <div
+                                                class="grid md:grid-cols-2 gap-6">
+                                                <div class="space-y-2">
+                                                    <label
+                                                        class="block text-sm font-medium text-brand-text-muted">Phone
+                                                        Number *</label>
+                                                    <input type="tel" required
+                                                        placeholder="+91..."
+                                                        class="w-full p-3 rounded-lg text-[15px] font-normal focus:bg-brand-card transition-colors">
+                                                </div>
+                                                <div class="space-y-2">
+                                                    <label
+                                                        class="block text-sm font-medium text-brand-text-muted">Email</label>
+                                                    <input type="email"
+                                                        placeholder="email@example.com"
+                                                        class="w-full p-3 rounded-lg text-[15px] font-normal focus:bg-brand-card transition-colors">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Academic -->
+                                        <div class="space-y-4">
+                                            <h3
+                                                class="text-lg font-semibold text-brand-text flex items-center gap-2"><i
+                                                    data-lucide="book-open"
+                                                    class="text-brand-emerald"></i>
+                                                Academic Details</h3>
+                                            <div
+                                                class="grid md:grid-cols-2 gap-6">
+                                                <div class="space-y-2">
+                                                    <label
+                                                        class="block text-sm font-medium text-brand-text-muted">Current
+                                                        Class *</label>
+                                                    <select
+                                                        class="w-full p-3 rounded-lg text-[15px] font-normal appearance-none focus:bg-brand-card transition-colors">
+                                                        <option>Class
+                                                            6</option><option>Class
+                                                            7</option><option>Class
+                                                            8</option><option>Class
+                                                            9</option>
+                                                        <option>Class
+                                                            10</option><option>Class
+                                                            11</option><option>Class
+                                                            12</option>
+                                                    </select>
+                                                </div>
+                                                <div class="space-y-2">
+                                                    <label
+                                                        class="block text-sm font-medium text-brand-text-muted">Interested
+                                                        Course *</label>
+                                                    <select
+                                                        class="w-full p-3 rounded-lg text-[15px] font-normal appearance-none focus:bg-brand-card transition-colors">
+                                                        <option>Foundation
+                                                            (6-8)</option><option>Board
+                                                            Prep (9-10)</option>
+                                                        <option>Science
+                                                            (11-12)</option><option>JEE/NEET</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="space-y-2">
+                                            <label
+                                                class="block text-sm font-medium text-brand-text-muted">Message</label>
+                                            <textarea rows="3"
+                                                class="w-full p-3 rounded-lg text-[15px] font-normal focus:bg-brand-card transition-colors"
+                                                placeholder="Any specific queries?"></textarea>
+                                        </div>
+                                        <button type="submit"
+                                            class="w-full bg-brand-emerald text-white py-4 rounded-lg font-semibold tracking-wide hover:bg-emerald-400 transition-colors flex items-center justify-center gap-2 btn-press">Submit
+                                            Enquiry <i data-lucide="arrow-right"
+                                                class="w-5 h-5"></i></button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sidebar -->
+                        <div class="space-y-6 reveal-on-scroll" style="transition-delay: 200ms;">
+                            <div
+                                class="glass-card p-6 rounded-xl border-t-4 border-brand-emerald hover-lift">
+                                <h3
+                                    class="text-xl font-heading font-bold text-brand-text mb-4 flex items-center gap-2"><i
+                                        data-lucide="check-circle"
+                                        class="text-brand-emerald"></i> Why
+                                    Apply Now?</h3>
+                                <ul class="space-y-4 text-brand-text-muted">
+                                    <li class="flex items-center gap-3"><div
+                                            class="w-6 h-6 bg-brand-emerald/10 rounded-full flex items-center justify-center text-brand-emerald text-xs shrink-0"><i
+                                                data-lucide="check"
+                                                class="w-4 h-4"></i></div> Free
+                                        counseling session</li>
+                                    <li class="flex items-center gap-3"><div
+                                            class="w-6 h-6 bg-brand-emerald/10 rounded-full flex items-center justify-center text-brand-emerald text-xs shrink-0"><i
+                                                data-lucide="check"
+                                                class="w-4 h-4"></i></div> Demo
+                                        class available</li>
+                                    <li class="flex items-center gap-3"><div
+                                            class="w-6 h-6 bg-brand-emerald/10 rounded-full flex items-center justify-center text-brand-emerald text-xs shrink-0"><i
+                                                data-lucide="check"
+                                                class="w-4 h-4"></i></div>
+                                        Scholarship options</li>
+                                </ul>
+                            </div>
+                            <div class="glass-card p-6 rounded-xl hover-lift">
+                                <h3
+                                    class="text-xl font-heading font-bold text-brand-text mb-4 flex items-center gap-2"><i
+                                        data-lucide="phone"></i> Need Help?</h3>
+                                <p
+                                    class="text-brand-text-muted mb-6 text-sm font-normal">Our
+                                    admission team is here to help you.</p>
+                                <div class="space-y-3">
+                                    <a href="tel:+919876543210"
+                                        class="flex items-center gap-3 p-3 bg-brand-muted rounded-lg hover:bg-brand-card transition-colors text-brand-text-muted hover:text-brand-emerald btn-press"><i
+                                            data-lucide="phone"
+                                            class="w-5 h-5 shrink-0"></i> <span
+                                            class="truncate">+91 98765
+                                            43210</span></a>
+                                    <a
+                                        href="mailto:admissions@nextgenscholars.com"
+                                        class="flex items-center gap-3 p-3 bg-brand-muted rounded-lg hover:bg-brand-card transition-colors text-brand-text-muted hover:text-brand-emerald btn-press"><i
+                                            data-lucide="mail"
+                                            class="w-5 h-5 shrink-0"></i> <span
+                                            class="truncate">admissions@nextgenscholars.com</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- ================= CONTACT PAGE ================= -->
+            <div id="contact-page" class="page-view hidden">
+                <section
+                    class="py-16 sm:py-24 section-gradient text-center relative overflow-hidden">
+                    <div class="absolute inset-0 z-0">
+                        <div
+                            class="absolute bottom-[-20%] left-[-10%] w-[600px] h-[600px] bg-brand-emerald/5 rounded-full blur-[100px] animate-pulse-slow"></div>
+                    </div>
+                    <div class="max-w-4xl mx-auto px-4 relative z-10 reveal-on-scroll">
+                        <span
+                            class="inline-block px-4 py-2 bg-brand-emerald/10 text-brand-emerald rounded-full text-xs font-bold uppercase tracking-wider mb-6 font-sans">Get
+                            In Touch</span>
+                        <h1
+                            class="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-brand-text mb-6">We'd
+                            Love to Hear From You</h1>
+                        <p
+                            class="text-[16px] sm:text-[18px] text-brand-text-muted leading-relaxed font-normal max-w-3xl mx-auto font-sans">Have
+                            questions? Reach out to us through any channel.</p>
+                    </div>
+                </section>
+
+                <section class="py-16 bg-brand-base">
+                    <div
+                        class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal-on-scroll" style="transition-delay: 200ms;">
+                        <div
+                            class="glass-card p-6 rounded-2xl text-center hover-lift">
+                            <div
+                                class="w-14 h-14 mx-auto bg-blue-500/10 text-blue-500 rounded-xl flex items-center justify-center mb-4"><i
+                                    data-lucide="phone"
+                                    class="w-7 h-7"></i></div>
+                            <h3 class="font-bold text-brand-text mb-2">Phone</h3>
+                            <p class="text-brand-text-muted text-sm font-normal">+91
+                                98765 43210</p>
+                        </div>
+                        <div
+                            class="glass-card p-6 rounded-2xl text-center hover-lift">
+                            <div
+                                class="w-14 h-14 mx-auto bg-green-500/10 text-green-500 rounded-xl flex items-center justify-center mb-4"><i
+                                    data-lucide="message-circle"
+                                    class="w-7 h-7"></i></div>
+                            <h3 class="font-bold text-brand-text mb-2">WhatsApp</h3>
+                            <p class="text-brand-text-muted text-sm font-normal">+91
+                                98765 43210</p>
+                        </div>
+                        <div
+                            class="glass-card p-6 rounded-2xl text-center hover-lift">
+                            <div
+                                class="w-14 h-14 mx-auto bg-purple-500/10 text-purple-500 rounded-xl flex items-center justify-center mb-4"><i
+                                    data-lucide="mail"
+                                    class="w-7 h-7"></i></div>
+                            <h3 class="font-bold text-brand-text mb-2">Email</h3>
+                            <p
+                                class="text-brand-text-muted text-sm font-normal">info@nextgenscholars.com</p>
+                        </div>
+                        <div
+                            class="glass-card p-6 rounded-2xl text-center hover-lift">
+                            <div
+                                class="w-14 h-14 mx-auto bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center mb-4"><i
+                                    data-lucide="map-pin"
+                                    class="w-7 h-7"></i></div>
+                            <h3 class="font-bold text-brand-text mb-2">Address</h3>
+                            <p class="text-brand-text-muted text-sm font-normal">123
+                                Education Street</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section
+                    class="py-16 sm:py-24 bg-brand-card border-t border-brand-border">
+                    <div
+                        class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12">
+                        <div
+                            class="glass-card rounded-2xl overflow-hidden shadow-xl reveal-on-scroll hover-lift">
+                            <div
+                                class="bg-brand-muted dark:bg-gray-800 p-6 border-b border-brand-border">
+                                <h2
+                                    class="text-[24px] sm:text-[28px] font-bold font-heading text-brand-text flex items-center gap-3"><i
+                                        data-lucide="send"
+                                        class="text-brand-emerald"></i> Send Us
+                                    a Message</h2>
+                            </div>
+                            <div class="p-4 sm:p-8">
+                                <form
+                                    onsubmit="handleFormSubmit(event, 'contact')"
+                                    class="space-y-5">
+                                    <div class="grid md:grid-cols-2 gap-4">
+                                        <div class="space-y-2"><label
+                                                class="block text-sm font-medium text-brand-text-muted">Name
+                                                *</label><input type="text"
+                                                required
+                                                class="w-full p-3 rounded-lg text-[15px] font-normal focus:bg-brand-card transition-colors"></div>
+                                        <div class="space-y-2"><label
+                                                class="block text-sm font-medium text-brand-text-muted">Phone
+                                                *</label><input type="tel"
+                                                required
+                                                class="w-full p-3 rounded-lg text-[15px] font-normal focus:bg-brand-card transition-colors"></div>
+                                    </div>
+                                    <div class="space-y-2"><label
+                                            class="block text-sm font-medium text-brand-text-muted">Email</label><input
+                                            type="email"
+                                            class="w-full p-3 rounded-lg text-[15px] font-normal focus:bg-brand-card transition-colors"></div>
+                                    <div class="space-y-2"><label
+                                            class="block text-sm font-medium text-brand-text-muted">Subject
+                                            *</label><input type="text" required
+                                            class="w-full p-3 rounded-lg text-[15px] font-normal focus:bg-brand-card transition-colors"></div>
+                                    <div class="space-y-2"><label
+                                            class="block text-sm font-medium text-brand-text-muted">Message
+                                            *</label><textarea rows="4" required
+                                            class="w-full p-3 rounded-lg text-[15px] font-normal focus:bg-brand-card transition-colors"></textarea></div>
+                                    <button type="submit"
+                                        class="w-full bg-brand-emerald text-white py-4 rounded-lg font-semibold tracking-wide hover:bg-emerald-400 transition-colors btn-press">Send
+                                        Message</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="space-y-6 reveal-on-scroll" style="transition-delay: 200ms;">
+                            <div
+                                class="bg-brand-muted dark:bg-gray-800 rounded-2xl overflow-hidden h-80 shadow-lg border border-brand-border relative hover-lift">
+                                <!-- Placeholder map -->
+                                <div
+                                    class="absolute inset-0 bg-brand-muted dark:bg-gray-700 flex items-center justify-center text-brand-text-muted">
+                                    [Map Placeholder]
+                                </div>
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.8852!2d72.8347!3d19.0760!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDA0JzMzLjYiTiA3MsKwNTAnMDQuOSJF!5e0!3m2!1sen!2sin!4v1234567890"
+                                    width="100%" height="100%"
+                                    style="border:0; opacity: 0.7;"
+                                    allowfullscreen loading="lazy"></iframe>
+                            </div>
+                            <div class="glass-card p-6 rounded-2xl hover-lift">
+                                <div class="flex items-center gap-3 mb-4"><div
+                                        class="w-12 h-12 bg-brand-emerald/10 rounded-xl flex items-center justify-center text-brand-emerald"><i
+                                            data-lucide="clock"
+                                            class="w-6 h-6"></i></div><h3
+                                        class="text-xl font-bold font-heading text-brand-text">Office
+                                        Hours</h3></div>
+                                <div
+                                    class="space-y-2 text-brand-text-muted font-normal">
+                                    <div
+                                        class="flex justify-between border-b border-brand-border py-2"><span>Mon
+                                            - Fri</span> <span
+                                            class="font-medium text-brand-text">8:00
+                                            AM - 8:00 PM</span></div>
+                                    <div
+                                        class="flex justify-between border-b border-brand-border py-2"><span>Sat</span>
+                                        <span
+                                            class="font-medium text-brand-text">8:00
+                                            AM - 6:00 PM</span></div>
+                                    <div
+                                        class="flex justify-between py-2"><span>Sun</span>
+                                        <span
+                                            class="font-medium text-brand-text">9:00
+                                            AM - 2:00 PM</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+        </main>
+
+        <!-- Footer -->
+        <footer
+            class="bg-[#050a14] text-gray-400 pt-16 pb-8 border-t border-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                    <div class="col-span-1 sm:col-span-2 lg:col-span-1">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div
+                                class="w-10 h-10 rounded bg-brand-emerald flex items-center justify-center text-white font-bold font-heading">
+                                S
+                            </div>
+                            <div>
+                                <h3
+                                    class="text-xl font-bold font-heading text-white">The
+                                    Scholars</h3>
+                                <p
+                                    class="text-xs text-brand-emerald font-semibold tracking-widest uppercase">Academy</p>
+                            </div>
+                        </div>
+                        <p
+                            class="text-sm leading-relaxed font-normal">Empowering
+                            students with quality education and personalized
+                            attention to achieve academic excellence.</p>
+                    </div>
+                    <div>
+                        <h4
+                            class="text-lg font-heading font-bold text-white mb-6">Quick
+                            Links</h4>
+                        <ul class="space-y-3 text-sm font-normal">
+                            <li><a href="#home" onclick="navigateTo('home')"
+                                    class="hover:text-brand-emerald transition-colors">Home</a></li>
+                            <li><a href="#about" onclick="navigateTo('about')"
+                                    class="hover:text-brand-emerald transition-colors">About</a></li>
+                            <li><a href="#courses"
+                                    onclick="navigateTo('courses')"
+                                    class="hover:text-brand-emerald transition-colors">Courses</a></li>
+                            <li><a href="#gallery"
+                                    onclick="navigateTo('gallery')"
+                                    class="hover:text-brand-emerald transition-colors">Gallery</a></li>
+                            <li><a href="#contact"
+                                    onclick="navigateTo('contact')"
+                                    class="hover:text-brand-emerald transition-colors">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4
+                            class="text-lg font-heading font-bold text-white mb-6">Contact
+                            Us</h4>
+                        <ul class="space-y-4 text-sm font-normal">
+                            <li class="flex items-start gap-3"><i
+                                    data-lucide="map-pin"
+                                    class="w-5 h-5 text-brand-emerald mt-1 shrink-0"></i>
+                                123 Education Street, Knowledge City</li>
+                            <li class="flex items-center gap-3"><i
+                                    data-lucide="phone"
+                                    class="w-5 h-5 text-brand-emerald shrink-0"></i>
+                                +91 98765 43210</li>
+                            <li class="flex items-center gap-3"><i
+                                    data-lucide="mail"
+                                    class="w-5 h-5 text-brand-emerald shrink-0"></i>
+                                info@nextgenscholars.com</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4
+                            class="text-lg font-heading font-bold text-white mb-6">Follow
+                            Us</h4>
+                        <div class="flex gap-4">
+                            <a href="#"
+                                class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-[#1877F2] hover:text-white transition-colors hover:scale-110 duration-300"><i
+                                    data-lucide="facebook"
+                                    class="w-5 h-5"></i></a>
+                            <a href="#"
+                                class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-[#E1306C] hover:text-white transition-colors hover:scale-110 duration-300"><i
+                                    data-lucide="instagram"
+                                    class="w-5 h-5"></i></a>
+                            <a href="#"
+                                class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-[#FF0000] hover:text-white transition-colors hover:scale-110 duration-300"><i
+                                    data-lucide="youtube"
+                                    class="w-5 h-5"></i></a>
+                            <a href="#"
+                                class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-[#1DA1F2] hover:text-white transition-colors hover:scale-110 duration-300"><i
+                                    data-lucide="twitter"
+                                    class="w-5 h-5"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-sm font-normal gap-4 text-center md:text-left">
+                    <p class="safe-pb">&copy; 2026 The Scholars Academy. All
+                        rights reserved. Designed by Subham Kumar Mallick</p>
+                    <div class="flex gap-6 safe-pb">
+                        <a href="#" class="hover:text-brand-emerald">Privacy
+                            Policy</a>
+                        <a href="#" class="hover:text-brand-emerald">Terms of
+                            Service</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/919876543210" target="_blank"
+            class="fixed bottom-6 right-6 z-50 group safe-pb hover:scale-110 transition-transform duration-300">
+            <span
+                class="absolute right-14 top-2 bg-white text-gray-900 text-xs font-bold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap hidden sm:block">Chat
+                with us!</span>
+            <div class="relative">
+                <div
+                    class="absolute inset-0 bg-green-500 rounded-full animate-ping opacity-25"></div>
+                <div
+                    class="relative w-12 h-12 sm:w-14 sm:h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg shadow-green-500/40">
+                    <i data-lucide="message-circle"
+                        class="w-6 h-6 sm:w-7 sm:h-7 text-white fill-current"></i>
+                </div>
+            </div>
+        </a>
+
+        <!-- Lightbox Modal -->
+        <div id="lightbox"
+            class="fixed inset-0 z-[60] bg-black/95 hidden flex items-center justify-center opacity-0 backdrop-blur-sm p-4">
+            <button onclick="closeLightbox()"
+                class="absolute top-4 right-4 sm:top-6 sm:right-6 text-white hover:text-brand-emerald p-2 bg-white/10 rounded-full transition-colors z-[70] hover:rotate-90 duration-300"><i
+                    data-lucide="x" class="w-6 h-6 sm:w-8 sm:h-8"></i></button>
+            <button onclick="navigateGallery('prev')"
+                class="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 text-white hover:bg-white/10 p-2 rounded-full transition-colors z-[70] hover:scale-110 active:scale-95"><i
+                    data-lucide="chevron-left"
+                    class="w-6 h-6 sm:w-8 sm:h-8"></i></button>
+            <div class="modal-content max-w-[95%] max-h-[85vh] text-center relative">
+                <img id="lightbox-img" src alt="Gallery Preview"
+                    class="max-w-full max-h-[70vh] rounded-lg shadow-2xl object-contain mx-auto border border-white/10">
+                <div class="mt-4 sm:mt-6 text-white">
+                    <h3 id="lightbox-title"
+                        class="text-xl sm:text-2xl font-bold font-heading"></h3>
+                    <p id="lightbox-desc"
+                        class="text-gray-400 text-xs sm:text-sm mt-1"></p>
+                </div>
+            </div>
+            <button onclick="navigateGallery('next')"
+                class="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 text-white hover:bg-white/10 p-2 rounded-full transition-colors z-[70] hover:scale-110 active:scale-95"><i
+                    data-lucide="chevron-right"
+                    class="w-6 h-6 sm:w-8 sm:h-8"></i></button>
+        </div>
+
+        <!-- Success Modal -->
+        <div id="success-modal"
+            class="fixed inset-0 z-[60] bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+            <div
+                class="modal-content glass-card bg-brand-card p-6 sm:p-8 md:p-12 text-center max-w-lg w-full mx-auto rounded-3xl border border-brand-emerald/20 shadow-2xl shadow-brand-emerald/10">
+                <div
+                    class="w-16 h-16 sm:w-20 sm:h-20 mx-auto bg-brand-emerald/20 rounded-full flex items-center justify-center mb-6 animate-bounce">
+                    <i data-lucide="check-circle"
+                        class="w-8 h-8 sm:w-10 sm:h-10 text-brand-emerald"></i>
+                </div>
+                <h2
+                    class="text-2xl md:text-3xl font-bold font-heading text-brand-text mb-4">Message
+                    Sent!</h2>
+                <p
+                    class="text-brand-text-muted mb-8 font-normal text-sm sm:text-base">Thank
+                    you for reaching out! We'll get back to you within 24
+                    hours.</p>
+                <button
+                    onclick="document.getElementById('success-modal').classList.remove('modal-open'); setTimeout(() => document.getElementById('success-modal').classList.add('hidden'), 300);"
+                    class="bg-brand-emerald hover:bg-emerald-400 text-white px-10 py-3 rounded-full font-semibold tracking-wide transition-colors w-full btn-press">Close</button>
+            </div>
+        </div>
+
+        <!-- Application Logic -->
+        <script>
+        // --- DATA ---
+        const facultyData = [
+            { name: "Dr. Rajesh Kumar", role: "Founder & Maths", exp: "20+ years", qual: "Ph.D. IIT Delhi", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&q=80" },
+            { name: "Mrs. Priya Sharma", role: "Science Head", exp: "15+ years", qual: "M.Sc. Physics", img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&q=80" },
+            { name: "Mr. Amit Singh", role: "English", exp: "12+ years", qual: "M.A. English", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&q=80" },
+            { name: "Mrs. Neha Gupta", role: "Chemistry", exp: "10+ years", qual: "M.Sc. Chemistry", img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&q=80" }
+        ];
+
+        const coursesData = [
+            { id: 1, cat: "foundation", name: "Class 6-8 Foundation", tagline: "Build Fundamentals", time: "Morning/Evening", batch: "15-20", desc: "Strong conceptual foundation.", subs: ["Maths", "Science", "English"], icon: "book-open", color: "emerald", popular: false },
+            { id: 2, cat: "board", name: "Class 9-10 Board Excellence", tagline: "Ace Boards", time: "Flexible", batch: "12-15", desc: "Intensive board prep.", subs: ["All Subjects"], icon: "award", color: "cyan", popular: true },
+            { id: 3, cat: "board", name: "Class 11-12 Science (PCM)", tagline: "Master Sciences", time: "Morning", batch: "10-12", desc: "Advanced PCM coaching.", subs: ["Physics", "Chem", "Maths"], icon: "calculator", color: "purple", popular: true },
+            { id: 4, cat: "board", name: "Class 11-12 Science (PCB)", tagline: "Medical Sciences", time: "Evening", batch: "10-12", desc: "Specialized Biology focus.", subs: ["Physics", "Chem", "Bio"], icon: "beaker", color: "rose", popular: false },
+            { id: 5, cat: "competitive", name: "JEE Main & Advanced", tagline: "Gateway to IITs", time: "Weekend/Daily", batch: "15-20", desc: "Comprehensive JEE prep.", subs: ["PCM"], icon: "target", color: "amber", popular: true },
+            { id: 6, cat: "competitive", name: "NEET UG Prep", tagline: "Medical Career", time: "Weekend/Daily", batch: "15-20", desc: "Dedicated NEET coaching.", subs: ["PCB"], icon: "atom", color: "cyan", popular: false },
+            { id: 7, cat: "foundation", name: "Olympiad Prep", tagline: "National Level", time: "Saturday", batch: "15-20", desc: "Excel at competitive level.", subs: ["Maths", "Science"], icon: "star", color: "orange", popular: false },
+            { id: 8, cat: "foundation", name: "Spoken English", tagline: "Confidence", time: "Sunday", batch: "10-15", desc: "Communication skills.", subs: ["English"], icon: "languages", color: "teal", popular: false }
+        ];
+
+        const galleryData = [
+            { id: 1, cat: "classroom", src: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&q=80", title: "Smart Classroom", desc: "Digitally equipped" },
+            { id: 2, cat: "classroom", src: "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=800&q=80", title: "Science Lab", desc: "Practical experiments" },
+            { id: 3, cat: "activities", src: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80", title: "Group Study", desc: "Collaborative learning" },
+            { id: 4, cat: "results", src: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80", title: "Toppers", desc: "Celebrating success" },
+            { id: 5, cat: "events", src: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80", title: "Annual Day", desc: "Grand celebration" },
+            { id: 6, cat: "activities", src: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=800&q=80", title: "Library", desc: "Extensive resources" },
+            { id: 7, cat: "results", src: "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=800&q=80", title: "Awards", desc: "Recognition" },
+            { id: 8, cat: "classroom", src: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80", title: "Computer Lab", desc: "Tech facilities" },
+            { id: 9, cat: "events", src: "https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80", title: "Counseling", desc: "Career guidance" }
+        ];
+
+        const testimonialsData = [
+            { name: "Priya Sharma", class: "Class 12", res: "98% Boards", text: "Teachers here don't just teach, they inspire.", i: "P" },
+            { name: "Rahul Verma", class: "Class 10", res: "Topper", text: "Personal attention helped me become school topper.", i: "R" },
+            { name: "Anjali Singh", class: "JEE", res: "AIR 5420", text: "Foundation built here helped me crack JEE.", i: "A" }
+        ];
+
+        const achievementsData = [
+            { year: "2009", title: "Foundation", desc: "Started with 10 students" },
+            { year: "2015", title: "Expansion", desc: "New branches opened" },
+            { year: "2024", title: "2500+ Students", desc: "Trusted community name" }
+        ];
+
+        const featuresData = [
+            { title: "Personalized Attention", desc: "Small batch sizes ensure individual guidance.", icon: "target" },
+            { title: "Concept Learning", desc: "Focus on understanding vs rote memorization.", icon: "lightbulb" },
+            { title: "Regular Assessments", desc: "Weekly tests to track progress.", icon: "trending-up" },
+            { title: "Experienced Faculty", desc: "15+ years of proven track records.", icon: "shield" }
+        ];
+
+        const statsData = [
+            { val: "2500+", lbl: "Students", icon: "users" },
+            { val: "95%", lbl: "Success Rate", icon: "award" },
+            { val: "15+", lbl: "Years Exp", icon: "graduation-cap" },
+            { val: "50+", lbl: "Faculty", icon: "book-open" }
+        ];
+
+        // --- RENDER FUNCTIONS (With Animation Staggering) ---
+
+        function renderFaculty() {
+            const grid = document.getElementById('faculty-grid');
+            grid.innerHTML = facultyData.map((f, idx) => `
+                <div class="glass-card rounded-2xl overflow-hidden shadow-xl hover-lift reveal-on-scroll" style="transition-delay: ${idx * 100}ms">
+                    <div class="h-56 sm:h-64 overflow-hidden">
+                        <img src="${f.img}" alt="${f.name}" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold font-heading text-brand-text">${f.name}</h3>
+                        <p class="text-brand-emerald font-medium mb-2">${f.role}</p>
+                        <div class="space-y-1 text-sm text-brand-text-muted font-normal">
+                            <div class="flex items-center gap-2"><i data-lucide="calendar" class="w-4 h-4"></i> ${f.exp}</div>
+                            <div class="flex items-center gap-2"><i data-lucide="graduation-cap" class="w-4 h-4"></i> ${f.qual}</div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function getColorClasses(color) {
+            const map = {
+                blue: { bg: "bg-blue-600/10", text: "text-blue-700 dark:text-blue-400", accent: "bg-blue-600", border: "border-blue-600/20", badge: "bg-blue-600/20 text-blue-800 dark:text-blue-300" },
+                emerald: { bg: "bg-emerald-600/10", text: "text-emerald-700 dark:text-emerald-400", accent: "bg-emerald-600", border: "border-emerald-600/20", badge: "bg-emerald-600/20 text-emerald-800 dark:text-emerald-300" },
+                purple: { bg: "bg-purple-600/10", text: "text-purple-700 dark:text-purple-400", accent: "bg-purple-600", border: "border-purple-600/20", badge: "bg-purple-600/20 text-purple-800 dark:text-purple-300" },
+                rose: { bg: "bg-rose-600/10", text: "text-rose-700 dark:text-rose-400", accent: "bg-rose-600", border: "border-rose-600/20", badge: "bg-rose-600/20 text-rose-800 dark:text-rose-300" },
+                amber: { bg: "bg-amber-600/10", text: "text-amber-700 dark:text-amber-400", accent: "bg-amber-600", border: "border-amber-600/20", badge: "bg-amber-600/20 text-amber-800 dark:text-amber-300" },
+                cyan: { bg: "bg-cyan-600/10", text: "text-cyan-700 dark:text-cyan-400", accent: "bg-cyan-600", border: "border-cyan-600/20", badge: "bg-cyan-600/20 text-cyan-800 dark:text-cyan-300" },
+                orange: { bg: "bg-orange-600/10", text: "text-orange-700 dark:text-orange-400", accent: "bg-orange-600", border: "border-orange-600/20", badge: "bg-orange-600/20 text-orange-800 dark:text-orange-300" },
+                teal: { bg: "bg-teal-600/10", text: "text-teal-700 dark:text-teal-400", accent: "bg-teal-600", border: "border-teal-600/20", badge: "bg-teal-600/20 text-teal-800 dark:text-teal-300" }
+            };
+            return map[color] || map.blue;
+        }
+
+        function filterCourses(category) {
+            const container = document.getElementById('courses-list-container');
+            const filtered = category === 'all' ? coursesData : coursesData.filter(c => c.cat === category);
+            
+            document.querySelectorAll('.course-filter-btn').forEach(btn => {
+                const isActive = btn.dataset.cat === category;
+                btn.className = `course-filter-btn px-6 py-2.5 rounded-lg font-medium tracking-wide text-[14px] sm:text-[15px] transition-all duration-300 whitespace-nowrap btn-press ${isActive ? 'bg-brand-emerald text-white shadow-md' : 'text-brand-text-muted hover:text-brand-text hover:bg-brand-muted'}`;
+            });
+
+            // Use keyframes for filtered items to reset animation on change
+            container.innerHTML = filtered.map((c, idx) => {
+                const colors = getColorClasses(c.color);
+                return `
+                <div class="glass-card rounded-3xl p-4 sm:p-6 hover:bg-brand-muted transition-all duration-300 group animate-slide-up hover-lift" style="animation-delay: ${idx * 0.08}s; animation-fill-mode: both;">
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="relative w-full md:w-1/3 h-48 md:h-auto rounded-2xl overflow-hidden shrink-0">
+                            <div class="${colors.bg} w-full h-full flex items-center justify-center">
+                                <i data-lucide="${c.icon}" class="w-16 h-16 ${colors.text} opacity-80 group-hover:scale-110 transition-transform duration-500"></i>
+                            </div>
+                            <div class="absolute top-3 right-3 flex flex-col gap-2 items-end">
+                                ${c.popular ? '<span class="bg-amber-500 text-white text-xs font-bold px-2 py-1 rounded shadow-sm flex items-center gap-1 animate-pulse-slow"><i data-lucide="star" class="w-3 h-3 fill-current"></i> Popular</span>' : ''}
+                            </div>
+                            <div class="absolute bottom-3 left-3">
+                                <div class="${colors.accent} text-white text-xs px-3 py-1 rounded-full font-bold flex items-center gap-1 shadow-sm">
+                                    <i data-lucide="${c.icon}" class="w-3 h-3"></i> ${c.tagline}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-1 py-2">
+                            <h3 class="text-xl sm:text-2xl font-bold font-heading text-brand-text mb-2 group-hover:text-brand-emerald transition-colors">${c.name}</h3>
+                            <p class="text-brand-text-muted mb-4 text-sm font-normal">${c.desc}</p>
+                            
+                            <div class="grid grid-cols-2 gap-4 mb-4 text-sm text-brand-text-muted font-normal">
+                                <div class="bg-brand-muted p-3 rounded-lg border border-brand-border">
+                                    <div class="font-semibold flex items-center gap-2 mb-1 text-brand-text"><i data-lucide="clock" class="w-4 h-4"></i> Timing</div>
+                                    ${c.time}
+                                </div>
+                                <div class="bg-brand-muted p-3 rounded-lg border border-brand-border">
+                                    <div class="font-semibold flex items-center gap-2 mb-1 text-brand-text"><i data-lucide="users" class="w-4 h-4"></i> Batch</div>
+                                    ${c.batch} Students
+                                </div>
+                            </div>
+
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                ${c.subs.map(s => `<span class="text-xs font-medium px-3 py-1 rounded-full bg-brand-muted text-brand-text-muted border border-brand-border">${s}</span>`).join('')}
+                            </div>
+
+                            <div class="flex gap-3">
+                                <a href="#admission" onclick="navigateTo('admission')" class="bg-brand-emerald text-white px-5 py-2.5 rounded-lg text-sm font-semibold tracking-wide hover:bg-emerald-400 transition-colors shadow-md flex-1 text-center sm:flex-none btn-press">Enroll Now</a>
+                                <a href="#contact" onclick="navigateTo('contact')" class="border border-brand-border text-brand-text px-5 py-2.5 rounded-lg text-sm font-semibold tracking-wide hover:bg-brand-muted transition-colors flex-1 text-center sm:flex-none btn-press">Enquire</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
+            }).join('');
+            lucide.createIcons();
+        }
+
+        function renderHomeCourses() {
+            const grid = document.getElementById('home-courses-grid');
+            grid.innerHTML = coursesData.slice(0, 4).map((c, idx) => {
+                const colors = getColorClasses(c.color);
+                return `
+                <div class="glass-card rounded-2xl p-6 hover:bg-brand-muted transition-all group hover-lift reveal-on-scroll" style="transition-delay: ${idx * 100}ms">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-12 h-12 ${colors.accent} rounded-xl flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform duration-300">
+                            <i data-lucide="${c.icon}" class="w-6 h-6"></i>
+                        </div>
+                        ${c.popular ? '<span class="bg-amber-500 text-white text-xs px-2 py-1 rounded font-bold animate-pulse-slow">Popular</span>' : ''}
+                    </div>
+                    <h3 class="text-xl font-bold font-heading text-brand-text mb-2 group-hover:text-brand-emerald transition-colors">${c.name}</h3>
+                    <p class="text-brand-text-muted text-sm mb-4 line-clamp-2 font-normal">${c.desc}</p>
+                    <div class="space-y-2 mb-6">
+                        <div class="flex items-center gap-2 text-sm text-brand-text-muted font-normal"><i data-lucide="clock" class="w-4 h-4"></i> ${c.time}</div>
+                        <div class="flex items-center gap-2 text-sm text-brand-text-muted font-normal"><i data-lucide="users" class="w-4 h-4"></i> ${c.batch} / batch</div>
+                    </div>
+                    <a href="#courses" onclick="navigateTo('courses')" class="flex items-center gap-2 ${colors.text} font-bold text-sm group-hover:gap-3 transition-all">Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                </div>`;
+            }).join('');
+        }
+
+        // Gallery Filter & Lightbox Logic
+        let currentGalleryItems = [];
+        
+        function filterGallery(category) {
+            const grid = document.getElementById('gallery-grid');
+            currentGalleryItems = category === 'all' ? galleryData : galleryData.filter(g => g.cat === category);
+            
+            document.querySelectorAll('.gallery-filter-btn').forEach(btn => {
+                const isActive = btn.dataset.cat === category;
+                btn.className = `gallery-filter-btn px-4 py-2 rounded-lg font-medium tracking-wide text-[14px] sm:text-[15px] transition-all duration-300 flex items-center gap-2 grow sm:grow-0 justify-center btn-press ${isActive ? 'bg-brand-emerald text-white shadow-md' : 'text-brand-text-muted hover:text-brand-text hover:bg-brand-muted'}`;
+            });
+
+            grid.innerHTML = currentGalleryItems.map((item, idx) => `
+                <div class="group relative rounded-2xl overflow-hidden aspect-[4/3] cursor-pointer shadow-md hover:shadow-xl transition-all duration-300 hover-lift animate-slide-up" onclick="openLightbox(${item.id})" style="animation-delay: ${idx * 0.08}s; animation-fill-mode: both;">
+                    <img src="${item.src}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <h3 class="text-white font-bold font-heading text-lg translate-y-4 group-hover:translate-y-0 transition-transform duration-300 ease-out">${item.title}</h3>
+                        <p class="text-gray-300 text-sm translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75 ease-out font-normal">${item.desc}</p>
+                    </div>
+                </div>
+            `).join('');
+            lucide.createIcons();
+        }
+
+        let lightboxIndex = 0;
+
+        function openLightbox(id) {
+            const item = galleryData.find(g => g.id === id);
+            const filteredIndex = currentGalleryItems.findIndex(g => g.id === id);
+            
+            if (item && filteredIndex !== -1) {
+                lightboxIndex = filteredIndex;
+                updateLightboxContent();
+                const lb = document.getElementById('lightbox');
+                lb.classList.remove('hidden');
+                // Force reflow
+                void lb.offsetWidth;
+                lb.classList.remove('opacity-0');
+                lb.classList.add('modal-open');
+            }
+        }
+
+        function updateLightboxContent() {
+            const item = currentGalleryItems[lightboxIndex];
+            document.getElementById('lightbox-img').src = item.src;
+            document.getElementById('lightbox-title').textContent = item.title;
+            document.getElementById('lightbox-desc').textContent = item.desc;
+        }
+
+        function navigateGallery(dir) {
+            if (dir === 'next') {
+                lightboxIndex = (lightboxIndex + 1) % currentGalleryItems.length;
+            } else {
+                lightboxIndex = (lightboxIndex - 1 + currentGalleryItems.length) % currentGalleryItems.length;
+            }
+            updateLightboxContent();
+        }
+
+        function closeLightbox() {
+            const lb = document.getElementById('lightbox');
+            lb.classList.add('opacity-0');
+            lb.classList.remove('modal-open');
+            setTimeout(() => lb.classList.add('hidden'), 300);
+        }
+
+        // Render Static Content
+        function renderStaticSections() {
+            // Stats
+            document.getElementById('stats-container').innerHTML = statsData.map((s, idx) => `
+                <div class="p-2 sm:p-4 group reveal-on-scroll" style="transition-delay: ${idx * 100}ms">
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto bg-brand-emerald/10 rounded-2xl flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300"><i data-lucide="${s.icon}" class="w-6 h-6 sm:w-8 sm:h-8 text-brand-emerald"></i></div>
+                    <h3 class="text-2xl sm:text-3xl font-bold font-heading text-brand-text mb-1">${s.val}</h3><p class="text-brand-text-muted font-normal text-sm sm:text-base">${s.lbl}</p>
+                </div>
+            `).join('');
+
+            // Features
+            document.getElementById('features-container').innerHTML = featuresData.map((f, idx) => `
+                <div class="glass-card rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all hover-lift reveal-on-scroll" style="transition-delay: ${idx * 100}ms">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 bg-brand-emerald/10 rounded-xl flex items-center justify-center mb-4 text-brand-emerald shadow-md">
+                        <i data-lucide="${f.icon}" class="w-6 h-6 sm:w-7 sm:h-7"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-semibold font-heading text-brand-text mb-2">${f.title}</h3>
+                    <p class="text-brand-text-muted text-sm leading-relaxed font-normal">${f.desc}</p>
+                </div>
+            `).join('');
+
+            // Testimonials
+            document.getElementById('testimonials-grid').innerHTML = testimonialsData.map((t, idx) => `
+                <div class="glass-card rounded-2xl p-6 shadow-lg relative hover-lift reveal-on-scroll" style="transition-delay: ${idx * 100}ms">
+                    <i data-lucide="quote" class="absolute top-6 right-6 w-8 h-8 text-brand-emerald/20"></i>
+                    <div class="flex text-brand-cyan mb-4 gap-1">${'<i data-lucide="star" class="w-4 h-4 fill-current"></i>'.repeat(5)}</div>
+                    <p class="text-brand-text-muted mb-6 relative z-10 leading-relaxed font-normal text-sm sm:text-base">"${t.text}"</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-brand-emerald to-brand-cyan rounded-full flex items-center justify-center text-brand-base font-bold text-lg shadow-md shrink-0">${t.i}</div>
+                        <div><h4 class="font-bold text-brand-text font-heading">${t.name}</h4><p class="text-sm text-brand-text-muted font-normal">${t.class} • ${t.res}</p></div>
+                    </div>
+                </div>
+            `).join('');
+
+            // Values
+            document.getElementById('values-grid').innerHTML = [
+                {t: "Excellence", i: "target", d: "High standards in everything."}, {t: "Care", i: "heart", d: "Nurturing environment."},
+                {t: "Innovation", i: "lightbulb", d: "Modern teaching methods."}, {t: "Community", i: "users", d: "Working together for success."}
+            ].map((v, idx) => `
+                <div class="glass-card rounded-2xl p-6 text-center shadow-lg hover-lift reveal-on-scroll" style="transition-delay: ${idx * 100}ms">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto bg-brand-emerald/10 rounded-2xl flex items-center justify-center mb-4 text-brand-emerald shadow-md group-hover:scale-110 transition-transform"><i data-lucide="${v.i}" class="w-7 h-7 sm:w-8 sm:h-8"></i></div>
+                    <h3 class="text-lg sm:text-xl font-semibold font-heading text-brand-text mb-2">${v.t}</h3><p class="text-brand-text-muted text-sm font-normal">${v.d}</p>
+                </div>
+            `).join('');
+
+            // Timeline
+            document.getElementById('timeline-container').innerHTML = achievementsData.map((item, idx) => `
+                <div class="flex flex-col md:flex-row items-center gap-8 ${idx % 2 === 0 ? '' : 'md:flex-row-reverse'} reveal-on-scroll" style="transition-delay: ${idx * 100}ms">
+                    <div class="w-full md:w-1/2 ${idx % 2 === 0 ? 'md:text-right text-center' : 'md:text-left text-center'}">
+                        <div class="glass-card rounded-2xl p-6 inline-block shadow-md hover-lift relative">
+                            <span class="text-2xl sm:text-3xl font-bold text-brand-emerald block mb-2 font-heading">${item.year}</span>
+                            <h3 class="text-lg sm:text-xl font-bold text-brand-text font-heading">${item.title}</h3>
+                            <p class="text-brand-text-muted mt-1 font-normal text-sm sm:text-base">${item.desc}</p>
+                        </div>
+                    </div>
+                    <div class="w-4 h-4 bg-brand-emerald rounded-full border-4 border-brand-base shadow-lg hidden md:block z-10 animate-pulse-slow"></div>
+                    <div class="w-full md:w-1/2"></div>
+                </div>
+            `).join('');
+
+            // Gallery Stats
+            document.getElementById('gallery-stats').innerHTML = statsData.map((s, idx) => `
+                <div class="text-center group reveal-on-scroll" style="transition-delay: ${idx * 100}ms">
+                    <div class="w-12 h-12 mx-auto bg-brand-emerald/10 rounded-xl flex items-center justify-center mb-3 text-brand-emerald group-hover:scale-110 transition-transform duration-300"><i data-lucide="${s.icon}" class="w-6 h-6"></i></div>
+                    <p class="text-xl sm:text-2xl font-bold font-heading text-brand-text">${s.val}</p><p class="text-brand-text-muted text-sm font-normal">${s.lbl}</p>
+                </div>
+            `).join('');
+        }
+
+        // SPA Navigation
+        function navigateTo(pageId) {
+            document.querySelectorAll('.page-view').forEach(el => {
+                el.classList.add('hidden');
+                el.classList.remove('block');
+            });
+            const target = document.getElementById(`${pageId}-page`);
+            if(target) {
+                target.classList.remove('hidden');
+                target.classList.add('block');
+                target.classList.add('page-transition');
+                window.scrollTo(0, 0);
+            }
+            document.getElementById('mobile-menu').classList.remove('open');
+        }
+
+        function handleFormSubmit(e, type) {
+            e.preventDefault();
+            const modal = document.getElementById('success-modal');
+            modal.classList.remove('hidden');
+            // Force reflow for animation
+            void modal.offsetWidth;
+            modal.classList.add('modal-open');
+            e.target.reset();
+        }
+        
+        // --- THEME LOGIC ---
+        function toggleTheme() {
+            const isDark = document.documentElement.classList.contains('dark');
+            if (isDark) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+            lucide.createIcons();
+        }
+
+        // --- ANIMATION OBSERVER ---
+        function initAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target); // Trigger once
+                    }
+                });
+            }, {
+                threshold: 0.1, // Trigger when 10% visible
+                rootMargin: "0px 0px -50px 0px" // Trigger slightly before element is fully in view
+            });
+
+            document.querySelectorAll('.reveal-on-scroll').forEach((el) => {
+                observer.observe(el);
+            });
+        }
+
+        // Initialization
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+
+            lucide.createIcons();
+            document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.toggle('open');
+            });
+            
+            // Render content with initial animation classes
+            renderStaticSections();
+            renderFaculty();
+            filterCourses('all');
+            renderHomeCourses();
+            filterGallery('all');
+            
+            const hash = window.location.hash.slice(1) || 'home';
+            navigateTo(hash);
+
+            // Initialize Animation Observer
+            setTimeout(initAnimations, 100);
+        });
+    </script>
+    </body>
+</html>
