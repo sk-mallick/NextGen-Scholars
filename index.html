@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth dark">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport"
-            content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
-        <title>NextGen Scholars | Educational Excellence</title>
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-            rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+    <title>NextGen Scholars | Educational Excellence</title>
 
-        <!-- Tailwind CSS -->
-        <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
-        <!-- Lucide Icons -->
-        <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-        <!-- Tailwind Config -->
-        <script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind Config -->
+    <script>
         tailwind.config = {
-            darkMode: 'class', 
+            darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: {
@@ -31,14 +32,14 @@
                     },
                     colors: {
                         brand: {
-                            base: 'var(--bg-base)',       
-                            card: 'var(--bg-card)',       
-                            muted: 'var(--bg-muted)',     
-                            text: 'var(--text-main)',     
-                            'text-muted': 'var(--text-muted)', 
-                            border: 'var(--border-color)', 
-                            emerald: '#10b981',           
-                            cyan: '#22d3ee',             
+                            base: 'var(--bg-base)',
+                            card: 'var(--bg-card)',
+                            muted: 'var(--bg-muted)',
+                            text: 'var(--text-main)',
+                            'text-muted': 'var(--text-muted)',
+                            border: 'var(--border-color)',
+                            emerald: '#10b981',
+                            cyan: '#22d3ee',
                         }
                     },
                     // PROFESSIONAL UI ANIMATIONS: Extended Animation Config
@@ -65,25 +66,25 @@
         }
     </script>
 
-        <style>
+    <style>
         /* PROFESSIONAL UI ANIMATIONS & COLOR REFINEMENT */
         :root {
             /* Palette */
-            --bg-base: #F1F5F9;         
-            --bg-card: #FFFFFF;         
-            --bg-muted: #E2E8F0;        
-            --text-main: #0F172A;       
-            --text-muted: #475569;      
+            --bg-base: #F1F5F9;
+            --bg-card: #FFFFFF;
+            --bg-muted: #E2E8F0;
+            --text-main: #0F172A;
+            --text-muted: #475569;
             --border-color: rgba(15, 23, 42, 0.12);
             --glass-bg: rgba(255, 255, 255, 0.90);
             --glass-border: rgba(255, 255, 255, 0.6);
-            
+
             /* Animation Variables */
             --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
             --duration-fast: 200ms;
             --duration-normal: 400ms;
             --duration-slow: 600ms;
-            
+
             --sat: env(safe-area-inset-top);
             --sab: env(safe-area-inset-bottom);
             --sal: env(safe-area-inset-left);
@@ -91,18 +92,18 @@
         }
 
         .dark {
-            --bg-base: #0b1220;         
-            --bg-card: #111827;         
-            --bg-muted: #0f1623;        
-            --text-main: #F8FAFC;       
-            --text-muted: #94A3B8;      
+            --bg-base: #0b1220;
+            --bg-card: #111827;
+            --bg-muted: #0f1623;
+            --text-main: #F8FAFC;
+            --text-muted: #94A3B8;
             --border-color: rgba(255, 255, 255, 0.08);
             --glass-bg: rgba(11, 18, 32, 0.75);
             --glass-border: rgba(255, 255, 255, 0.08);
         }
 
-        body { 
-            font-family: 'Inter', sans-serif; 
+        body {
+            font-family: 'Inter', sans-serif;
             background-color: var(--bg-base);
             color: var(--text-main);
             transition: background-color 0.5s var(--ease-premium), color 0.5s var(--ease-premium);
@@ -112,10 +113,28 @@
             padding-right: var(--sar);
         }
 
-        h1, h2, h3, h4, h5, h6 { font-family: 'Plus Jakarta Sans', sans-serif; }
-        p { letter-spacing: 0.2px; }
-        button { letter-spacing: 0.4px; }
-        h1, h2, h3 { letter-spacing: -0.3px; }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        p {
+            letter-spacing: 0.2px;
+        }
+
+        button {
+            letter-spacing: 0.4px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            letter-spacing: -0.3px;
+        }
 
         /* --- MOTION UTILITIES --- */
 
@@ -126,6 +145,7 @@
             transition: opacity 0.8s var(--ease-premium), transform 0.8s var(--ease-premium);
             will-change: opacity, transform;
         }
+
         .reveal-on-scroll.is-visible {
             opacity: 1;
             transform: translateY(0);
@@ -136,6 +156,7 @@
             transition: transform 0.4s var(--ease-premium), box-shadow 0.4s var(--ease-premium), border-color 0.3s ease, background-color 0.3s ease;
             will-change: transform, box-shadow;
         }
+
         /* Only lift on non-touch devices to prevent stuck states */
         @media (hover: hover) {
             .hover-lift:hover {
@@ -147,17 +168,26 @@
         .btn-press {
             transition: transform 0.1s ease-out, background-color 0.3s ease, box-shadow 0.3s ease;
         }
+
         .btn-press:active {
             transform: scale(0.97);
         }
 
         /* 4. Page Transitions */
-        .page-transition { 
-            animation: fadeInPage 0.5s var(--ease-premium) forwards; 
+        .page-transition {
+            animation: fadeInPage 0.5s var(--ease-premium) forwards;
         }
+
         @keyframes fadeInPage {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* 5. Nav Items Underline Animation */
@@ -170,16 +200,27 @@
         .scrolling-wrapper {
             display: flex;
             gap: 2rem;
-            animation: scroll 60s linear infinite; /* Slower 60s animation for readability */
+            animation: scroll 60s linear infinite;
+            /* Slower 60s animation for readability */
             width: max-content;
         }
+
         .scrolling-wrapper:hover {
             animation-play-state: paused;
         }
+
         @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); } /* Moves half way (since content is duplicated) */
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+
+            /* Moves half way (since content is duplicated) */
         }
+
         /* Fade mask for edges */
         .scroll-mask {
             mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
@@ -215,6 +256,7 @@
             border-color: rgba(16, 185, 129, 0.3);
             box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
         }
+
         .dark .glass-card:hover {
             background: rgba(17, 24, 39, 0.95);
             box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
@@ -228,10 +270,19 @@
             background-size: 200% auto;
             animation: gradientMove 5s ease infinite;
         }
+
         @keyframes gradientMove {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         .section-gradient {
@@ -242,12 +293,14 @@
         .theme-icon {
             transition: transform 0.5s var(--ease-premium), opacity 0.3s ease;
         }
+
         .theme-btn:hover .theme-icon {
             transform: rotate(15deg);
         }
 
         /* Modal Animation */
-        #lightbox, #success-modal {
+        #lightbox,
+        #success-modal {
             transition: opacity 0.3s ease;
         }
 
@@ -256,9 +309,9 @@
         #mobile-menu {
             transform: scaleY(0);
             opacity: 0;
-            pointer-events: none; 
+            pointer-events: none;
         }
-        
+
         /* Open State: Visible & Expanded */
         #mobile-menu.open {
             transform: scaleY(1);
@@ -271,1352 +324,1232 @@
             opacity: 0;
             transition: transform 0.4s var(--ease-premium), opacity 0.4s ease;
         }
+
         .modal-open .modal-content {
             transform: scale(1);
             opacity: 1;
         }
 
         /* Form styling */
-        input, textarea, select {
+        input,
+        textarea,
+        select {
             background-color: var(--bg-muted);
             border: 1px solid var(--border-color);
             color: var(--text-main);
             transition: all 0.2s;
         }
-        .dark input, .dark textarea, .dark select {
+
+        .dark input,
+        .dark textarea,
+        .dark select {
             background-color: rgba(31, 41, 55, 0.5);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        input:focus, textarea:focus, select:focus {
+
+        input:focus,
+        textarea:focus,
+        select:focus {
             outline: none;
             border-color: #10b981;
-            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15); /* Softer focus ring */
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+            /* Softer focus ring */
             background-color: var(--bg-card);
-            transform: translateY(-1px); /* Micro-interaction focus */
+            transform: translateY(-1px);
+            /* Micro-interaction focus */
         }
-        
-        option { background-color: var(--bg-card); color: var(--text-main); }
-        .safe-pb { padding-bottom: calc(1rem + var(--sab)); }
-        .safe-pt { padding-top: calc(1rem + var(--sat)); }
+
+        option {
+            background-color: var(--bg-card);
+            color: var(--text-main);
+        }
+
+        .safe-pb {
+            padding-bottom: calc(1rem + var(--sab));
+        }
+
+        .safe-pt {
+            padding-top: calc(1rem + var(--sat));
+        }
     </style>
-    </head>
-    <body class="antialiased">
+</head>
 
-        <!-- Navigation -->
-        <div
-            class="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 pt-4 sm:pt-6 pb-2 transition-all pointer-events-none">
-            <nav
-                class="glass-nav w-full max-w-6xl rounded-full px-4 sm:px-6 py-3 flex items-center justify-between pointer-events-auto">
+<body class="antialiased">
 
-                <!-- Logo -->
-                <a href="#home" onclick="navigateTo('home')"
-                    class="flex items-center gap-2 sm:gap-3 group cursor-pointer shrink-0">
-                    <!-- UPDATED LOGO: Implemented logo1.png with responsive sizing and hover effect -->
-                    <img src="logo1.png"
-                        alt="NextGen Scholars"
-                        class="h-8 sm:h-10 w-auto object-contain transition-transform duration-500 group-hover:scale-105">
+    <!-- Navigation -->
+    <div
+        class="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 pt-4 sm:pt-6 pb-2 transition-all pointer-events-none">
+        <nav
+            class="glass-nav w-full max-w-6xl rounded-full px-4 sm:px-6 py-3 flex items-center justify-between pointer-events-auto">
 
-                    <!-- Text Restored & Branding Updated -->
-                    <div>
-                        <h1
-                            class="text-base sm:text-lg font-bold font-heading text-brand-text tracking-tight leading-none transition-colors">NextGen</h1>
-                        <p
-                            class="text-[9px] sm:text-[10px] text-brand-emerald font-semibold tracking-widest uppercase leading-none mt-0.5">Scholars</p>
-                    </div>
-                </a>
+            <!-- Logo -->
+            <a href="#home" onclick="navigateTo('home')"
+                class="flex items-center gap-2 sm:gap-3 group cursor-pointer shrink-0">
+                <!-- UPDATED LOGO: Implemented logo1.png with responsive sizing and hover effect -->
+                <img src="logo1.png" alt="NextGen Scholars"
+                    class="h-8 sm:h-10 w-auto object-contain transition-transform duration-500 group-hover:scale-105">
 
-                <!-- Desktop Nav -->
-                <div class="hidden md:flex items-center gap-4 lg:gap-8">
-                    <a href="#home" onclick="navigateTo('home')"
-                        class="nav-item text-brand-text-muted hover:text-brand-text font-medium tracking-wide text-[14px] lg:text-[15px] transition-colors relative group py-2">Home
-                        <span
-                            class="absolute bottom-1 left-0 w-0 h-0.5 bg-brand-emerald transition-all group-hover:w-full"></span></a>
-                    <a href="#about" onclick="navigateTo('about')"
-                        class="nav-item text-brand-text-muted hover:text-brand-text font-medium tracking-wide text-[14px] lg:text-[15px] transition-colors relative group py-2">About
-                        <span
-                            class="absolute bottom-1 left-0 w-0 h-0.5 bg-brand-emerald transition-all group-hover:w-full"></span></a>
-                    <a href="#courses" onclick="navigateTo('courses')"
-                        class="nav-item text-brand-text-muted hover:text-brand-text font-medium tracking-wide text-[14px] lg:text-[15px] transition-colors relative group py-2">Courses
-                        <span
-                            class="absolute bottom-1 left-0 w-0 h-0.5 bg-brand-emerald transition-all group-hover:w-full"></span></a>
-                    <a href="#gallery" onclick="navigateTo('gallery')"
-                        class="nav-item text-brand-text-muted hover:text-brand-text font-medium tracking-wide text-[14px] lg:text-[15px] transition-colors relative group py-2">Gallery
-                        <span
-                            class="absolute bottom-1 left-0 w-0 h-0.5 bg-brand-emerald transition-all group-hover:w-full"></span></a>
-                    <a href="#contact" onclick="navigateTo('contact')"
-                        class="nav-item text-brand-text-muted hover:text-brand-text font-medium tracking-wide text-[14px] lg:text-[15px] transition-colors relative group py-2">Contact
-                        <span
-                            class="absolute bottom-1 left-0 w-0 h-0.5 bg-brand-emerald transition-all group-hover:w-full"></span></a>
+                <!-- Text Restored & Branding Updated -->
+                <div>
+                    <h1
+                        class="text-base sm:text-lg font-bold font-heading text-brand-text tracking-tight leading-none transition-colors">
+                        NextGen</h1>
+                    <p
+                        class="text-[9px] sm:text-[10px] text-brand-emerald font-semibold tracking-widest uppercase leading-none mt-0.5">
+                        Scholars</p>
                 </div>
+            </a>
 
-                <!-- CTA & Theme Toggle -->
-                <div class="hidden md:flex items-center gap-3 lg:gap-4">
-
-                    <!-- Theme Toggle -->
-                    <button onclick="toggleTheme()"
-                        class="theme-btn p-2 rounded-full text-brand-text-muted hover:bg-brand-muted transition-colors border border-transparent hover:border-brand-border"
-                        aria-label="Toggle Theme">
-                        <div class="theme-icon">
-                            <i data-lucide="moon"
-                                class="w-5 h-5 hidden dark:block"></i>
-                            <i data-lucide="sun"
-                                class="w-5 h-5 block dark:hidden text-amber-500"></i>
-                        </div>
-                    </button>
-
-                    <a href="tel:+919556670902"
-                        class="group flex items-center gap-2 px-3 lg:px-4 py-2 rounded-full border border-brand-border hover:border-brand-emerald/50 bg-brand-muted hover:bg-brand-card transition-all font-medium tracking-wide text-[13px] lg:text-[14px] text-brand-text btn-press">
-                        <div
-                            class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-                        <span
-                            class="group-hover:text-brand-emerald transition-colors whitespace-nowrap">95566
-                            70902</span>
-                    </a>
-
-                    <a href="#admission" onclick="navigateTo('admission')"
-                        class="bg-gradient-to-r from-brand-emerald to-teal-500 hover:to-brand-emerald text-white px-4 lg:px-6 py-2.5 rounded-full font-semibold tracking-wide shadow-lg shadow-brand-emerald/20 transition-all transform hover:-translate-y-0.5 cursor-pointer text-[14px] lg:text-[15px] whitespace-nowrap btn-press">
-                        Enquire Now
-                    </a>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn"
-                    class="md:hidden p-2 text-brand-text-muted hover:text-brand-text focus:outline-none transition-transform active:scale-90"
-                    aria-label="Toggle Menu">
-                    <i data-lucide="menu" class="w-6 h-6"></i>
-                </button>
-            </nav>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu"
-            class="fixed top-20 sm:top-24 left-4 right-4 z-40 glass-nav rounded-3xl shadow-2xl p-2 md:hidden origin-top mt-[env(safe-area-inset-top)] bg-white/95 dark:bg-[#0b1220]/95 transition-all duration-300 ease-out">
-            <div class="flex flex-col space-y-1">
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex items-center gap-4 lg:gap-8">
                 <a href="#home" onclick="navigateTo('home')"
-                    class="text-brand-text-muted font-medium tracking-wide text-[15px] hover:text-brand-text hover:bg-brand-muted px-4 py-3 rounded-xl transition-colors">Home</a>
+                    class="nav-item text-brand-text-muted hover:text-brand-text font-medium tracking-wide text-[14px] lg:text-[15px] transition-colors relative group py-2">Home
+                    <span
+                        class="absolute bottom-1 left-0 w-0 h-0.5 bg-brand-emerald transition-all group-hover:w-full"></span></a>
                 <a href="#about" onclick="navigateTo('about')"
-                    class="text-brand-text-muted font-medium tracking-wide text-[15px] hover:text-brand-text hover:bg-brand-muted px-4 py-3 rounded-xl transition-colors">About</a>
+                    class="nav-item text-brand-text-muted hover:text-brand-text font-medium tracking-wide text-[14px] lg:text-[15px] transition-colors relative group py-2">About
+                    <span
+                        class="absolute bottom-1 left-0 w-0 h-0.5 bg-brand-emerald transition-all group-hover:w-full"></span></a>
                 <a href="#courses" onclick="navigateTo('courses')"
-                    class="text-brand-text-muted font-medium tracking-wide text-[15px] hover:text-brand-text hover:bg-brand-muted px-4 py-3 rounded-xl transition-colors">Courses</a>
+                    class="nav-item text-brand-text-muted hover:text-brand-text font-medium tracking-wide text-[14px] lg:text-[15px] transition-colors relative group py-2">Courses
+                    <span
+                        class="absolute bottom-1 left-0 w-0 h-0.5 bg-brand-emerald transition-all group-hover:w-full"></span></a>
                 <a href="#gallery" onclick="navigateTo('gallery')"
-                    class="text-brand-text-muted font-medium tracking-wide text-[15px] hover:text-brand-text hover:bg-brand-muted px-4 py-3 rounded-xl transition-colors">Gallery</a>
+                    class="nav-item text-brand-text-muted hover:text-brand-text font-medium tracking-wide text-[14px] lg:text-[15px] transition-colors relative group py-2">Gallery
+                    <span
+                        class="absolute bottom-1 left-0 w-0 h-0.5 bg-brand-emerald transition-all group-hover:w-full"></span></a>
                 <a href="#contact" onclick="navigateTo('contact')"
-                    class="text-brand-text-muted font-medium tracking-wide text-[15px] hover:text-brand-text hover:bg-brand-muted px-4 py-3 rounded-xl transition-colors">Contact</a>
+                    class="nav-item text-brand-text-muted hover:text-brand-text font-medium tracking-wide text-[14px] lg:text-[15px] transition-colors relative group py-2">Contact
+                    <span
+                        class="absolute bottom-1 left-0 w-0 h-0.5 bg-brand-emerald transition-all group-hover:w-full"></span></a>
+            </div>
 
-                <div class="h-px bg-brand-border my-2 mx-2"></div>
+            <!-- CTA & Theme Toggle -->
+            <div class="hidden md:flex items-center gap-3 lg:gap-4">
 
-                <!-- Mobile Theme Toggle -->
+                <!-- Theme Toggle -->
                 <button onclick="toggleTheme()"
-                    class="flex items-center gap-2 text-brand-text-muted font-medium tracking-wide text-[15px] hover:bg-brand-muted px-4 py-3 rounded-xl transition-colors w-full text-left">
-                    <i data-lucide="moon" class="w-4 h-4 hidden dark:block"></i>
-                    <i data-lucide="sun"
-                        class="w-4 h-4 block dark:hidden text-amber-500"></i>
-                    <span>Toggle Theme</span>
+                    class="theme-btn p-2 rounded-full text-brand-text-muted hover:bg-brand-muted transition-colors border border-transparent hover:border-brand-border"
+                    aria-label="Toggle Theme">
+                    <div class="theme-icon">
+                        <i data-lucide="moon" class="w-5 h-5 hidden dark:block"></i>
+                        <i data-lucide="sun" class="w-5 h-5 block dark:hidden text-amber-500"></i>
+                    </div>
                 </button>
 
                 <a href="tel:+919556670902"
-                    class="flex items-center justify-center gap-2 text-brand-text font-medium tracking-wide text-[15px] hover:bg-brand-muted px-4 py-3 rounded-xl transition-colors btn-press">
-                    <i data-lucide="phone"
-                        class="w-4 h-4 text-brand-emerald"></i> Call Now
+                    class="group flex items-center gap-2 px-3 lg:px-4 py-2 rounded-full border border-brand-border hover:border-brand-emerald/50 bg-brand-muted hover:bg-brand-card transition-all font-medium tracking-wide text-[13px] lg:text-[14px] text-brand-text btn-press">
+                    <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                    <span class="group-hover:text-brand-emerald transition-colors whitespace-nowrap">95566
+                        70902</span>
                 </a>
+
                 <a href="#admission" onclick="navigateTo('admission')"
-                    class="bg-brand-emerald text-white text-center py-3 rounded-xl font-bold tracking-wide text-[15px] mx-2 mb-1 shadow-lg shadow-brand-emerald/20 btn-press">Enquire
-                    Now</a>
+                    class="bg-gradient-to-r from-brand-emerald to-teal-500 hover:to-brand-emerald text-white px-4 lg:px-6 py-2.5 rounded-full font-semibold tracking-wide shadow-lg shadow-brand-emerald/20 transition-all transform hover:-translate-y-0.5 cursor-pointer text-[14px] lg:text-[15px] whitespace-nowrap btn-press">
+                    Enquire Now
+                </a>
             </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn"
+                class="md:hidden p-2 text-brand-text-muted hover:text-brand-text focus:outline-none transition-transform active:scale-90"
+                aria-label="Toggle Menu">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </nav>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+        class="fixed top-20 sm:top-24 left-4 right-4 z-40 glass-nav rounded-3xl shadow-2xl p-2 md:hidden origin-top mt-[env(safe-area-inset-top)] bg-white/95 dark:bg-[#0b1220]/95 transition-all duration-300 ease-out">
+        <div class="flex flex-col space-y-1">
+            <a href="#home" onclick="navigateTo('home')"
+                class="text-brand-text-muted font-medium tracking-wide text-[15px] hover:text-brand-text hover:bg-brand-muted px-4 py-3 rounded-xl transition-colors">Home</a>
+            <a href="#about" onclick="navigateTo('about')"
+                class="text-brand-text-muted font-medium tracking-wide text-[15px] hover:text-brand-text hover:bg-brand-muted px-4 py-3 rounded-xl transition-colors">About</a>
+            <a href="#courses" onclick="navigateTo('courses')"
+                class="text-brand-text-muted font-medium tracking-wide text-[15px] hover:text-brand-text hover:bg-brand-muted px-4 py-3 rounded-xl transition-colors">Courses</a>
+            <a href="#gallery" onclick="navigateTo('gallery')"
+                class="text-brand-text-muted font-medium tracking-wide text-[15px] hover:text-brand-text hover:bg-brand-muted px-4 py-3 rounded-xl transition-colors">Gallery</a>
+            <a href="#contact" onclick="navigateTo('contact')"
+                class="text-brand-text-muted font-medium tracking-wide text-[15px] hover:text-brand-text hover:bg-brand-muted px-4 py-3 rounded-xl transition-colors">Contact</a>
+
+            <div class="h-px bg-brand-border my-2 mx-2"></div>
+
+            <!-- Mobile Theme Toggle -->
+            <button onclick="toggleTheme()"
+                class="flex items-center gap-2 text-brand-text-muted font-medium tracking-wide text-[15px] hover:bg-brand-muted px-4 py-3 rounded-xl transition-colors w-full text-left">
+                <i data-lucide="moon" class="w-4 h-4 hidden dark:block"></i>
+                <i data-lucide="sun" class="w-4 h-4 block dark:hidden text-amber-500"></i>
+                <span>Toggle Theme</span>
+            </button>
+
+            <a href="tel:+919556670902"
+                class="flex items-center justify-center gap-2 text-brand-text font-medium tracking-wide text-[15px] hover:bg-brand-muted px-4 py-3 rounded-xl transition-colors btn-press">
+                <i data-lucide="phone" class="w-4 h-4 text-brand-emerald"></i> Call Now
+            </a>
+            <a href="#admission" onclick="navigateTo('admission')"
+                class="bg-brand-emerald text-white text-center py-3 rounded-xl font-bold tracking-wide text-[15px] mx-2 mb-1 shadow-lg shadow-brand-emerald/20 btn-press">Enquire
+                Now</a>
         </div>
+    </div>
 
-        <!-- Main Content -->
-        <main class="pt-24 sm:pt-28 safe-pb">
+    <!-- Main Content -->
+    <main class="pt-24 sm:pt-28 safe-pb">
 
-            <!-- ================= HOME PAGE ================= -->
-            <div id="home-page" class="page-view block">
-                <!-- HERO SECTION -->
-                <div
-                    class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-20 grid lg:grid-cols-12 gap-12 items-center z-10">
+        <!-- ================= HOME PAGE ================= -->
+        <div id="home-page" class="page-view block">
+            <!-- HERO SECTION -->
+            <div
+                class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-20 grid lg:grid-cols-12 gap-12 items-center z-10">
+                <div class="lg:col-span-6 flex flex-col justify-center text-center lg:text-left">
+                    <div class="flex justify-center lg:justify-start reveal-on-scroll">
+                        <span
+                            class="inline-block w-fit px-4 py-2 bg-brand-emerald/10 text-brand-emerald rounded-full text-xs font-bold tracking-wider uppercase mb-6 border border-brand-emerald/20 hover:bg-brand-emerald/20 transition-colors cursor-default">
+                            Small batches. Special attention. Your child, our responsibility.
+                        </span>
+                    </div>
+                    <h1 class="reveal-on-scroll text-4xl xs:text-5xl lg:text-6xl font-heading font-extrabold text-brand-text leading-[1.12] mb-6"
+                        style="transition-delay: 100ms;">
+                        NextGen Scholars<br>
+                        <span class="text-gradient block sm:inline text-3xl sm:text-5xl lg:text-5xl">Where
+                            Hard Work Meets Success</span>
+                    </h1>
+                    <p class="reveal-on-scroll text-[16px] sm:text-[18px] text-brand-text-muted leading-relaxed font-normal mb-8 sm:mb-10 max-w-2xl mx-auto lg:mx-0"
+                        style="transition-delay: 200ms;">
+                        Empowering students with strong fundamentals,
+                        personal attention, and disciplined guidance for
+                        consistent academic growth.
+                    </p>
+
+                    <div class="reveal-on-scroll flex flex-col xs:flex-row gap-4 justify-center lg:justify-start"
+                        style="transition-delay: 300ms;">
+                        <a href="#admission" onclick="navigateTo('admission')"
+                            class="bg-brand-emerald hover:bg-emerald-400 text-white px-6 py-3.5 rounded-full text-[15px] font-bold shadow-lg shadow-brand-emerald/25 flex items-center justify-center gap-2 cursor-pointer transition-transform hover:-translate-y-1 w-full xs:w-auto min-w-[160px] btn-press">
+                            Enquire Now <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#courses" onclick="navigateTo('courses')"
+                            class="border border-brand-border text-brand-text-muted hover:border-brand-text hover:text-brand-text px-6 py-3.5 rounded-full text-[15px] font-semibold tracking-wide flex items-center justify-center gap-2 cursor-pointer transition-colors w-full xs:w-auto min-w-[160px] btn-press">
+                            <i data-lucide="play" class="w-5 h-5"></i> View
+                            Courses
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Image -->
+                <div class="reveal-on-scroll lg:col-span-6 relative mt-8 lg:mt-0" style="transition-delay: 400ms;">
                     <div
-                        class="lg:col-span-6 flex flex-col justify-center text-center lg:text-left">
-                        <div
-                            class="flex justify-center lg:justify-start reveal-on-scroll">
-                            <span
-                                class="inline-block w-fit px-4 py-2 bg-brand-emerald/10 text-brand-emerald rounded-full text-xs font-bold tracking-wider uppercase mb-6 border border-brand-emerald/20 hover:bg-brand-emerald/20 transition-colors cursor-default">
-                                Small batches. Special attention. Your child, our responsibility.
-                            </span>
-                        </div>
-                        <h1
-                            class="reveal-on-scroll text-4xl xs:text-5xl lg:text-6xl font-heading font-extrabold text-brand-text leading-[1.12] mb-6"
-                            style="transition-delay: 100ms;">
-                            NextGen Scholars<br>
-                            <span
-                                class="text-gradient block sm:inline text-3xl sm:text-5xl lg:text-5xl">Where
-                                Hard Work Meets Success</span>
-                        </h1>
-                        <p
-                            class="reveal-on-scroll text-[16px] sm:text-[18px] text-brand-text-muted leading-relaxed font-normal mb-8 sm:mb-10 max-w-2xl mx-auto lg:mx-0"
-                            style="transition-delay: 200ms;">
-                            Empowering students with strong fundamentals,
-                            personal attention, and disciplined guidance for
-                            consistent academic growth.
-                        </p>
-
-                        <div
-                            class="reveal-on-scroll flex flex-col xs:flex-row gap-4 justify-center lg:justify-start"
-                            style="transition-delay: 300ms;">
-                            <a href="#admission"
-                                onclick="navigateTo('admission')"
-                                class="bg-brand-emerald hover:bg-emerald-400 text-white px-6 py-3.5 rounded-full text-[15px] font-bold shadow-lg shadow-brand-emerald/25 flex items-center justify-center gap-2 cursor-pointer transition-transform hover:-translate-y-1 w-full xs:w-auto min-w-[160px] btn-press">
-                                Enquire Now <i data-lucide="arrow-right"
-                                    class="w-5 h-5"></i>
-                            </a>
-                            <a href="#courses" onclick="navigateTo('courses')"
-                                class="border border-brand-border text-brand-text-muted hover:border-brand-text hover:text-brand-text px-6 py-3.5 rounded-full text-[15px] font-semibold tracking-wide flex items-center justify-center gap-2 cursor-pointer transition-colors w-full xs:w-auto min-w-[160px] btn-press">
-                                <i data-lucide="play" class="w-5 h-5"></i> View
-                                Courses
-                            </a>
-                        </div>
+                        class="absolute -inset-1 bg-gradient-to-r from-brand-emerald to-brand-cyan rounded-2xl blur opacity-30 animate-pulse-slow">
                     </div>
 
-                    <!-- Hero Image -->
-                    <div
-                        class="reveal-on-scroll lg:col-span-6 relative mt-8 lg:mt-0"
-                        style="transition-delay: 400ms;">
+                    <div class="relative w-full mx-auto max-w-[580px] hover-lift">
                         <div
-                            class="absolute -inset-1 bg-gradient-to-r from-brand-emerald to-brand-cyan rounded-2xl blur opacity-30 animate-pulse-slow"></div>
+                            class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border border-brand-border">
+                            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&q=80"
+                                alt="Students"
+                                class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
+                        </div>
 
-                        <div
-                            class="relative w-full mx-auto max-w-[580px] hover-lift">
-                            <div
-                                class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border border-brand-border">
-                                <img
-                                    src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&q=80"
-                                    alt="Students"
-                                    class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
+                        <!-- Floating Badge -->
+                        <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 lg:translate-x-0 lg:left-[-2.5rem] z-20 glass-card bg-brand-base/95 backdrop-blur-xl p-4 rounded-2xl border border-brand-border shadow-2xl flex items-center gap-4 w-[90%] sm:w-auto min-w-[240px] animate-fade-in"
+                            style="animation-delay: 800ms; opacity: 0;">
+                            <div class="flex -space-x-3 shrink-0">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-brand-emerald border-2 border-brand-base flex items-center justify-center text-white text-[11px] font-bold">
+                                    A</div>
+                                <div
+                                    class="w-10 h-10 rounded-full bg-brand-cyan border-2 border-brand-base flex items-center justify-center text-white text-[11px] font-bold">
+                                    B</div>
+                                <div
+                                    class="w-10 h-10 rounded-full bg-purple-500 border-2 border-brand-base flex items-center justify-center text-white text-[11px] font-bold">
+                                    C</div>
+                                <div
+                                    class="w-10 h-10 rounded-full bg-brand-muted border-2 border-brand-base flex items-center justify-center text-brand-text text-[9px] font-bold flex-col leading-none">
+                                    <span class="block mt-0.5">+2k</span></div>
                             </div>
-
-                            <!-- Floating Badge -->
-                            <div
-                                class="absolute -bottom-6 left-1/2 -translate-x-1/2 lg:translate-x-0 lg:left-[-2.5rem] z-20 glass-card bg-brand-base/95 backdrop-blur-xl p-4 rounded-2xl border border-brand-border shadow-2xl flex items-center gap-4 w-[90%] sm:w-auto min-w-[240px] animate-fade-in"
-                                style="animation-delay: 800ms; opacity: 0;">
-                                <div class="flex -space-x-3 shrink-0">
-                                    <div
-                                        class="w-10 h-10 rounded-full bg-brand-emerald border-2 border-brand-base flex items-center justify-center text-white text-[11px] font-bold">A</div>
-                                    <div
-                                        class="w-10 h-10 rounded-full bg-brand-cyan border-2 border-brand-base flex items-center justify-center text-white text-[11px] font-bold">B</div>
-                                    <div
-                                        class="w-10 h-10 rounded-full bg-purple-500 border-2 border-brand-base flex items-center justify-center text-white text-[11px] font-bold">C</div>
-                                    <div
-                                        class="w-10 h-10 rounded-full bg-brand-muted border-2 border-brand-base flex items-center justify-center text-brand-text text-[9px] font-bold flex-col leading-none"><span
-                                            class="block mt-0.5">+2k</span></div>
+                            <div class="flex flex-col justify-center">
+                                <div class="flex text-yellow-400 gap-0.5 mb-0.5">
+                                    <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
+                                    <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
+                                    <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
+                                    <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
+                                    <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
                                 </div>
-                                <div class="flex flex-col justify-center">
-                                    <div
-                                        class="flex text-yellow-400 gap-0.5 mb-0.5">
-                                        <i data-lucide="star"
-                                            class="w-3.5 h-3.5 fill-current"></i>
-                                        <i data-lucide="star"
-                                            class="w-3.5 h-3.5 fill-current"></i>
-                                        <i data-lucide="star"
-                                            class="w-3.5 h-3.5 fill-current"></i>
-                                        <i data-lucide="star"
-                                            class="w-3.5 h-3.5 fill-current"></i>
-                                        <i data-lucide="star"
-                                            class="w-3.5 h-3.5 fill-current"></i>
-                                    </div>
-                                    <span
-                                        class="text-xs text-brand-text-muted font-medium tracking-wide whitespace-nowrap">Trusted
-                                        by 2.5k+ students</span>
-                                </div>
+                                <span
+                                    class="text-xs text-brand-text-muted font-medium tracking-wide whitespace-nowrap">Trusted
+                                    by 2.5k+ students</span>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Stats -->
-                <section
-                    class="py-12 sm:py-16 section-gradient border-y border-brand-border mt-8 lg:mt-0">
-                    <div
-                        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center"
-                        id="stats-container">
-                        <!-- JS Injected -->
-                    </div>
-                </section>
-
-                <!-- Why Choose Us -->
-                <section class="py-16 sm:py-24 bg-brand-base">
-                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <div
-                            class="text-center mb-12 sm:mb-16 reveal-on-scroll">
-                            <span
-                                class="inline-block px-4 py-2 bg-brand-emerald/10 text-brand-emerald rounded-full text-xs font-bold uppercase tracking-wider mb-4">Why
-                                Choose Us</span>
-                            <h2
-                                class="text-[28px] sm:text-[36px] font-heading font-bold text-brand-text mb-4">What
-                                Makes Us Different</h2>
-                            <p
-                                class="text-[16px] sm:text-[18px] text-brand-text-muted leading-relaxed font-normal max-w-2xl mx-auto">
-                                We believe every child learns differently. At
-                                NextGen Scholars, we focus on understanding
-                                students first—then guiding them towards
-                                success.
-                            </p>
-                        </div>
-                        <div
-                            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-                            id="features-container">
-                            <!-- JS Injected -->
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Courses Preview -->
-                <section
-                    class="py-16 sm:py-24 section-gradient border-y border-brand-border relative overflow-hidden">
-                    <div
-                        class="absolute top-0 right-0 w-96 h-96 bg-brand-cyan/5 rounded-full blur-[100px] animate-pulse-slow"></div>
-                    <div
-                        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                        <div
-                            class="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 reveal-on-scroll">
-                            <div class="text-center md:text-left">
-                                <span
-                                    class="inline-block px-4 py-2 bg-brand-emerald/10 text-brand-emerald rounded-full text-xs font-bold uppercase tracking-wider mb-4">Our
-                                    Programs</span>
-                                <h2
-                                    class="text-[28px] sm:text-[36px] font-heading font-bold text-brand-text mb-4">Courses
-                                    We Offer</h2>
-                                <p
-                                    class="text-[16px] sm:text-[18px] text-brand-text-muted leading-relaxed font-normal max-w-xl mx-auto md:mx-0">Comprehensive
-                                    programs designed for academic excellence at
-                                    every level.</p>
-                            </div>
-                            <div class="flex justify-center md:justify-end">
-                                <a href="#courses"
-                                    onclick="navigateTo('courses')"
-                                    class="mt-6 md:mt-0 px-6 py-3 rounded-full border border-brand-border text-brand-text-muted hover:border-brand-emerald hover:text-brand-emerald font-semibold tracking-wide transition-colors flex items-center gap-2 btn-press">
-                                    View All Courses <i
-                                        data-lucide="arrow-right"
-                                        class="w-4 h-4"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div
-                            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-                            id="home-courses-grid">
-                            <!-- JS Injected -->
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Testimonials -->
-                <section
-                    class="py-16 sm:py-24 bg-brand-base relative overflow-hidden">
-                    <div
-                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-emerald/5 rounded-full blur-[120px]"></div>
-                    <div
-                        class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <div
-                            class="text-center mb-12 sm:mb-16 reveal-on-scroll">
-                            <span
-                                class="inline-block px-4 py-2 bg-brand-emerald/10 text-brand-emerald rounded-full text-xs font-bold uppercase tracking-wider mb-4">Success
-                                Stories</span>
-                            <h2
-                                class="text-[28px] sm:text-[36px] font-heading font-bold text-brand-text mb-4">What
-                                Our Students Say</h2>
-                            <p
-                                class="text-[16px] sm:text-[18px] text-brand-text-muted leading-relaxed font-normal max-w-2xl mx-auto">Hear
-                                from our students and parents about their
-                                transformative journey with us.</p>
-                        </div>
-                        
-                        <!-- SCROLLING CONTAINER -->
-                        <div class="scroll-mask overflow-hidden w-full py-4">
-                            <div class="scrolling-wrapper" id="testimonials-track">
-                                <!-- JS Injected -->
-                            </div>
-                        </div>
-
-                    </div>
-                </section>
-
-                <!-- CTA -->
-                <section
-                    class="py-16 sm:py-24 bg-brand-card border-t border-brand-border">
-                    <div
-                        class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal-on-scroll">
-                        <h2
-                            class="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-brand-text mb-6">Ready
-                            to Start Your Success Story?</h2>
-                        <p
-                            class="text-[16px] sm:text-[18px] text-brand-text-muted leading-relaxed font-normal mb-8 max-w-2xl mx-auto">Take
-                            the first step towards academic excellence. Enroll
-                            now and join thousands of successful students.</p>
-                        <div
-                            class="flex flex-col xs:flex-row gap-4 justify-center">
-                            <a href="#admission"
-                                onclick="navigateTo('admission')"
-                                class="bg-gradient-to-r from-brand-emerald to-teal-500 hover:to-brand-emerald text-white px-8 py-4 rounded-full text-base sm:text-lg font-semibold tracking-wide shadow-lg shadow-brand-emerald/20 flex items-center justify-center gap-2 transition-transform hover:-translate-y-0.5 btn-press">
-                                Enquire Now <i data-lucide="arrow-right"
-                                    class="w-5 h-5"></i>
-                            </a>
-                            <a href="#contact" onclick="navigateTo('contact')"
-                                class="border border-brand-border text-brand-text-muted hover:border-brand-text hover:text-brand-text px-8 py-4 rounded-full text-base sm:text-lg font-semibold tracking-wide transition-colors btn-press">Get
-                                in Touch</a>
-                        </div>
-                    </div>
-                </section>
             </div>
 
-            <!-- ================= ABOUT PAGE ================= -->
-            <div id="about-page" class="page-view hidden">
-                <section
-                    class="py-16 sm:py-24 section-gradient relative overflow-hidden text-center">
-                    <div class="absolute inset-0 z-0">
-                        <div
-                            class="absolute top-20 left-10 w-72 h-72 bg-brand-emerald/5 rounded-full blur-[100px] animate-pulse-slow"></div>
-                    </div>
-                    <div
-                        class="relative max-w-7xl mx-auto px-4 z-10 reveal-on-scroll">
+            <!-- Stats -->
+            <section class="py-12 sm:py-16 section-gradient border-y border-brand-border mt-8 lg:mt-0">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center"
+                    id="stats-container">
+                    <!-- JS Injected -->
+                </div>
+            </section>
+
+            <!-- Why Choose Us -->
+            <section class="py-16 sm:py-24 bg-brand-base">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-12 sm:mb-16 reveal-on-scroll">
                         <span
-                            class="inline-block px-4 py-2 bg-brand-emerald/10 text-brand-emerald rounded-full text-xs font-bold uppercase tracking-wider mb-6 font-sans">About
-                            Us</span>
-                        <h1
-                            class="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-brand-text mb-6">Our
-                            Story of Educational Excellence</h1>
+                            class="inline-block px-4 py-2 bg-brand-emerald/10 text-brand-emerald rounded-full text-xs font-bold uppercase tracking-wider mb-4">Why
+                            Choose Us</span>
+                        <h2 class="text-[28px] sm:text-[36px] font-heading font-bold text-brand-text mb-4">What
+                            Makes Us Different</h2>
                         <p
-                            class="text-[16px] sm:text-[18px] text-brand-text-muted leading-relaxed font-normal max-w-3xl mx-auto font-sans">
-                            NextGen Scholars is an academic coaching institute
-                            built on a simple belief — quality education with
-                            responsibility.
-                            We focus on concept clarity, discipline, and
-                            continuous improvement. Our approach is
-                            student-centric, ensuring that each learner gets the
-                            attention they deserve.
+                            class="text-[16px] sm:text-[18px] text-brand-text-muted leading-relaxed font-normal max-w-2xl mx-auto">
+                            We believe every child learns differently. At
+                            NextGen Scholars, we focus on understanding
+                            students first—then guiding them towards
+                            success.
                         </p>
                     </div>
-                </section>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="features-container">
+                        <!-- JS Injected -->
+                    </div>
+                </div>
+            </section>
 
-                <section
-                    class="py-16 sm:py-24 bg-brand-base border-y border-brand-border">
-                    <div
-                        class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 sm:gap-16 items-center">
-                        <div class="reveal-on-scroll">
+            <!-- Courses Preview -->
+            <section class="py-16 sm:py-24 section-gradient border-y border-brand-border relative overflow-hidden">
+                <div
+                    class="absolute top-0 right-0 w-96 h-96 bg-brand-cyan/5 rounded-full blur-[100px] animate-pulse-slow">
+                </div>
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 reveal-on-scroll">
+                        <div class="text-center md:text-left">
                             <span
-                                class="inline-block px-4 py-2 bg-brand-emerald/10 text-brand-emerald rounded-full text-xs font-bold uppercase tracking-wider mb-4 font-sans">Our
-                                Mission</span>
-                            <h2
-                                class="text-[28px] sm:text-[36px] font-heading font-bold text-brand-text mb-6">Nurturing
-                                Excellence, Building Futures</h2>
+                                class="inline-block px-4 py-2 bg-brand-emerald/10 text-brand-emerald rounded-full text-xs font-bold uppercase tracking-wider mb-4">Our
+                                Programs</span>
+                            <h2 class="text-[28px] sm:text-[36px] font-heading font-bold text-brand-text mb-4">Courses
+                                We Offer</h2>
                             <p
-                                class="text-[16px] sm:text-[18px] text-brand-text-muted leading-relaxed font-normal mb-6 font-sans">
-                                To build confident learners with strong academic
-                                foundations and the right mindset for future
-                                challenges. Our mission is to provide quality
-                                education in a supportive environment, to guide
-                                students with care, discipline, and
-                                responsibility, and to help students grow
-                                academically and personally.
-                            </p>
-                            <div
-                                class="glass-card rounded-2xl p-6 border-l-4 border-brand-emerald hover-lift">
-                                <i data-lucide="quote"
-                                    class="w-8 h-8 text-brand-emerald mb-4"></i>
-                                <p
-                                    class="text-brand-text-muted italic text-lg font-normal font-sans">"Education is not the filling of a pail, but the lighting of a fire. We ignite the passion for learning in every student."</p>
-                                <p
-                                    class="text-brand-emerald mt-4 font-bold text-sm font-sans">—
-                                    Dr. Rajesh Kumar, Founder</p>
-                            </div>
+                                class="text-[16px] sm:text-[18px] text-brand-text-muted leading-relaxed font-normal max-w-xl mx-auto md:mx-0">
+                                Comprehensive
+                                programs designed for academic excellence at
+                                every level.</p>
                         </div>
-                        <div class="relative reveal-on-scroll"
-                            style="transition-delay: 200ms;">
+                        <div class="flex justify-center md:justify-end">
+                            <a href="#courses" onclick="navigateTo('courses')"
+                                class="mt-6 md:mt-0 px-6 py-3 rounded-full border border-brand-border text-brand-text-muted hover:border-brand-emerald hover:text-brand-emerald font-semibold tracking-wide transition-colors flex items-center gap-2 btn-press">
+                                View All Courses <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="home-courses-grid">
+                        <!-- JS Injected -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials -->
+            <section class="py-16 sm:py-24 bg-brand-base relative overflow-hidden">
+                <div
+                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-emerald/5 rounded-full blur-[120px]">
+                </div>
+                <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-12 sm:mb-16 reveal-on-scroll">
+                        <span
+                            class="inline-block px-4 py-2 bg-brand-emerald/10 text-brand-emerald rounded-full text-xs font-bold uppercase tracking-wider mb-4">Success
+                            Stories</span>
+                        <h2 class="text-[28px] sm:text-[36px] font-heading font-bold text-brand-text mb-4">What
+                            Our Students Say</h2>
+                        <p
+                            class="text-[16px] sm:text-[18px] text-brand-text-muted leading-relaxed font-normal max-w-2xl mx-auto">
+                            Hear
+                            from our students and parents about their
+                            transformative journey with us.</p>
+                    </div>
+
+                    <!-- SCROLLING CONTAINER -->
+                    <div class="scroll-mask overflow-hidden w-full py-4">
+                        <div class="scrolling-wrapper" id="testimonials-track">
+                            <!-- JS Injected -->
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- CTA -->
+            <section class="py-16 sm:py-24 bg-brand-card border-t border-brand-border">
+                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal-on-scroll">
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-brand-text mb-6">Ready
+                        to Start Your Success Story?</h2>
+                    <p
+                        class="text-[16px] sm:text-[18px] text-brand-text-muted leading-relaxed font-normal mb-8 max-w-2xl mx-auto">
+                        Take
+                        the first step towards academic excellence. Enroll
+                        now and join thousands of successful students.</p>
+                    <div class="flex flex-col xs:flex-row gap-4 justify-center">
+                        <a href="#admission" onclick="navigateTo('admission')"
+                            class="bg-gradient-to-r from-brand-emerald to-teal-500 hover:to-brand-emerald text-white px-8 py-4 rounded-full text-base sm:text-lg font-semibold tracking-wide shadow-lg shadow-brand-emerald/20 flex items-center justify-center gap-2 transition-transform hover:-translate-y-0.5 btn-press">
+                            Enquire Now <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#contact" onclick="navigateTo('contact')"
+                            class="border border-brand-border text-brand-text-muted hover:border-brand-text hover:text-brand-text px-8 py-4 rounded-full text-base sm:text-lg font-semibold tracking-wide transition-colors btn-press">Get
+                            in Touch</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ================= ABOUT PAGE ================= -->
+        <div id="about-page" class="page-view hidden">
+            <section class="py-16 sm:py-24 section-gradient relative overflow-hidden text-center">
+                <div class="absolute inset-0 z-0">
+                    <div
+                        class="absolute top-20 left-10 w-72 h-72 bg-brand-emerald/5 rounded-full blur-[100px] animate-pulse-slow">
+                    </div>
+                </div>
+                <div class="relative max-w-7xl mx-auto px-4 z-10 reveal-on-scroll">
+                    <span
+                        class="inline-block px-4 py-2 bg-brand-emerald/10 text-brand-emerald rounded-full text-xs font-bold uppercase tracking-wider mb-6 font-sans">About
+                        Us</span>
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-brand-text mb-6">Our
+                        Story of Educational Excellence</h1>
+                    <p
+                        class="text-[16px] sm:text-[18px] text-brand-text-muted leading-relaxed font-normal max-w-3xl mx-auto font-sans">
+                        NextGen Scholars is an academic coaching institute
+                        built on a simple belief — quality education with
+                        responsibility.
+                        We focus on concept clarity, discipline, and
+                        continuous improvement. Our approach is
+                        student-centric, ensuring that each learner gets the
+                        attention they deserve.
+                    </p>
+                </div>
+            </section>
+
+            <section class="py-16 sm:py-24 bg-brand-base border-y border-brand-border">
+                <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 sm:gap-16 items-center">
+                    <div class="reveal-on-scroll">
+                        <span
+                            class="inline-block px-4 py-2 bg-brand-emerald/10 text-brand-emerald rounded-full text-xs font-bold uppercase tracking-wider mb-4 font-sans">Our
+                            Mission</span>
+                        <h2 class="text-[28px] sm:text-[36px] font-heading font-bold text-brand-text mb-6">Nurturing
+                            Excellence, Building Futures</h2>
+                        <p
+                            class="text-[16px] sm:text-[18px] text-brand-text-muted leading-relaxed font-normal mb-6 font-sans">
+                            To build confident learners with strong academic
+                            foundations and the right mindset for future
+                            challenges. Our mission is to provide quality
+                            education in a supportive environment, to guide
+                            students with care, discipline, and
+                            responsibility, and to help students grow
+                            academically and personally.
+                        </p>
+                        <div class="glass-card rounded-2xl p-6 border-l-4 border-brand-emerald hover-lift">
+                            <i data-lucide="quote" class="w-8 h-8 text-brand-emerald mb-4"></i>
+                            <p class="text-brand-text-muted italic text-lg font-normal font-sans">"Education is not the
+                                filling of a pail, but the lighting of a fire. We ignite the passion for learning in
+                                every student."</p>
+                            <p class="text-brand-emerald mt-4 font-bold text-sm font-sans">—
+                                Dr. Rajesh Kumar, Founder</p>
+                        </div>
+                    </div>
+                    <div class="relative reveal-on-scroll" style="transition-delay: 200ms;">
+                        <div class="absolute -inset-2 bg-brand-emerald/20 rounded-2xl blur-lg"></div>
+                        <img src="NIRAD.JPG.jpeg"
+                            class="relative rounded-2xl shadow-2xl w-full border border-brand-border hover:scale-[1.02] transition-transform duration-500"
+                            alt="Mission">
+                        <div class="absolute -bottom-8 -left-2 sm:-left-8 glass-card bg-brand-base/95 rounded-2xl p-4 sm:p-6 shadow-xl flex items-center gap-4 border border-brand-border max-w-[calc(100%-1rem)] animate-fade-in"
+                            style="animation-delay: 600ms; opacity: 0;">
                             <div
-                                class="absolute -inset-2 bg-brand-emerald/20 rounded-2xl blur-lg"></div>
-                            <img
-                                src="NIRAD.JPG.jpeg"
-                                class="relative rounded-2xl shadow-2xl w-full border border-brand-border hover:scale-[1.02] transition-transform duration-500"
-                                alt="Mission">
-                            <div
-                                class="absolute -bottom-8 -left-2 sm:-left-8 glass-card bg-brand-base/95 rounded-2xl p-4 sm:p-6 shadow-xl flex items-center gap-4 border border-brand-border max-w-[calc(100%-1rem)] animate-fade-in"
-                                style="animation-delay: 600ms; opacity: 0;">
-                                <div
-                                    class="w-12 h-12 sm:w-14 sm:h-14 bg-brand-emerald/20 rounded-xl flex items-center justify-center shrink-0"><i
-                                        data-lucide="trophy"
-                                        class="w-6 h-6 sm:w-7 sm:h-7 text-brand-emerald"></i></div>
-                                <div>
-                                    <p
-                                        class="text-2xl sm:text-3xl font-bold text-brand-text font-heading">95%</p>
-                                    <p
-                                        class="text-xs sm:text-sm text-brand-text-muted font-medium font-sans">Student
-                                        Success Rate</p>
-                                </div>
+                                class="w-12 h-12 sm:w-14 sm:h-14 bg-brand-emerald/20 rounded-xl flex items-center justify-center shrink-0">
+                                <i data-lucide="trophy" class="w-6 h-6 sm:w-7 sm:h-7 text-brand-emerald"></i></div>
+                            <div>
+                                <p class="text-2xl sm:text-3xl font-bold text-brand-text font-heading">95%</p>
+                                <p class="text-xs sm:text-sm text-brand-text-muted font-medium font-sans">Student
+                                    Success Rate</p>
                             </div>
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <!-- LEADERSHIP SECTION (NEW) -->
-                <section class="py-16 sm:py-24 bg-brand-card/50 border-y border-brand-border" id="leadership-section">
-                    <div class="max-w-7xl mx-auto px-4">
-                        <div class="text-center mb-16 reveal-on-scroll">
-                            <span class="inline-block px-4 py-2 bg-brand-emerald/10 text-brand-emerald rounded-full text-xs font-bold uppercase tracking-wider mb-4 font-sans">Visionaries</span>
-                            <h2 class="text-[28px] sm:text-[36px] font-heading font-bold text-brand-text mb-4">Leadership Behind the Vision</h2>
-                            <p class="text-[16px] sm:text-[18px] text-brand-text-muted leading-relaxed font-normal font-sans max-w-2xl mx-auto">
-                                Guided by experienced mentors committed to academic excellence and student growth.
-                            </p>
+            <!-- LEADERSHIP SECTION (NEW) -->
+            <section class="py-16 sm:py-24 bg-brand-card/50 border-y border-brand-border" id="leadership-section">
+                <div class="max-w-7xl mx-auto px-4">
+                    <div class="text-center mb-16 reveal-on-scroll">
+                        <span
+                            class="inline-block px-4 py-2 bg-brand-emerald/10 text-brand-emerald rounded-full text-xs font-bold uppercase tracking-wider mb-4 font-sans">Visionaries</span>
+                        <h2 class="text-[28px] sm:text-[36px] font-heading font-bold text-brand-text mb-4">Leadership
+                            Behind the Vision</h2>
+                        <p
+                            class="text-[16px] sm:text-[18px] text-brand-text-muted leading-relaxed font-normal font-sans max-w-2xl mx-auto">
+                            Guided by experienced mentors committed to academic excellence and student growth.
+                        </p>
+                    </div>
+
+                    <!-- Founder Block -->
+                    <div
+                        class="relative grid md:grid-cols-12 gap-8 lg:gap-16 items-start mb-24 last:mb-0 reveal-on-scroll">
+                        <!-- Image Side (40%) -->
+                        <div class="md:col-span-5 relative order-1 md:order-1">
+                            <div
+                                class="relative rounded-3xl overflow-hidden shadow-2xl border border-brand-border aspect-[3/4] group hover-lift">
+                                <!-- Using placeholder portrait -->
+                                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80"
+                                    alt="Mr. Nirad Baran Dalai"
+                                    class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60">
+                                </div>
+                            </div>
+                            <!-- Decorative element -->
+                            <div
+                                class="absolute -z-10 top-6 -left-6 w-full h-full border-2 border-brand-emerald/20 rounded-3xl hidden md:block">
+                            </div>
                         </div>
 
-                        <!-- Founder Block -->
-                        <div class="relative grid md:grid-cols-12 gap-8 lg:gap-16 items-start mb-24 last:mb-0 reveal-on-scroll">
-                            <!-- Image Side (40%) -->
-                            <div class="md:col-span-5 relative order-1 md:order-1">
-                                <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-brand-border aspect-[3/4] group hover-lift">
-                                    <!-- Using placeholder portrait -->
-                                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80" alt="Mr. Nirad Baran Dalai" class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60"></div>
-                                </div>
-                                <!-- Decorative element -->
-                                <div class="absolute -z-10 top-6 -left-6 w-full h-full border-2 border-brand-emerald/20 rounded-3xl hidden md:block"></div>
+                        <!-- Content Side (60%) -->
+                        <div class="md:col-span-7 pt-2 order-2 md:order-2">
+                            <span
+                                class="text-brand-emerald font-bold tracking-widest uppercase text-xs mb-2 block">Founder</span>
+                            <h3 class="text-3xl sm:text-4xl font-heading font-bold text-brand-text mb-6">Mr. Nirad Baran
+                                Dalai</h3>
+
+                            <div
+                                class="text-brand-text-muted leading-relaxed font-normal mb-8 text-[15px] sm:text-[16px] space-y-4">
+                                <p>Mr. Nirad Baran Dalai believes that true education shapes character and transforms
+                                    lives. With a background in Commerce (Finance) from KIIT University and BJB
+                                    Autonomous College, along with a B.Ed. in Political Science and Social Studies, he
+                                    brings strong conceptual clarity and learner-centric teaching to education.</p>
+                                <p>With 6+ years of teaching experience across multiple boards and experience as a Guest
+                                    Faculty in English and Communication, his focus remains on concept-based learning,
+                                    discipline, and student confidence. His appearance in the UPSC Examination (2024)
+                                    reflects his commitment to leadership and continuous growth.</p>
                             </div>
 
-                            <!-- Content Side (60%) -->
-                            <div class="md:col-span-7 pt-2 order-2 md:order-2">
-                                <span class="text-brand-emerald font-bold tracking-widest uppercase text-xs mb-2 block">Founder</span>
-                                <h3 class="text-3xl sm:text-4xl font-heading font-bold text-brand-text mb-6">Mr. Nirad Baran Dalai</h3>
-                                
-                                <div class="text-brand-text-muted leading-relaxed font-normal mb-8 text-[15px] sm:text-[16px] space-y-4">
-                                    <p>Mr. Nirad Baran Dalai believes that true education shapes character and transforms lives. With a background in Commerce (Finance) from KIIT University and BJB Autonomous College, along with a B.Ed. in Political Science and Social Studies, he brings strong conceptual clarity and learner-centric teaching to education.</p>
-                                    <p>With 6+ years of teaching experience across multiple boards and experience as a Guest Faculty in English and Communication, his focus remains on concept-based learning, discipline, and student confidence. His appearance in the UPSC Examination (2024) reflects his commitment to leadership and continuous growth.</p>
+                            <!-- Vertical Timeline -->
+                            <div class="relative pl-4 mt-8">
+                                <!-- Vertical Dotted Line -->
+                                <div
+                                    class="absolute left-[7px] top-2 bottom-4 w-px border-l-2 border-dotted border-brand-emerald/30">
                                 </div>
 
-                                <!-- Vertical Timeline -->
-                                <div class="relative pl-4 mt-8">
-                                    <!-- Vertical Dotted Line -->
-                                    <div class="absolute left-[7px] top-2 bottom-4 w-px border-l-2 border-dotted border-brand-emerald/30"></div>
-                                    
-                                    <!-- Milestones Loop -->
-                                    <div class="space-y-5">
-                                        <div class="relative pl-8 group">
-                                            <div class="absolute left-0 top-1.5 w-4 h-4 rounded-full border-2 border-brand-emerald bg-brand-base z-10 box-content group-hover:bg-brand-emerald transition-colors duration-300"></div>
-                                            <h4 class="font-semibold text-brand-text text-[15px] mb-0.5">Bachelor of Commerce (Finance)</h4>
-                                            <p class="text-xs text-brand-text-muted font-normal">KIIT University</p>
+                                <!-- Milestones Loop -->
+                                <div class="space-y-5">
+                                    <div class="relative pl-8 group">
+                                        <div
+                                            class="absolute left-0 top-1.5 w-4 h-4 rounded-full border-2 border-brand-emerald bg-brand-base z-10 box-content group-hover:bg-brand-emerald transition-colors duration-300">
                                         </div>
-                                        <div class="relative pl-8 group">
-                                            <div class="absolute left-0 top-1.5 w-4 h-4 rounded-full border-2 border-brand-emerald bg-brand-base z-10 box-content group-hover:bg-brand-emerald transition-colors duration-300"></div>
-                                            <h4 class="font-semibold text-brand-text text-[15px] mb-0.5">Master of Commerce (Finance)</h4>
-                                            <p class="text-xs text-brand-text-muted font-normal">BJB Autonomous College</p>
+                                        <h4 class="font-semibold text-brand-text text-[15px] mb-0.5">Bachelor of
+                                            Commerce (Finance)</h4>
+                                        <p class="text-xs text-brand-text-muted font-normal">KIIT University</p>
+                                    </div>
+                                    <div class="relative pl-8 group">
+                                        <div
+                                            class="absolute left-0 top-1.5 w-4 h-4 rounded-full border-2 border-brand-emerald bg-brand-base z-10 box-content group-hover:bg-brand-emerald transition-colors duration-300">
                                         </div>
-                                        <div class="relative pl-8 group">
-                                            <div class="absolute left-0 top-1.5 w-4 h-4 rounded-full border-2 border-brand-emerald bg-brand-base z-10 box-content group-hover:bg-brand-emerald transition-colors duration-300"></div>
-                                            <h4 class="font-semibold text-brand-text text-[15px] mb-0.5">Bachelor of Education</h4>
-                                            <p class="text-xs text-brand-text-muted font-normal">Political Science & Social Studies</p>
+                                        <h4 class="font-semibold text-brand-text text-[15px] mb-0.5">Master of Commerce
+                                            (Finance)</h4>
+                                        <p class="text-xs text-brand-text-muted font-normal">BJB Autonomous College</p>
+                                    </div>
+                                    <div class="relative pl-8 group">
+                                        <div
+                                            class="absolute left-0 top-1.5 w-4 h-4 rounded-full border-2 border-brand-emerald bg-brand-base z-10 box-content group-hover:bg-brand-emerald transition-colors duration-300">
                                         </div>
-                                        <div class="relative pl-8 group">
-                                            <div class="absolute left-0 top-1.5 w-4 h-4 rounded-full border-2 border-brand-emerald bg-brand-base z-10 box-content group-hover:bg-brand-emerald transition-colors duration-300"></div>
-                                            <h4 class="font-semibold text-brand-text text-[15px] mb-0.5">Guest Faculty</h4>
-                                            <p class="text-xs text-brand-text-muted font-normal">English & Communication</p>
+                                        <h4 class="font-semibold text-brand-text text-[15px] mb-0.5">Bachelor of
+                                            Education</h4>
+                                        <p class="text-xs text-brand-text-muted font-normal">Political Science & Social
+                                            Studies</p>
+                                    </div>
+                                    <div class="relative pl-8 group">
+                                        <div
+                                            class="absolute left-0 top-1.5 w-4 h-4 rounded-full border-2 border-brand-emerald bg-brand-base z-10 box-content group-hover:bg-brand-emerald transition-colors duration-300">
                                         </div>
-                                        <div class="relative pl-8 group">
-                                            <div class="absolute left-0 top-1.5 w-4 h-4 rounded-full border-2 border-brand-emerald bg-brand-base z-10 box-content group-hover:bg-brand-emerald transition-colors duration-300"></div>
-                                            <h4 class="font-semibold text-brand-text text-[15px] mb-0.5">6+ Years of Academic Teaching Experience</h4>
-                                            <p class="text-xs text-brand-text-muted font-normal">Across multiple boards & streams</p>
+                                        <h4 class="font-semibold text-brand-text text-[15px] mb-0.5">Guest Faculty</h4>
+                                        <p class="text-xs text-brand-text-muted font-normal">English & Communication</p>
+                                    </div>
+                                    <div class="relative pl-8 group">
+                                        <div
+                                            class="absolute left-0 top-1.5 w-4 h-4 rounded-full border-2 border-brand-emerald bg-brand-base z-10 box-content group-hover:bg-brand-emerald transition-colors duration-300">
                                         </div>
-                                        <div class="relative pl-8 group">
-                                            <div class="absolute left-0 top-1.5 w-4 h-4 rounded-full border-2 border-brand-emerald bg-brand-base z-10 box-content group-hover:bg-brand-emerald transition-colors duration-300"></div>
-                                            <h4 class="font-semibold text-brand-text text-[15px] mb-0.5">UPSC Civil Services Examination</h4>
-                                            <p class="text-xs text-brand-text-muted font-normal">Appeared (2024)</p>
+                                        <h4 class="font-semibold text-brand-text text-[15px] mb-0.5">6+ Years of
+                                            Academic Teaching Experience</h4>
+                                        <p class="text-xs text-brand-text-muted font-normal">Across multiple boards &
+                                            streams</p>
+                                    </div>
+                                    <div class="relative pl-8 group">
+                                        <div
+                                            class="absolute left-0 top-1.5 w-4 h-4 rounded-full border-2 border-brand-emerald bg-brand-base z-10 box-content group-hover:bg-brand-emerald transition-colors duration-300">
                                         </div>
+                                        <h4 class="font-semibold text-brand-text text-[15px] mb-0.5">UPSC Civil Services
+                                            Examination</h4>
+                                        <p class="text-xs text-brand-text-muted font-normal">Appeared (2024)</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Co-Founder Block -->
-                        <div class="relative grid md:grid-cols-12 gap-8 lg:gap-16 items-start reveal-on-scroll">
-                            <!-- Image Side (40%) -->
-                            <div class="md:col-span-5 relative order-1 md:order-1">
-                                <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-brand-border aspect-[3/4] group hover-lift">
-                                    <!-- Placeholder portrait -->
-                                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80" alt="Co-Founder" class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60"></div>
-                                </div>
-                                <!-- Decorative element -->
-                                <div class="absolute -z-10 top-6 -right-6 w-full h-full border-2 border-brand-cyan/20 rounded-3xl hidden md:block"></div>
-                            </div>
                     </div>
-                </section>
+            </section>
 
-                <section
-                    class="py-16 sm:py-24 bg-brand-card border-y border-brand-border">
-                    <div class="max-w-7xl mx-auto px-4">
-                        <div class="text-center mb-16 reveal-on-scroll">
-                            <h2
-                                class="text-[28px] sm:text-[36px] font-heading font-bold text-brand-text mb-4">The
-                                Pillars We Stand On</h2>
-                            <p
-                                class="text-[16px] sm:text-[18px] text-brand-text-muted leading-relaxed font-normal font-sans">Our
-                                core values guide everything we do.</p>
-                        </div>
-                        <div
-                            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-                            id="values-grid">
-                            <!-- JS Injected -->
-                        </div>
-                    </div>
-                </section>
-
-                <section class="py-16 sm:py-24 bg-brand-base">
-                    <div class="max-w-7xl mx-auto px-4">
-                        <div class="text-center mb-16 reveal-on-scroll">
-                            <span
-                                class="inline-block px-4 py-2 bg-brand-emerald/10 text-brand-emerald rounded-full text-xs font-bold uppercase tracking-wider mb-4 font-sans">Our
-                                Journey</span>
-                            <h2
-                                class="text-[28px] sm:text-[36px] font-heading font-bold text-brand-text">Milestones
-                                of Excellence</h2>
-                        </div>
-                        <div class="relative max-w-4xl mx-auto space-y-12"
-                            id="timeline-container">
-                            <div
-                                class="absolute left-1/2 top-0 bottom-0 w-px bg-brand-border hidden md:block -translate-x-1/2"></div>
-                            <!-- JS Injected -->
-                        </div>
-                    </div>
-                </section>
-
-                <section
-                    class="py-16 sm:py-24 section-gradient border-t border-brand-border">
-                    <div class="max-w-7xl mx-auto px-4">
-                        <div class="text-center mb-16 reveal-on-scroll">
-                            <h2
-                                class="text-[28px] sm:text-[36px] font-heading font-bold text-brand-text mb-4">Meet
-                                Our Expert Teachers</h2>
-                            <p
-                                class="text-[16px] sm:text-[18px] text-brand-text-muted leading-relaxed font-normal font-sans">Mentors
-                                who guide you to success.</p>
-                        </div>
-                        <div
-                            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
-                            id="faculty-grid">
-                            <!-- JS Injected -->
-                        </div>
-                    </div>
-                </section>
-            </div>
-
-            <!-- ================= COURSES PAGE ================= -->
-            <div id="courses-page" class="page-view hidden">
-                <section
-                    class="py-16 sm:py-24 section-gradient relative overflow-hidden text-center">
-                    <div class="absolute inset-0 z-0">
-                        <div
-                            class="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-brand-emerald/5 rounded-full blur-[100px] animate-pulse-slow"></div>
-                    </div>
-                    <div
-                        class="relative max-w-4xl mx-auto px-4 z-10 reveal-on-scroll">
-                        <span
-                            class="inline-block px-4 py-2 bg-brand-emerald/10 text-brand-emerald rounded-full text-xs font-bold uppercase tracking-wider mb-6">Our
-                            Programs</span>
-                        <h1
-                            class="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-brand-text mb-6">Courses
-                            Designed for Success</h1>
-                        <p
-                            class="text-[16px] sm:text-[18px] text-brand-text-muted leading-relaxed font-normal">Comprehensive
-                            programs for foundation, boards, and competitive
-                            exams.</p>
-                    </div>
-                </section>
-
-                <section class="py-12 sm:py-16 bg-brand-base">
-                    <div class="max-w-7xl mx-auto px-4">
-                        <!-- Filters -->
-                        <div
-                            class="flex justify-center flex-wrap gap-2 mb-12 font-sans overflow-x-auto no-scrollbar pb-2 reveal-on-scroll">
-                            <button onclick="filterCourses('all')"
-                                class="course-filter-btn px-6 py-2.5 rounded-lg font-medium tracking-wide text-[14px] sm:text-[15px] transition-all bg-brand-emerald text-white whitespace-nowrap btn-press"
-                                data-cat="all">All Courses</button>
-                            <button onclick="filterCourses('foundation')"
-                                class="course-filter-btn px-6 py-2.5 rounded-lg font-medium tracking-wide text-[14px] sm:text-[15px] transition-all text-brand-text-muted hover:text-brand-text hover:bg-brand-muted whitespace-nowrap btn-press"
-                                data-cat="foundation">Foundation</button>
-                            <button onclick="filterCourses('board')"
-                                class="course-filter-btn px-6 py-2.5 rounded-lg font-medium tracking-wide text-[14px] sm:text-[15px] transition-all text-brand-text-muted hover:text-brand-text hover:bg-brand-muted whitespace-nowrap btn-press"
-                                data-cat="board">Board Prep</button>
-                            <button onclick="filterCourses('competitive')"
-                                class="course-filter-btn px-6 py-2.5 rounded-lg font-medium tracking-wide text-[14px] sm:text-[15px] transition-all text-brand-text-muted hover:text-brand-text hover:bg-brand-muted whitespace-nowrap btn-press"
-                                data-cat="competitive">Competitive</button>
-                        </div>
-
-                        <!-- Course Grid -->
-                        <div class="space-y-6" id="courses-list-container">
-                            <!-- JS Injected: All 8 courses -->
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Fee Note -->
-                <section
-                    class="py-16 bg-brand-card border-t border-brand-border">
-                    <div
-                        class="max-w-4xl mx-auto px-4 text-center reveal-on-scroll">
-                        <div
-                            class="glass-card rounded-3xl p-6 sm:p-8 md:p-12 text-brand-text relative overflow-hidden bg-brand-muted dark:bg-transparent hover-lift">
-                            <div
-                                class="absolute top-0 right-0 w-32 h-32 bg-brand-emerald/10 rounded-full blur-2xl"></div>
-                            <i data-lucide="graduation-cap"
-                                class="w-16 h-16 mx-auto mb-6 text-brand-emerald"></i>
-                            <h3
-                                class="text-[24px] sm:text-[28px] md:text-[36px] font-heading font-bold mb-4">Affordable
-                                Quality Education</h3>
-                            <p
-                                class="text-[16px] sm:text-[18px] text-brand-text-muted mb-8 max-w-2xl mx-auto font-normal">We
-                                believe quality education should be accessible
-                                to all. Contact us for detailed fee structure
-                                and flexible payment options.</p>
-                            <div
-                                class="flex flex-col sm:flex-row gap-4 justify-center">
-                                <a href="#contact"
-                                    onclick="navigateTo('contact')"
-                                    class="bg-brand-emerald text-white px-8 py-3 rounded-full font-semibold tracking-wide hover:bg-emerald-400 transition-colors btn-press">Get
-                                    Fee Details</a>
-                                <a href="tel:+919556670902"
-                                    class="border border-brand-border text-brand-text px-8 py-3 rounded-full font-semibold tracking-wide hover:bg-brand-muted transition-colors btn-press">Call:
-                                    95566 70902</a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-
-            <!-- ================= GALLERY PAGE ================= -->
-            <div id="gallery-page" class="page-view hidden">
-                <section
-                    class="py-16 sm:py-24 section-gradient relative overflow-hidden text-center">
-                    <div class="absolute inset-0 z-0">
-                        <div
-                            class="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] bg-brand-cyan/5 rounded-full blur-[100px] animate-pulse-slow"></div>
-                    </div>
-                    <div
-                        class="relative max-w-4xl mx-auto px-4 z-10 reveal-on-scroll">
-                        <span
-                            class="inline-block px-4 py-2 bg-brand-emerald/10 text-brand-emerald rounded-full text-xs font-bold uppercase tracking-wider mb-6 font-sans">Our
-                            Memories</span>
-                        <h1
-                            class="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-brand-text mb-6">Capturing
-                            Moments</h1>
+            <section class="py-16 sm:py-24 bg-brand-card border-y border-brand-border">
+                <div class="max-w-7xl mx-auto px-4">
+                    <div class="text-center mb-16 reveal-on-scroll">
+                        <h2 class="text-[28px] sm:text-[36px] font-heading font-bold text-brand-text mb-4">The
+                            Pillars We Stand On</h2>
                         <p
                             class="text-[16px] sm:text-[18px] text-brand-text-muted leading-relaxed font-normal font-sans">
-                            A glimpse into our classrooms, student activities,
-                            and academic journey.
-                        </p>
+                            Our
+                            core values guide everything we do.</p>
                     </div>
-                </section>
-
-                <!-- Stats -->
-                <section
-                    class="py-12 bg-brand-base border-y border-brand-border">
-                    <div
-                        class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
-                        id="gallery-stats">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="values-grid">
                         <!-- JS Injected -->
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <section class="py-16 bg-brand-base">
-                    <div class="max-w-7xl mx-auto px-4">
-                        <!-- Filters -->
-                        <div
-                            class="flex justify-center flex-wrap gap-2 mb-12 reveal-on-scroll">
-                            <div
-                                class="glass-card p-1 rounded-xl flex flex-wrap justify-center gap-1 w-full sm:w-auto">
-                                <button onclick="filterGallery('all')"
-                                    class="gallery-filter-btn px-4 py-2 rounded-lg font-medium tracking-wide text-[14px] sm:text-[15px] transition-all bg-brand-emerald text-white flex items-center gap-2 grow sm:grow-0 justify-center btn-press"
-                                    data-cat="all"><i data-lucide="camera"
-                                        class="w-4 h-4"></i> All</button>
-                                <button onclick="filterGallery('classroom')"
-                                    class="gallery-filter-btn px-4 py-2 rounded-lg font-medium tracking-wide text-[14px] sm:text-[15px] transition-all text-brand-text-muted hover:text-brand-text hover:bg-brand-muted flex items-center gap-2 grow sm:grow-0 justify-center btn-press"
-                                    data-cat="classroom"><i data-lucide="users"
-                                        class="w-4 h-4"></i> Classrooms</button>
-                                <button onclick="filterGallery('activities')"
-                                    class="gallery-filter-btn px-4 py-2 rounded-lg font-medium tracking-wide text-[14px] sm:text-[15px] transition-all text-brand-text-muted hover:text-brand-text hover:bg-brand-muted flex items-center gap-2 grow sm:grow-0 justify-center btn-press"
-                                    data-cat="activities"><i
-                                        data-lucide="calendar"
-                                        class="w-4 h-4"></i> Activities</button>
-                                <button onclick="filterGallery('results')"
-                                    class="gallery-filter-btn px-4 py-2 rounded-lg font-medium tracking-wide text-[14px] sm:text-[15px] transition-all text-brand-text-muted hover:text-brand-text hover:bg-brand-muted flex items-center gap-2 grow sm:grow-0 justify-center btn-press"
-                                    data-cat="results"><i data-lucide="trophy"
-                                        class="w-4 h-4"></i> Results</button>
-                                <button onclick="filterGallery('events')"
-                                    class="gallery-filter-btn px-4 py-2 rounded-lg font-medium tracking-wide text-[14px] sm:text-[15px] transition-all text-brand-text-muted hover:text-brand-text hover:bg-brand-muted flex items-center gap-2 grow sm:grow-0 justify-center btn-press"
-                                    data-cat="events"><i data-lucide="play"
-                                        class="w-4 h-4"></i> Events</button>
-                            </div>
-                        </div>
-
-                        <!-- Gallery Grid -->
-                        <div
-                            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
-                            id="gallery-grid">
-                            <!-- JS Injected -->
-                        </div>
-                    </div>
-                </section>
-            </div>
-
-            <!-- ================= ADMISSION PAGE ================= -->
-            <div id="admission-page" class="page-view hidden">
-                <section
-                    class="py-16 sm:py-24 section-gradient relative overflow-hidden">
-                    <div class="absolute inset-0 z-0">
-                        <div
-                            class="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-brand-emerald/5 rounded-full blur-[100px] animate-pulse-slow"></div>
-                    </div>
-                    <div
-                        class="relative max-w-7xl mx-auto px-4 text-center z-10 reveal-on-scroll">
+            <section class="py-16 sm:py-24 bg-brand-base">
+                <div class="max-w-7xl mx-auto px-4">
+                    <div class="text-center mb-16 reveal-on-scroll">
                         <span
-                            class="inline-block px-4 py-2 bg-brand-emerald/10 text-brand-emerald rounded-full text-xs font-bold uppercase tracking-wider mb-6 font-sans">Admission
-                            Open 2024-25</span>
-                        <h1
-                            class="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-brand-text mb-6">Begin
-                            Your Success Journey</h1>
+                            class="inline-block px-4 py-2 bg-brand-emerald/10 text-brand-emerald rounded-full text-xs font-bold uppercase tracking-wider mb-4 font-sans">Our
+                            Journey</span>
+                        <h2 class="text-[28px] sm:text-[36px] font-heading font-bold text-brand-text">Milestones
+                            of Excellence</h2>
+                    </div>
+                    <div class="relative max-w-4xl mx-auto space-y-12" id="timeline-container">
+                        <div
+                            class="absolute left-1/2 top-0 bottom-0 w-px bg-brand-border hidden md:block -translate-x-1/2">
+                        </div>
+                        <!-- JS Injected -->
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-16 sm:py-24 section-gradient border-t border-brand-border">
+                <div class="max-w-7xl mx-auto px-4">
+                    <div class="text-center mb-16 reveal-on-scroll">
+                        <h2 class="text-[28px] sm:text-[36px] font-heading font-bold text-brand-text mb-4">Meet
+                            Our Expert Teachers</h2>
                         <p
-                            class="text-[16px] sm:text-[18px] text-brand-text-muted leading-relaxed font-normal max-w-3xl mx-auto font-sans">Fill
-                            out the enquiry form below and take the first step
-                            towards academic excellence.</p>
+                            class="text-[16px] sm:text-[18px] text-brand-text-muted leading-relaxed font-normal font-sans">
+                            Mentors
+                            who guide you to success.</p>
                     </div>
-                </section>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8" id="faculty-grid">
+                        <!-- JS Injected -->
+                    </div>
+                </div>
+            </section>
+        </div>
 
-                <section class="py-12 sm:py-24 bg-brand-base">
+        <!-- ================= COURSES PAGE ================= -->
+        <div id="courses-page" class="page-view hidden">
+            <section class="py-16 sm:py-24 section-gradient relative overflow-hidden text-center">
+                <div class="absolute inset-0 z-0">
                     <div
-                        class="max-w-7xl mx-auto px-4 grid lg:grid-cols-3 gap-12">
-                        <!-- Form -->
-                        <div class="lg:col-span-2 reveal-on-scroll">
-                            <div
-                                class="glass-card rounded-2xl overflow-hidden shadow-xl hover-lift">
-                                <div
-                                    class="bg-brand-card dark:bg-[#0f1623] p-6 border-b border-brand-border">
-                                    <h2
-                                        class="text-[24px] sm:text-[28px] font-bold font-heading text-brand-text flex items-center gap-3"><i
-                                            data-lucide="graduation-cap"
-                                            class="w-8 h-8 text-brand-emerald"></i>
-                                        Admission Enquiry Form</h2>
-                                    <p
-                                        class="text-brand-text-muted mt-1 font-normal text-sm sm:text-base">Please
-                                        fill in the details below.</p>
-                                </div>
-                                <div class="p-4 sm:p-8 relative">
-
-                                    <!-- BYPASS BUTTON OVERLAY -->
-                                    <div
-                                        class="absolute inset-0 z-10 flex items-center justify-center bg-white/50 dark:bg-black/50 backdrop-blur-[2px] rounded-b-2xl">
-                                        <a href="#contact"
-                                            onclick="navigateTo('contact')"
-                                            class="bg-brand-emerald text-white px-8 py-4 rounded-full font-bold text-lg shadow-2xl transform hover:scale-105 transition-all flex items-center gap-2">
-                                            Enquire Now <i
-                                                data-lucide="arrow-right"
-                                                class="w-5 h-5"></i>
-                                        </a>
-                                    </div>
-
-                                    <!-- HIDDEN FORM (MARKUP PRESERVED) -->
-                                    <form id="admission-form"
-                                        onsubmit="handleFormSubmit(event, 'admission')"
-                                        class="space-y-6 font-sans opacity-20 pointer-events-none"
-                                        aria-hidden="true">
-                                        <!-- Student Details -->
-                                        <div class="space-y-4">
-                                            <h3
-                                                class="text-lg font-semibold text-brand-text flex items-center gap-2"><i
-                                                    data-lucide="user"
-                                                    class="text-brand-emerald"></i>
-                                                Student Details</h3>
-                                            <div
-                                                class="grid md:grid-cols-2 gap-6">
-                                                <div class="space-y-2">
-                                                    <label
-                                                        class="block text-sm font-medium text-brand-text-muted">Student
-                                                        Name *</label>
-                                                    <input type="text" required
-                                                        placeholder="Full Name"
-                                                        class="w-full p-3 rounded-lg text-[15px] font-normal focus:bg-brand-card transition-colors">
-                                                </div>
-                                                <div class="space-y-2">
-                                                    <label
-                                                        class="block text-sm font-medium text-brand-text-muted">Parent
-                                                        Name *</label>
-                                                    <input type="text" required
-                                                        placeholder="Parent Name"
-                                                        class="w-full p-3 rounded-lg text-[15px] font-normal focus:bg-brand-card transition-colors">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Contact -->
-                                        <div class="space-y-4">
-                                            <h3
-                                                class="text-lg font-semibold text-brand-text flex items-center gap-2"><i
-                                                    data-lucide="phone"
-                                                    class="text-brand-emerald"></i>
-                                                Contact Details</h3>
-                                            <div
-                                                class="grid md:grid-cols-2 gap-6">
-                                                <div class="space-y-2">
-                                                    <label
-                                                        class="block text-sm font-medium text-brand-text-muted">Phone
-                                                        Number *</label>
-                                                    <input type="tel" required
-                                                        placeholder="+91..."
-                                                        class="w-full p-3 rounded-lg text-[15px] font-normal focus:bg-brand-card transition-colors">
-                                                </div>
-                                                <div class="space-y-2">
-                                                    <label
-                                                        class="block text-sm font-medium text-brand-text-muted">Email</label>
-                                                    <input type="email"
-                                                        placeholder="email@example.com"
-                                                        class="w-full p-3 rounded-lg text-[15px] font-normal focus:bg-brand-card transition-colors">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Academic -->
-                                        <div class="space-y-4">
-                                            <h3
-                                                class="text-lg font-semibold text-brand-text flex items-center gap-2"><i
-                                                    data-lucide="book-open"
-                                                    class="text-brand-emerald"></i>
-                                                Academic Details</h3>
-                                            <div
-                                                class="grid md:grid-cols-2 gap-6">
-                                                <div class="space-y-2">
-                                                    <label
-                                                        class="block text-sm font-medium text-brand-text-muted">Current
-                                                        Class *</label>
-                                                    <select
-                                                        class="w-full p-3 rounded-lg text-[15px] font-normal appearance-none focus:bg-brand-card transition-colors">
-                                                        <option>Class
-                                                            6</option><option>Class
-                                                            7</option><option>Class
-                                                            8</option><option>Class
-                                                            9</option>
-                                                        <option>Class
-                                                            10</option><option>Class
-                                                            11</option><option>Class
-                                                            12</option>
-                                                    </select>
-                                                </div>
-                                                <div class="space-y-2">
-                                                    <label
-                                                        class="block text-sm font-medium text-brand-text-muted">Interested
-                                                        Course *</label>
-                                                    <select
-                                                        class="w-full p-3 rounded-lg text-[15px] font-normal appearance-none focus:bg-brand-card transition-colors">
-                                                        <option>Foundation
-                                                            (6-8)</option><option>Board
-                                                            Prep (9-10)</option>
-                                                        <option>Science
-                                                            (11-12)</option><option>JEE/NEET</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="space-y-2">
-                                            <label
-                                                class="block text-sm font-medium text-brand-text-muted">Message</label>
-                                            <textarea rows="3"
-                                                class="w-full p-3 rounded-lg text-[15px] font-normal focus:bg-brand-card transition-colors"
-                                                placeholder="Any specific queries?"></textarea>
-                                        </div>
-                                        <button type="submit"
-                                            class="w-full bg-brand-emerald text-white py-4 rounded-lg font-semibold tracking-wide hover:bg-emerald-400 transition-colors flex items-center justify-center gap-2 btn-press">Submit
-                                            Enquiry <i data-lucide="arrow-right"
-                                                class="w-5 h-5"></i></button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Sidebar -->
-                        <div class="space-y-6 reveal-on-scroll"
-                            style="transition-delay: 200ms;">
-                            <div
-                                class="glass-card p-6 rounded-xl border-t-4 border-brand-emerald hover-lift">
-                                <h3
-                                    class="text-xl font-heading font-bold text-brand-text mb-4 flex items-center gap-2"><i
-                                        data-lucide="check-circle"
-                                        class="text-brand-emerald"></i> Why
-                                    Apply Now?</h3>
-                                <ul class="space-y-4 text-brand-text-muted">
-                                    <li class="flex items-center gap-3"><div
-                                            class="w-6 h-6 bg-brand-emerald/10 rounded-full flex items-center justify-center text-brand-emerald text-xs shrink-0"><i
-                                                data-lucide="check"
-                                                class="w-4 h-4"></i></div> Free
-                                        counseling session</li>
-                                    <li class="flex items-center gap-3"><div
-                                            class="w-6 h-6 bg-brand-emerald/10 rounded-full flex items-center justify-center text-brand-emerald text-xs shrink-0"><i
-                                                data-lucide="check"
-                                                class="w-4 h-4"></i></div> Demo
-                                        class available</li>
-                                    <li class="flex items-center gap-3"><div
-                                            class="w-6 h-6 bg-brand-emerald/10 rounded-full flex items-center justify-center text-brand-emerald text-xs shrink-0"><i
-                                                data-lucide="check"
-                                                class="w-4 h-4"></i></div>
-                                        Scholarship options</li>
-                                </ul>
-                            </div>
-                            <div class="glass-card p-6 rounded-xl hover-lift">
-                                <h3
-                                    class="text-xl font-heading font-bold text-brand-text mb-4 flex items-center gap-2"><i
-                                        data-lucide="phone"></i> Need Help?</h3>
-                                <p
-                                    class="text-brand-text-muted mb-6 text-sm font-normal">Our
-                                    admission team is here to help you.</p>
-                                <div class="space-y-3">
-                                    <a href="tel:+919556670902"
-                                        class="flex items-center gap-3 p-3 bg-brand-muted rounded-lg hover:bg-brand-card transition-colors text-brand-text-muted hover:text-brand-emerald btn-press"><i
-                                            data-lucide="phone"
-                                            class="w-5 h-5 shrink-0"></i> <span
-                                            class="truncate">95566
-                                            70902</span></a>
-                                    <a
-                                        href="mailto:nextgenscholars7@gmail.com"
-                                        class="flex items-center gap-3 p-3 bg-brand-muted rounded-lg hover:bg-brand-card transition-colors text-brand-text-muted hover:text-brand-emerald btn-press"><i
-                                            data-lucide="mail"
-                                            class="w-5 h-5 shrink-0"></i> <span
-                                            class="truncate">nextgenscholars7@gmail.com</span></a>
-                                </div>
-                            </div>
-                        </div>
+                        class="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-brand-emerald/5 rounded-full blur-[100px] animate-pulse-slow">
                     </div>
-                </section>
-            </div>
+                </div>
+                <div class="relative max-w-4xl mx-auto px-4 z-10 reveal-on-scroll">
+                    <span
+                        class="inline-block px-4 py-2 bg-brand-emerald/10 text-brand-emerald rounded-full text-xs font-bold uppercase tracking-wider mb-6">Our
+                        Programs</span>
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-brand-text mb-6">
+                        Courses
+                        Designed for Success</h1>
+                    <p class="text-[16px] sm:text-[18px] text-brand-text-muted leading-relaxed font-normal">
+                        Comprehensive
+                        programs for foundation, boards, and competitive
+                        exams.</p>
+                </div>
+            </section>
 
-            <!-- ================= CONTACT PAGE ================= -->
-            <div id="contact-page" class="page-view hidden">
-                <section
-                    class="py-16 sm:py-24 section-gradient text-center relative overflow-hidden">
-                    <div class="absolute inset-0 z-0">
-                        <div
-                            class="absolute bottom-[-20%] left-[-10%] w-[600px] h-[600px] bg-brand-emerald/5 rounded-full blur-[100px] animate-pulse-slow"></div>
-                    </div>
+            <section class="py-12 sm:py-16 bg-brand-base">
+                <div class="max-w-7xl mx-auto px-4">
+                    <!-- Filters -->
                     <div
-                        class="max-w-4xl mx-auto px-4 relative z-10 reveal-on-scroll">
-                        <span
-                            class="inline-block px-4 py-2 bg-brand-emerald/10 text-brand-emerald rounded-full text-xs font-bold uppercase tracking-wider mb-6 font-sans">Get
-                            In Touch</span>
-                        <h1
-                            class="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-brand-text mb-6">We'd
-                            Love to Hear From You</h1>
-                        <p
-                            class="text-[16px] sm:text-[18px] text-brand-text-muted leading-relaxed font-normal max-w-3xl mx-auto font-sans">Have
-                            questions? Reach out to us through any channel.</p>
+                        class="flex justify-center flex-wrap gap-2 mb-12 font-sans overflow-x-auto no-scrollbar pb-2 reveal-on-scroll">
+                        <button onclick="filterCourses('all')"
+                            class="course-filter-btn px-6 py-2.5 rounded-lg font-medium tracking-wide text-[14px] sm:text-[15px] transition-all bg-brand-emerald text-white whitespace-nowrap btn-press"
+                            data-cat="all">All Courses</button>
+                        <button onclick="filterCourses('foundation')"
+                            class="course-filter-btn px-6 py-2.5 rounded-lg font-medium tracking-wide text-[14px] sm:text-[15px] transition-all text-brand-text-muted hover:text-brand-text hover:bg-brand-muted whitespace-nowrap btn-press"
+                            data-cat="foundation">Foundation</button>
+                        <button onclick="filterCourses('board')"
+                            class="course-filter-btn px-6 py-2.5 rounded-lg font-medium tracking-wide text-[14px] sm:text-[15px] transition-all text-brand-text-muted hover:text-brand-text hover:bg-brand-muted whitespace-nowrap btn-press"
+                            data-cat="board">Board Prep</button>
+                        <button onclick="filterCourses('competitive')"
+                            class="course-filter-btn px-6 py-2.5 rounded-lg font-medium tracking-wide text-[14px] sm:text-[15px] transition-all text-brand-text-muted hover:text-brand-text hover:bg-brand-muted whitespace-nowrap btn-press"
+                            data-cat="competitive">Competitive</button>
                     </div>
-                </section>
 
-                <section class="py-16 bg-brand-base">
+                    <!-- Course Grid -->
+                    <div class="space-y-6" id="courses-list-container">
+                        <!-- JS Injected: All 8 courses -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Fee Note -->
+            <section class="py-16 bg-brand-card border-t border-brand-border">
+                <div class="max-w-4xl mx-auto px-4 text-center reveal-on-scroll">
                     <div
-                        class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal-on-scroll"
-                        style="transition-delay: 200ms;">
-                        <div
-                            class="glass-card p-6 rounded-2xl text-center hover-lift">
-                            <div
-                                class="w-14 h-14 mx-auto bg-blue-500/10 text-blue-500 rounded-xl flex items-center justify-center mb-4"><i
-                                    data-lucide="phone"
-                                    class="w-7 h-7"></i></div>
-                            <h3
-                                class="font-bold text-brand-text mb-2">Phone</h3>
-                            <p
-                                class="text-brand-text-muted text-sm font-normal">95566
-                                70902 <br> 80936 43286</p>
-                        </div>
-                        <div
-                            class="glass-card p-6 rounded-2xl text-center hover-lift">
-                            <div
-                                class="w-14 h-14 mx-auto bg-green-500/10 text-green-500 rounded-xl flex items-center justify-center mb-4"><i
-                                    data-lucide="message-circle"
-                                    class="w-7 h-7"></i></div>
-                            <h3
-                                class="font-bold text-brand-text mb-2">WhatsApp</h3>
-                            <p
-                                class="text-brand-text-muted text-sm font-normal">95566
-                                70902</p>
-                        </div>
-                        <div
-                            class="glass-card p-6 rounded-2xl text-center hover-lift">
-                            <div
-                                class="w-14 h-14 mx-auto bg-purple-500/10 text-purple-500 rounded-xl flex items-center justify-center mb-4"><i
-                                    data-lucide="mail"
-                                    class="w-7 h-7"></i></div>
-                            <h3
-                                class="font-bold text-brand-text mb-2">Email</h3>
-                            <p
-                                class="text-brand-text-muted text-sm font-normal">nextgenscholars7@gmail.com</p>
-                        </div>
-                        <div
-                            class="glass-card p-6 rounded-2xl text-center hover-lift">
-                            <div
-                                class="w-14 h-14 mx-auto bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center mb-4"><i
-                                    data-lucide="map-pin"
-                                    class="w-7 h-7"></i></div>
-                            <h3
-                                class="font-bold text-brand-text mb-2">Address</h3>
-                            <p
-                                class="text-brand-text-muted text-sm font-normal">Niladri
-                                Vihar, Near SS Mart, Sector-2</p>
+                        class="glass-card rounded-3xl p-6 sm:p-8 md:p-12 text-brand-text relative overflow-hidden bg-brand-muted dark:bg-transparent hover-lift">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-brand-emerald/10 rounded-full blur-2xl"></div>
+                        <i data-lucide="graduation-cap" class="w-16 h-16 mx-auto mb-6 text-brand-emerald"></i>
+                        <h3 class="text-[24px] sm:text-[28px] md:text-[36px] font-heading font-bold mb-4">Affordable
+                            Quality Education</h3>
+                        <p class="text-[16px] sm:text-[18px] text-brand-text-muted mb-8 max-w-2xl mx-auto font-normal">
+                            We
+                            believe quality education should be accessible
+                            to all. Contact us for detailed fee structure
+                            and flexible payment options.</p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <a href="#contact" onclick="navigateTo('contact')"
+                                class="bg-brand-emerald text-white px-8 py-3 rounded-full font-semibold tracking-wide hover:bg-emerald-400 transition-colors btn-press">Get
+                                Fee Details</a>
+                            <a href="tel:+919556670902"
+                                class="border border-brand-border text-brand-text px-8 py-3 rounded-full font-semibold tracking-wide hover:bg-brand-muted transition-colors btn-press">Call:
+                                95566 70902</a>
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
+        </div>
 
-                <section
-                    class="py-16 sm:py-24 bg-brand-card border-t border-brand-border">
+        <!-- ================= GALLERY PAGE ================= -->
+        <div id="gallery-page" class="page-view hidden">
+            <section class="py-16 sm:py-24 section-gradient relative overflow-hidden text-center">
+                <div class="absolute inset-0 z-0">
                     <div
-                        class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12">
-                        <div
-                            class="glass-card rounded-2xl overflow-hidden shadow-xl reveal-on-scroll hover-lift">
-                            <div
-                                class="bg-brand-muted dark:bg-gray-800 p-6 border-b border-brand-border">
+                        class="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] bg-brand-cyan/5 rounded-full blur-[100px] animate-pulse-slow">
+                    </div>
+                </div>
+                <div class="relative max-w-4xl mx-auto px-4 z-10 reveal-on-scroll">
+                    <span
+                        class="inline-block px-4 py-2 bg-brand-emerald/10 text-brand-emerald rounded-full text-xs font-bold uppercase tracking-wider mb-6 font-sans">Our
+                        Memories</span>
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-brand-text mb-6">
+                        Capturing
+                        Moments</h1>
+                    <p class="text-[16px] sm:text-[18px] text-brand-text-muted leading-relaxed font-normal font-sans">
+                        A glimpse into our classrooms, student activities,
+                        and academic journey.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Stats -->
+            <section class="py-12 bg-brand-base border-y border-brand-border">
+                <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
+                    id="gallery-stats">
+                    <!-- JS Injected -->
+                </div>
+            </section>
+
+            <section class="py-16 bg-brand-base">
+                <div class="max-w-7xl mx-auto px-4">
+                    <!-- Filters -->
+                    <div class="flex justify-center flex-wrap gap-2 mb-12 reveal-on-scroll">
+                        <div class="glass-card p-1 rounded-xl flex flex-wrap justify-center gap-1 w-full sm:w-auto">
+                            <button onclick="filterGallery('all')"
+                                class="gallery-filter-btn px-4 py-2 rounded-lg font-medium tracking-wide text-[14px] sm:text-[15px] transition-all bg-brand-emerald text-white flex items-center gap-2 grow sm:grow-0 justify-center btn-press"
+                                data-cat="all"><i data-lucide="camera" class="w-4 h-4"></i> All</button>
+                            <button onclick="filterGallery('classroom')"
+                                class="gallery-filter-btn px-4 py-2 rounded-lg font-medium tracking-wide text-[14px] sm:text-[15px] transition-all text-brand-text-muted hover:text-brand-text hover:bg-brand-muted flex items-center gap-2 grow sm:grow-0 justify-center btn-press"
+                                data-cat="classroom"><i data-lucide="users" class="w-4 h-4"></i> Classrooms</button>
+                            <button onclick="filterGallery('activities')"
+                                class="gallery-filter-btn px-4 py-2 rounded-lg font-medium tracking-wide text-[14px] sm:text-[15px] transition-all text-brand-text-muted hover:text-brand-text hover:bg-brand-muted flex items-center gap-2 grow sm:grow-0 justify-center btn-press"
+                                data-cat="activities"><i data-lucide="calendar" class="w-4 h-4"></i> Activities</button>
+                            <button onclick="filterGallery('results')"
+                                class="gallery-filter-btn px-4 py-2 rounded-lg font-medium tracking-wide text-[14px] sm:text-[15px] transition-all text-brand-text-muted hover:text-brand-text hover:bg-brand-muted flex items-center gap-2 grow sm:grow-0 justify-center btn-press"
+                                data-cat="results"><i data-lucide="trophy" class="w-4 h-4"></i> Results</button>
+                            <button onclick="filterGallery('events')"
+                                class="gallery-filter-btn px-4 py-2 rounded-lg font-medium tracking-wide text-[14px] sm:text-[15px] transition-all text-brand-text-muted hover:text-brand-text hover:bg-brand-muted flex items-center gap-2 grow sm:grow-0 justify-center btn-press"
+                                data-cat="events"><i data-lucide="play" class="w-4 h-4"></i> Events</button>
+                        </div>
+                    </div>
+
+                    <!-- Gallery Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
+                        <!-- JS Injected -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ================= ADMISSION PAGE ================= -->
+        <div id="admission-page" class="page-view hidden">
+            <section class="py-16 sm:py-24 section-gradient relative overflow-hidden">
+                <div class="absolute inset-0 z-0">
+                    <div
+                        class="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-brand-emerald/5 rounded-full blur-[100px] animate-pulse-slow">
+                    </div>
+                </div>
+                <div class="relative max-w-7xl mx-auto px-4 text-center z-10 reveal-on-scroll">
+                    <span
+                        class="inline-block px-4 py-2 bg-brand-emerald/10 text-brand-emerald rounded-full text-xs font-bold uppercase tracking-wider mb-6 font-sans">Admission
+                        Open 2024-25</span>
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-brand-text mb-6">Begin
+                        Your Success Journey</h1>
+                    <p
+                        class="text-[16px] sm:text-[18px] text-brand-text-muted leading-relaxed font-normal max-w-3xl mx-auto font-sans">
+                        Fill
+                        out the enquiry form below and take the first step
+                        towards academic excellence.</p>
+                </div>
+            </section>
+
+            <section class="py-12 sm:py-24 bg-brand-base">
+                <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-3 gap-12">
+                    <!-- Form -->
+                    <div class="lg:col-span-2 reveal-on-scroll">
+                        <div class="glass-card rounded-2xl overflow-hidden shadow-xl hover-lift">
+                            <div class="bg-brand-card dark:bg-[#0f1623] p-6 border-b border-brand-border">
                                 <h2
-                                    class="text-[24px] sm:text-[28px] font-bold font-heading text-brand-text flex items-center gap-3"><i
-                                        data-lucide="send"
-                                        class="text-brand-emerald"></i> Send Us
-                                    a Message</h2>
+                                    class="text-[24px] sm:text-[28px] font-bold font-heading text-brand-text flex items-center gap-3">
+                                    <i data-lucide="graduation-cap" class="w-8 h-8 text-brand-emerald"></i>
+                                    Admission Enquiry Form</h2>
+                                <p class="text-brand-text-muted mt-1 font-normal text-sm sm:text-base">Please
+                                    fill in the details below.</p>
                             </div>
-                            <div class="p-4 sm:p-8">
-                                <form
-                                    onsubmit="handleFormSubmit(event, 'contact')"
-                                    class="space-y-5">
-                                    <div class="grid md:grid-cols-2 gap-4">
-                                        <div class="space-y-2"><label
-                                                class="block text-sm font-medium text-brand-text-muted">Name
-                                                *</label><input type="text"
-                                                required
-                                                class="w-full p-3 rounded-lg text-[15px] font-normal focus:bg-brand-card transition-colors"></div>
-                                        <div class="space-y-2"><label
-                                                class="block text-sm font-medium text-brand-text-muted">Phone
-                                                *</label><input type="tel"
-                                                required
-                                                class="w-full p-3 rounded-lg text-[15px] font-normal focus:bg-brand-card transition-colors"></div>
+                            <div class="p-4 sm:p-8 relative">
+
+                                <!-- BYPASS BUTTON OVERLAY -->
+                                <div
+                                    class="absolute inset-0 z-10 flex items-center justify-center bg-white/50 dark:bg-black/50 backdrop-blur-[2px] rounded-b-2xl">
+                                    <a href="#contact" onclick="navigateTo('contact')"
+                                        class="bg-brand-emerald text-white px-8 py-4 rounded-full font-bold text-lg shadow-2xl transform hover:scale-105 transition-all flex items-center gap-2">
+                                        Enquire Now <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                                    </a>
+                                </div>
+
+                                <!-- HIDDEN FORM (MARKUP PRESERVED) -->
+                                <form id="admission-form" onsubmit="handleFormSubmit(event, 'admission')"
+                                    class="space-y-6 font-sans opacity-20 pointer-events-none" aria-hidden="true">
+                                    <!-- Student Details -->
+                                    <div class="space-y-4">
+                                        <h3 class="text-lg font-semibold text-brand-text flex items-center gap-2"><i
+                                                data-lucide="user" class="text-brand-emerald"></i>
+                                            Student Details</h3>
+                                        <div class="grid md:grid-cols-2 gap-6">
+                                            <div class="space-y-2">
+                                                <label class="block text-sm font-medium text-brand-text-muted">Student
+                                                    Name *</label>
+                                                <input type="text" required placeholder="Full Name"
+                                                    class="w-full p-3 rounded-lg text-[15px] font-normal focus:bg-brand-card transition-colors">
+                                            </div>
+                                            <div class="space-y-2">
+                                                <label class="block text-sm font-medium text-brand-text-muted">Parent
+                                                    Name *</label>
+                                                <input type="text" required placeholder="Parent Name"
+                                                    class="w-full p-3 rounded-lg text-[15px] font-normal focus:bg-brand-card transition-colors">
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="space-y-2"><label
-                                            class="block text-sm font-medium text-brand-text-muted">Email</label><input
-                                            type="email"
-                                            class="w-full p-3 rounded-lg text-[15px] font-normal focus:bg-brand-card transition-colors"></div>
-                                    <div class="space-y-2"><label
-                                            class="block text-sm font-medium text-brand-text-muted">Subject
-                                            *</label><input type="text" required
-                                            class="w-full p-3 rounded-lg text-[15px] font-normal focus:bg-brand-card transition-colors"></div>
-                                    <div class="space-y-2"><label
-                                            class="block text-sm font-medium text-brand-text-muted">Message
-                                            *</label><textarea rows="4" required
-                                            class="w-full p-3 rounded-lg text-[15px] font-normal focus:bg-brand-card transition-colors"></textarea></div>
+                                    <!-- Contact -->
+                                    <div class="space-y-4">
+                                        <h3 class="text-lg font-semibold text-brand-text flex items-center gap-2"><i
+                                                data-lucide="phone" class="text-brand-emerald"></i>
+                                            Contact Details</h3>
+                                        <div class="grid md:grid-cols-2 gap-6">
+                                            <div class="space-y-2">
+                                                <label class="block text-sm font-medium text-brand-text-muted">Phone
+                                                    Number *</label>
+                                                <input type="tel" required placeholder="+91..."
+                                                    class="w-full p-3 rounded-lg text-[15px] font-normal focus:bg-brand-card transition-colors">
+                                            </div>
+                                            <div class="space-y-2">
+                                                <label
+                                                    class="block text-sm font-medium text-brand-text-muted">Email</label>
+                                                <input type="email" placeholder="email@example.com"
+                                                    class="w-full p-3 rounded-lg text-[15px] font-normal focus:bg-brand-card transition-colors">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Academic -->
+                                    <div class="space-y-4">
+                                        <h3 class="text-lg font-semibold text-brand-text flex items-center gap-2"><i
+                                                data-lucide="book-open" class="text-brand-emerald"></i>
+                                            Academic Details</h3>
+                                        <div class="grid md:grid-cols-2 gap-6">
+                                            <div class="space-y-2">
+                                                <label class="block text-sm font-medium text-brand-text-muted">Current
+                                                    Class *</label>
+                                                <select
+                                                    class="w-full p-3 rounded-lg text-[15px] font-normal appearance-none focus:bg-brand-card transition-colors">
+                                                    <option>Class
+                                                        6</option>
+                                                    <option>Class
+                                                        7</option>
+                                                    <option>Class
+                                                        8</option>
+                                                    <option>Class
+                                                        9</option>
+                                                    <option>Class
+                                                        10</option>
+                                                    <option>Class
+                                                        11</option>
+                                                    <option>Class
+                                                        12</option>
+                                                </select>
+                                            </div>
+                                            <div class="space-y-2">
+                                                <label
+                                                    class="block text-sm font-medium text-brand-text-muted">Interested
+                                                    Course *</label>
+                                                <select
+                                                    class="w-full p-3 rounded-lg text-[15px] font-normal appearance-none focus:bg-brand-card transition-colors">
+                                                    <option>Foundation
+                                                        (6-8)</option>
+                                                    <option>Board
+                                                        Prep (9-10)</option>
+                                                    <option>Science
+                                                        (11-12)</option>
+                                                    <option>JEE/NEET</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="space-y-2">
+                                        <label class="block text-sm font-medium text-brand-text-muted">Message</label>
+                                        <textarea rows="3"
+                                            class="w-full p-3 rounded-lg text-[15px] font-normal focus:bg-brand-card transition-colors"
+                                            placeholder="Any specific queries?"></textarea>
+                                    </div>
                                     <button type="submit"
-                                        class="w-full bg-brand-emerald text-white py-4 rounded-lg font-semibold tracking-wide hover:bg-emerald-400 transition-colors btn-press">Send
-                                        Message</button>
+                                        class="w-full bg-brand-emerald text-white py-4 rounded-lg font-semibold tracking-wide hover:bg-emerald-400 transition-colors flex items-center justify-center gap-2 btn-press">Submit
+                                        Enquiry <i data-lucide="arrow-right" class="w-5 h-5"></i></button>
                                 </form>
                             </div>
                         </div>
-                        <div class="space-y-6 reveal-on-scroll"
-                            style="transition-delay: 200ms;">
-                            <div
-                                class="bg-brand-muted dark:bg-gray-800 rounded-2xl overflow-hidden h-80 shadow-lg border border-brand-border relative hover-lift">
-                                <!-- Map Iframe -->
-                                <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3741.071536417734!2d85.8172905750242!3d20.338791981144075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1909a89c93a4c5%3A0xc3f5c782787c8054!2sNiladri%20Vihar%2C%20Bhubaneswar%2C%20Odisha!5e0!3m2!1sen!2sin!4v1709221234567!5m2!1sen!2sin"
-                                    width="100%" height="100%" style="border:0;"
-                                    allowfullscreen loading="lazy"
-                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <div class="space-y-6 reveal-on-scroll" style="transition-delay: 200ms;">
+                        <div class="glass-card p-6 rounded-xl border-t-4 border-brand-emerald hover-lift">
+                            <h3 class="text-xl font-heading font-bold text-brand-text mb-4 flex items-center gap-2"><i
+                                    data-lucide="check-circle" class="text-brand-emerald"></i> Why
+                                Apply Now?</h3>
+                            <ul class="space-y-4 text-brand-text-muted">
+                                <li class="flex items-center gap-3">
+                                    <div
+                                        class="w-6 h-6 bg-brand-emerald/10 rounded-full flex items-center justify-center text-brand-emerald text-xs shrink-0">
+                                        <i data-lucide="check" class="w-4 h-4"></i></div> Free
+                                    counseling session
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <div
+                                        class="w-6 h-6 bg-brand-emerald/10 rounded-full flex items-center justify-center text-brand-emerald text-xs shrink-0">
+                                        <i data-lucide="check" class="w-4 h-4"></i></div> Demo
+                                    class available
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <div
+                                        class="w-6 h-6 bg-brand-emerald/10 rounded-full flex items-center justify-center text-brand-emerald text-xs shrink-0">
+                                        <i data-lucide="check" class="w-4 h-4"></i></div>
+                                    Scholarship options
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="glass-card p-6 rounded-xl hover-lift">
+                            <h3 class="text-xl font-heading font-bold text-brand-text mb-4 flex items-center gap-2"><i
+                                    data-lucide="phone"></i> Need Help?</h3>
+                            <p class="text-brand-text-muted mb-6 text-sm font-normal">Our
+                                admission team is here to help you.</p>
+                            <div class="space-y-3">
+                                <a href="tel:+919556670902"
+                                    class="flex items-center gap-3 p-3 bg-brand-muted rounded-lg hover:bg-brand-card transition-colors text-brand-text-muted hover:text-brand-emerald btn-press"><i
+                                        data-lucide="phone" class="w-5 h-5 shrink-0"></i> <span class="truncate">95566
+                                        70902</span></a>
+                                <a href="mailto:nextgenscholars7@gmail.com"
+                                    class="flex items-center gap-3 p-3 bg-brand-muted rounded-lg hover:bg-brand-card transition-colors text-brand-text-muted hover:text-brand-emerald btn-press"><i
+                                        data-lucide="mail" class="w-5 h-5 shrink-0"></i> <span
+                                        class="truncate">nextgenscholars7@gmail.com</span></a>
                             </div>
-                            <div class="glass-card p-6 rounded-2xl hover-lift">
-                                <div class="flex items-center gap-3 mb-4"><div
-                                        class="w-12 h-12 bg-brand-emerald/10 rounded-xl flex items-center justify-center text-brand-emerald"><i
-                                            data-lucide="clock"
-                                            class="w-6 h-6"></i></div><h3
-                                        class="text-xl font-bold font-heading text-brand-text">Office
-                                        Hours</h3></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ================= CONTACT PAGE ================= -->
+        <div id="contact-page" class="page-view hidden">
+            <section class="py-16 sm:py-24 section-gradient text-center relative overflow-hidden">
+                <div class="absolute inset-0 z-0">
+                    <div
+                        class="absolute bottom-[-20%] left-[-10%] w-[600px] h-[600px] bg-brand-emerald/5 rounded-full blur-[100px] animate-pulse-slow">
+                    </div>
+                </div>
+                <div class="max-w-4xl mx-auto px-4 relative z-10 reveal-on-scroll">
+                    <span
+                        class="inline-block px-4 py-2 bg-brand-emerald/10 text-brand-emerald rounded-full text-xs font-bold uppercase tracking-wider mb-6 font-sans">Get
+                        In Touch</span>
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-brand-text mb-6">We'd
+                        Love to Hear From You</h1>
+                    <p
+                        class="text-[16px] sm:text-[18px] text-brand-text-muted leading-relaxed font-normal max-w-3xl mx-auto font-sans">
+                        Have
+                        questions? Reach out to us through any channel.</p>
+                </div>
+            </section>
+
+            <section class="py-16 bg-brand-base">
+                <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal-on-scroll"
+                    style="transition-delay: 200ms;">
+                    <div class="glass-card p-6 rounded-2xl text-center hover-lift">
+                        <div
+                            class="w-14 h-14 mx-auto bg-blue-500/10 text-blue-500 rounded-xl flex items-center justify-center mb-4">
+                            <i data-lucide="phone" class="w-7 h-7"></i></div>
+                        <h3 class="font-bold text-brand-text mb-2">Phone</h3>
+                        <p class="text-brand-text-muted text-sm font-normal">95566
+                            70902 <br> 80936 43286</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl text-center hover-lift">
+                        <div
+                            class="w-14 h-14 mx-auto bg-green-500/10 text-green-500 rounded-xl flex items-center justify-center mb-4">
+                            <i data-lucide="message-circle" class="w-7 h-7"></i></div>
+                        <h3 class="font-bold text-brand-text mb-2">WhatsApp</h3>
+                        <p class="text-brand-text-muted text-sm font-normal">95566
+                            70902</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl text-center hover-lift">
+                        <div
+                            class="w-14 h-14 mx-auto bg-purple-500/10 text-purple-500 rounded-xl flex items-center justify-center mb-4">
+                            <i data-lucide="mail" class="w-7 h-7"></i></div>
+                        <h3 class="font-bold text-brand-text mb-2">Email</h3>
+                        <p class="text-brand-text-muted text-sm font-normal">nextgenscholars7@gmail.com</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl text-center hover-lift">
+                        <div
+                            class="w-14 h-14 mx-auto bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center mb-4">
+                            <i data-lucide="map-pin" class="w-7 h-7"></i></div>
+                        <h3 class="font-bold text-brand-text mb-2">Address</h3>
+                        <p class="text-brand-text-muted text-sm font-normal">Niladri
+                            Vihar, Near SS Mart, Sector-2</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-16 sm:py-24 bg-brand-card border-t border-brand-border">
+                <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12">
+                    <div class="glass-card rounded-2xl overflow-hidden shadow-xl reveal-on-scroll hover-lift">
+                        <div class="bg-brand-muted dark:bg-gray-800 p-6 border-b border-brand-border">
+                            <h2
+                                class="text-[24px] sm:text-[28px] font-bold font-heading text-brand-text flex items-center gap-3">
+                                <i data-lucide="send" class="text-brand-emerald"></i> Send Us
+                                a Message</h2>
+                        </div>
+                        <div class="p-4 sm:p-8">
+                            <form onsubmit="handleFormSubmit(event, 'contact')" class="space-y-5">
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div class="space-y-2"><label
+                                            class="block text-sm font-medium text-brand-text-muted">Name
+                                            *</label><input type="text" required
+                                            class="w-full p-3 rounded-lg text-[15px] font-normal focus:bg-brand-card transition-colors">
+                                    </div>
+                                    <div class="space-y-2"><label
+                                            class="block text-sm font-medium text-brand-text-muted">Phone
+                                            *</label><input type="tel" required
+                                            class="w-full p-3 rounded-lg text-[15px] font-normal focus:bg-brand-card transition-colors">
+                                    </div>
+                                </div>
+                                <div class="space-y-2"><label
+                                        class="block text-sm font-medium text-brand-text-muted">Email</label><input
+                                        type="email"
+                                        class="w-full p-3 rounded-lg text-[15px] font-normal focus:bg-brand-card transition-colors">
+                                </div>
+                                <div class="space-y-2"><label
+                                        class="block text-sm font-medium text-brand-text-muted">Subject
+                                        *</label><input type="text" required
+                                        class="w-full p-3 rounded-lg text-[15px] font-normal focus:bg-brand-card transition-colors">
+                                </div>
+                                <div class="space-y-2"><label
+                                        class="block text-sm font-medium text-brand-text-muted">Message
+                                        *</label><textarea rows="4" required
+                                        class="w-full p-3 rounded-lg text-[15px] font-normal focus:bg-brand-card transition-colors"></textarea>
+                                </div>
+                                <button type="submit"
+                                    class="w-full bg-brand-emerald text-white py-4 rounded-lg font-semibold tracking-wide hover:bg-emerald-400 transition-colors btn-press">Send
+                                    Message</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="space-y-6 reveal-on-scroll" style="transition-delay: 200ms;">
+                        <div
+                            class="bg-brand-muted dark:bg-gray-800 rounded-2xl overflow-hidden h-80 shadow-lg border border-brand-border relative hover-lift">
+                            <!-- Map Iframe -->
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3741.071536417734!2d85.8172905750242!3d20.338791981144075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1909a89c93a4c5%3A0xc3f5c782787c8054!2sNiladri%20Vihar%2C%20Bhubaneswar%2C%20Odisha!5e0!3m2!1sen!2sin!4v1709221234567!5m2!1sen!2sin"
+                                width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        <div class="glass-card p-6 rounded-2xl hover-lift">
+                            <div class="flex items-center gap-3 mb-4">
                                 <div
-                                    class="space-y-2 text-brand-text-muted font-normal">
-                                    <div
-                                        class="flex justify-between border-b border-brand-border py-2"><span>Mon
-                                            - Sat</span> <span
-                                            class="font-medium text-brand-text">8:00
-                                            AM - 8:00 PM</span></div>
-                                    <div
-                                        class="flex justify-between py-2"><span>Sun</span>
-                                        <span
-                                            class="font-medium text-brand-text">By
-                                            prior appointment</span></div>
+                                    class="w-12 h-12 bg-brand-emerald/10 rounded-xl flex items-center justify-center text-brand-emerald">
+                                    <i data-lucide="clock" class="w-6 h-6"></i></div>
+                                <h3 class="text-xl font-bold font-heading text-brand-text">Office
+                                    Hours</h3>
+                            </div>
+                            <div class="space-y-2 text-brand-text-muted font-normal">
+                                <div class="flex justify-between border-b border-brand-border py-2"><span>Mon
+                                        - Sat</span> <span class="font-medium text-brand-text">8:00
+                                        AM - 8:00 PM</span></div>
+                                <div class="flex justify-between py-2"><span>Sun</span>
+                                    <span class="font-medium text-brand-text">By
+                                        prior appointment</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </section>
-            </div>
-
-        </main>
-
-        <!-- Footer -->
-        <footer
-            class="bg-[#050a14] text-gray-400 pt-16 pb-8 border-t border-white/5">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-                    <div class="col-span-1 sm:col-span-2 lg:col-span-1">
-                        <div class="flex items-center gap-3 mb-6">
-                            <div
-                                class="w-10 h-10 rounded bg-brand-emerald flex items-center justify-center text-white font-bold font-heading">
-                                N
-                            </div>
-                            <div>
-                                <h3
-                                    class="text-xl font-bold font-heading text-white">NextGen</h3>
-                                <p
-                                    class="text-xs text-brand-emerald font-semibold tracking-widest uppercase">Scholars</p>
-                            </div>
-                        </div>
-                        <p
-                            class="text-sm leading-relaxed font-normal">Empowering
-                            students with quality education and personalized
-                            attention to achieve academic excellence.</p>
-                    </div>
-                    <div>
-                        <h4
-                            class="text-lg font-heading font-bold text-white mb-6">Quick
-                            Links</h4>
-                        <ul class="space-y-3 text-sm font-normal">
-                            <li><a href="#home" onclick="navigateTo('home')"
-                                    class="hover:text-brand-emerald transition-colors">Home</a></li>
-                            <li><a href="#about" onclick="navigateTo('about')"
-                                    class="hover:text-brand-emerald transition-colors">About</a></li>
-                            <li><a href="#courses"
-                                    onclick="navigateTo('courses')"
-                                    class="hover:text-brand-emerald transition-colors">Courses</a></li>
-                            <li><a href="#gallery"
-                                    onclick="navigateTo('gallery')"
-                                    class="hover:text-brand-emerald transition-colors">Gallery</a></li>
-                            <li><a href="#contact"
-                                    onclick="navigateTo('contact')"
-                                    class="hover:text-brand-emerald transition-colors">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4
-                            class="text-lg font-heading font-bold text-white mb-6">Contact
-                            Us</h4>
-                        <ul class="space-y-4 text-sm font-normal">
-                            <li class="flex items-start gap-3"><i
-                                    data-lucide="map-pin"
-                                    class="w-5 h-5 text-brand-emerald mt-1 shrink-0"></i>
-                                Niladri Vihar, Near SS Mart</li>
-                            <li class="flex items-center gap-3"><i
-                                    data-lucide="phone"
-                                    class="w-5 h-5 text-brand-emerald shrink-0"></i>
-                                95566 70902</li>
-                            <li class="flex items-center gap-3"><i
-                                    data-lucide="mail"
-                                    class="w-5 h-5 text-brand-emerald shrink-0"></i>
-                                nextgenscholars7@gmail.com</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4
-                            class="text-lg font-heading font-bold text-white mb-6">Follow
-                            Us</h4>
-                        <div class="flex gap-4">
-                            <a href="#"
-                                class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-[#1877F2] hover:text-white transition-colors hover:scale-110 duration-300"><i
-                                    data-lucide="facebook"
-                                    class="w-5 h-5"></i></a>
-                            <a href="#"
-                                class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-[#E1306C] hover:text-white transition-colors hover:scale-110 duration-300"><i
-                                    data-lucide="instagram"
-                                    class="w-5 h-5"></i></a>
-                            <a href="#"
-                                class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-[#FF0000] hover:text-white transition-colors hover:scale-110 duration-300"><i
-                                    data-lucide="youtube"
-                                    class="w-5 h-5"></i></a>
-                            <a href="#"
-                                class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-[#1DA1F2] hover:text-white transition-colors hover:scale-110 duration-300"><i
-                                    data-lucide="twitter"
-                                    class="w-5 h-5"></i></a>
-                        </div>
-                    </div>
                 </div>
-                <div
-                    class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-sm font-normal gap-4 text-center md:text-left">
-                    <p class="safe-pb">&copy; 2026 NextGen Scholars. All Rights
-                        Reserved. | Website designed by Subham Kumar Mallick</p>
-                    <div class="flex gap-6 safe-pb">
-                        <a href="#" class="hover:text-brand-emerald">Privacy
-                            Policy</a>
-                        <a href="#" class="hover:text-brand-emerald">Terms of
-                            Service</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
-
-        <!-- WhatsApp Button -->
-        <a href="https://wa.me/919556670902" target="_blank"
-            class="fixed bottom-6 right-6 z-50 group safe-pb hover:scale-110 transition-transform duration-300">
-            <span
-                class="absolute right-14 top-2 bg-white text-gray-900 text-xs font-bold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap hidden sm:block">Chat
-                with us!</span>
-            <div class="relative">
-                <div
-                    class="absolute inset-0 bg-green-500 rounded-full animate-ping opacity-25"></div>
-                <div
-                    class="relative w-12 h-12 sm:w-14 sm:h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg shadow-green-500/40">
-                    <i data-lucide="message-circle"
-                        class="w-6 h-6 sm:w-7 sm:h-7 text-white fill-current"></i>
-                </div>
-            </div>
-        </a>
-
-        <!-- Lightbox Modal -->
-        <div id="lightbox"
-            class="fixed inset-0 z-[60] bg-black/95 hidden flex items-center justify-center opacity-0 backdrop-blur-sm p-4">
-            <button onclick="closeLightbox()"
-                class="absolute top-4 right-4 sm:top-6 sm:right-6 text-white hover:text-brand-emerald p-2 bg-white/10 rounded-full transition-colors z-[70] hover:rotate-90 duration-300"><i
-                    data-lucide="x" class="w-6 h-6 sm:w-8 sm:h-8"></i></button>
-            <button onclick="navigateGallery('prev')"
-                class="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 text-white hover:bg-white/10 p-2 rounded-full transition-colors z-[70] hover:scale-110 active:scale-95"><i
-                    data-lucide="chevron-left"
-                    class="w-6 h-6 sm:w-8 sm:h-8"></i></button>
-            <div
-                class="modal-content max-w-[95%] max-h-[85vh] text-center relative">
-                <img id="lightbox-img" src alt="Gallery Preview"
-                    class="max-w-full max-h-[70vh] rounded-lg shadow-2xl object-contain mx-auto border border-white/10">
-                <div class="mt-4 sm:mt-6 text-white">
-                    <h3 id="lightbox-title"
-                        class="text-xl sm:text-2xl font-bold font-heading"></h3>
-                    <p id="lightbox-desc"
-                        class="text-gray-400 text-xs sm:text-sm mt-1"></p>
-                </div>
-            </div>
-            <button onclick="navigateGallery('next')"
-                class="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 text-white hover:bg-white/10 p-2 rounded-full transition-colors z-[70] hover:scale-110 active:scale-95"><i
-                    data-lucide="chevron-right"
-                    class="w-6 h-6 sm:w-8 sm:h-8"></i></button>
+            </section>
         </div>
 
-        <!-- Success Modal -->
-        <div id="success-modal"
-            class="fixed inset-0 z-[60] bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
-            <div
-                class="modal-content glass-card bg-brand-card p-6 sm:p-8 md:p-12 text-center max-w-lg w-full mx-auto rounded-3xl border border-brand-emerald/20 shadow-2xl shadow-brand-emerald/10">
-                <div
-                    class="w-16 h-16 sm:w-20 sm:h-20 mx-auto bg-brand-emerald/20 rounded-full flex items-center justify-center mb-6 animate-bounce">
-                    <i data-lucide="check-circle"
-                        class="w-8 h-8 sm:w-10 sm:h-10 text-brand-emerald"></i>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#050a14] text-gray-400 pt-16 pb-8 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 sm:col-span-2 lg:col-span-1">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div
+                            class="w-10 h-10 rounded bg-brand-emerald flex items-center justify-center text-white font-bold font-heading">
+                            N
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold font-heading text-white">NextGen</h3>
+                            <p class="text-xs text-brand-emerald font-semibold tracking-widest uppercase">Scholars</p>
+                        </div>
+                    </div>
+                    <p class="text-sm leading-relaxed font-normal">Empowering
+                        students with quality education and personalized
+                        attention to achieve academic excellence.</p>
                 </div>
-                <h2
-                    class="text-2xl md:text-3xl font-bold font-heading text-brand-text mb-4">Message
-                    Sent!</h2>
-                <p
-                    class="text-brand-text-muted mb-8 font-normal text-sm sm:text-base">Thank
-                    you for reaching out! We'll get back to you within 24
-                    hours.</p>
-                <button
-                    onclick="document.getElementById('success-modal').classList.remove('modal-open'); setTimeout(() => document.getElementById('success-modal').classList.add('hidden'), 300);"
-                    class="bg-brand-emerald hover:bg-emerald-400 text-white px-10 py-3 rounded-full font-semibold tracking-wide transition-colors w-full btn-press">Close</button>
+                <div>
+                    <h4 class="text-lg font-heading font-bold text-white mb-6">Quick
+                        Links</h4>
+                    <ul class="space-y-3 text-sm font-normal">
+                        <li><a href="#home" onclick="navigateTo('home')"
+                                class="hover:text-brand-emerald transition-colors">Home</a></li>
+                        <li><a href="#about" onclick="navigateTo('about')"
+                                class="hover:text-brand-emerald transition-colors">About</a></li>
+                        <li><a href="#courses" onclick="navigateTo('courses')"
+                                class="hover:text-brand-emerald transition-colors">Courses</a></li>
+                        <li><a href="#gallery" onclick="navigateTo('gallery')"
+                                class="hover:text-brand-emerald transition-colors">Gallery</a></li>
+                        <li><a href="#contact" onclick="navigateTo('contact')"
+                                class="hover:text-brand-emerald transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-heading font-bold text-white mb-6">Contact
+                        Us</h4>
+                    <ul class="space-y-4 text-sm font-normal">
+                        <li class="flex items-start gap-3"><i data-lucide="map-pin"
+                                class="w-5 h-5 text-brand-emerald mt-1 shrink-0"></i>
+                            Niladri Vihar, Near SS Mart</li>
+                        <li class="flex items-center gap-3"><i data-lucide="phone"
+                                class="w-5 h-5 text-brand-emerald shrink-0"></i>
+                            95566 70902</li>
+                        <li class="flex items-center gap-3"><i data-lucide="mail"
+                                class="w-5 h-5 text-brand-emerald shrink-0"></i>
+                            nextgenscholars7@gmail.com</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-heading font-bold text-white mb-6">Follow
+                        Us</h4>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-[#1877F2] hover:text-white transition-colors hover:scale-110 duration-300"><i
+                                data-lucide="facebook" class="w-5 h-5"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-[#E1306C] hover:text-white transition-colors hover:scale-110 duration-300"><i
+                                data-lucide="instagram" class="w-5 h-5"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-[#FF0000] hover:text-white transition-colors hover:scale-110 duration-300"><i
+                                data-lucide="youtube" class="w-5 h-5"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-[#1DA1F2] hover:text-white transition-colors hover:scale-110 duration-300"><i
+                                data-lucide="twitter" class="w-5 h-5"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-sm font-normal gap-4 text-center md:text-left">
+                <p class="safe-pb">&copy; 2026 NextGen Scholars. All Rights
+                    Reserved. | Website designed by Subham Kumar Mallick</p>
+                <div class="flex gap-6 safe-pb">
+                    <a href="#" class="hover:text-brand-emerald">Privacy
+                        Policy</a>
+                    <a href="#" class="hover:text-brand-emerald">Terms of
+                        Service</a>
+                </div>
             </div>
         </div>
+    </footer>
 
-        <!-- Application Logic -->
-        <script>
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/919556670902" target="_blank"
+        class="fixed bottom-6 right-6 z-50 group safe-pb hover:scale-110 transition-transform duration-300">
+        <span
+            class="absolute right-14 top-2 bg-white text-gray-900 text-xs font-bold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap hidden sm:block">Chat
+            with us!</span>
+        <div class="relative">
+            <div class="absolute inset-0 bg-green-500 rounded-full animate-ping opacity-25"></div>
+            <div
+                class="relative w-12 h-12 sm:w-14 sm:h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg shadow-green-500/40">
+                <i data-lucide="message-circle" class="w-6 h-6 sm:w-7 sm:h-7 text-white fill-current"></i>
+            </div>
+        </div>
+    </a>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox"
+        class="fixed inset-0 z-[60] bg-black/95 hidden flex items-center justify-center opacity-0 backdrop-blur-sm p-4">
+        <button onclick="closeLightbox()"
+            class="absolute top-4 right-4 sm:top-6 sm:right-6 text-white hover:text-brand-emerald p-2 bg-white/10 rounded-full transition-colors z-[70] hover:rotate-90 duration-300"><i
+                data-lucide="x" class="w-6 h-6 sm:w-8 sm:h-8"></i></button>
+        <button onclick="navigateGallery('prev')"
+            class="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 text-white hover:bg-white/10 p-2 rounded-full transition-colors z-[70] hover:scale-110 active:scale-95"><i
+                data-lucide="chevron-left" class="w-6 h-6 sm:w-8 sm:h-8"></i></button>
+        <div class="modal-content max-w-[95%] max-h-[85vh] text-center relative">
+            <img id="lightbox-img" src alt="Gallery Preview"
+                class="max-w-full max-h-[70vh] rounded-lg shadow-2xl object-contain mx-auto border border-white/10">
+            <div class="mt-4 sm:mt-6 text-white">
+                <h3 id="lightbox-title" class="text-xl sm:text-2xl font-bold font-heading"></h3>
+                <p id="lightbox-desc" class="text-gray-400 text-xs sm:text-sm mt-1"></p>
+            </div>
+        </div>
+        <button onclick="navigateGallery('next')"
+            class="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 text-white hover:bg-white/10 p-2 rounded-full transition-colors z-[70] hover:scale-110 active:scale-95"><i
+                data-lucide="chevron-right" class="w-6 h-6 sm:w-8 sm:h-8"></i></button>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="success-modal"
+        class="fixed inset-0 z-[60] bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div
+            class="modal-content glass-card bg-brand-card p-6 sm:p-8 md:p-12 text-center max-w-lg w-full mx-auto rounded-3xl border border-brand-emerald/20 shadow-2xl shadow-brand-emerald/10">
+            <div
+                class="w-16 h-16 sm:w-20 sm:h-20 mx-auto bg-brand-emerald/20 rounded-full flex items-center justify-center mb-6 animate-bounce">
+                <i data-lucide="check-circle" class="w-8 h-8 sm:w-10 sm:h-10 text-brand-emerald"></i>
+            </div>
+            <h2 class="text-2xl md:text-3xl font-bold font-heading text-brand-text mb-4">Message
+                Sent!</h2>
+            <p class="text-brand-text-muted mb-8 font-normal text-sm sm:text-base">Thank
+                you for reaching out! We'll get back to you within 24
+                hours.</p>
+            <button
+                onclick="document.getElementById('success-modal').classList.remove('modal-open'); setTimeout(() => document.getElementById('success-modal').classList.add('hidden'), 300);"
+                class="bg-brand-emerald hover:bg-emerald-400 text-white px-10 py-3 rounded-full font-semibold tracking-wide transition-colors w-full btn-press">Close</button>
+        </div>
+    </div>
+
+    <!-- Application Logic -->
+    <script>
         // --- DATA ---
         const facultyData = [
             { name: "Dr. Rajesh Kumar", role: "Founder & Maths", exp: "20+ years", qual: "Ph.D. IIT Delhi", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&q=80" },
@@ -1681,12 +1614,12 @@
             { title: "Parent Engagement", desc: "Regular updates on student progress.", icon: "phone" },
             { title: "Competitive Edge", desc: "Early foundation for future success.", icon: "award" }
         ];
-        
+
         const valuesData = [
-            {t: "No Overcrowding", i: "users", d: "We don’t overcrowd classrooms."}, 
-            {t: "Concept Focus", i: "lightbulb", d: "We focus on learning, not shortcuts."},
-            {t: "Consistent Guidance", i: "target", d: "We guide students consistently, not occasionally."}, 
-            {t: "Community", i: "heart", d: "Working together for success."}
+            { t: "No Overcrowding", i: "users", d: "We don’t overcrowd classrooms." },
+            { t: "Concept Focus", i: "lightbulb", d: "We focus on learning, not shortcuts." },
+            { t: "Consistent Guidance", i: "target", d: "We guide students consistently, not occasionally." },
+            { t: "Community", i: "heart", d: "Working together for success." }
         ];
 
         const statsData = [
@@ -1734,7 +1667,7 @@
         function filterCourses(category) {
             const container = document.getElementById('courses-list-container');
             const filtered = category === 'all' ? coursesData : coursesData.filter(c => c.cat === category);
-            
+
             document.querySelectorAll('.course-filter-btn').forEach(btn => {
                 const isActive = btn.dataset.cat === category;
                 btn.className = `course-filter-btn px-6 py-2.5 rounded-lg font-medium tracking-wide text-[14px] sm:text-[15px] transition-all duration-300 whitespace-nowrap btn-press ${isActive ? 'bg-brand-emerald text-white shadow-md' : 'text-brand-text-muted hover:text-brand-text hover:bg-brand-muted'}`;
@@ -1854,11 +1787,11 @@
 
         // Gallery Filter & Lightbox Logic
         let currentGalleryItems = [];
-        
+
         function filterGallery(category) {
             const grid = document.getElementById('gallery-grid');
             currentGalleryItems = category === 'all' ? galleryData : galleryData.filter(g => g.cat === category);
-            
+
             document.querySelectorAll('.gallery-filter-btn').forEach(btn => {
                 const isActive = btn.dataset.cat === category;
                 btn.className = `gallery-filter-btn px-4 py-2 rounded-lg font-medium tracking-wide text-[14px] sm:text-[15px] transition-all duration-300 flex items-center gap-2 grow sm:grow-0 justify-center btn-press ${isActive ? 'bg-brand-emerald text-white shadow-md' : 'text-brand-text-muted hover:text-brand-text hover:bg-brand-muted'}`;
@@ -1881,7 +1814,7 @@
         function openLightbox(id) {
             const item = galleryData.find(g => g.id === id);
             const filteredIndex = currentGalleryItems.findIndex(g => g.id === id);
-            
+
             if (item && filteredIndex !== -1) {
                 lightboxIndex = filteredIndex;
                 updateLightboxContent();
@@ -1950,10 +1883,10 @@
                     </div>
                 </div>
             `).join('');
-            
+
             // Inject content TWICE for seamless loop
             const track = document.getElementById('testimonials-track');
-            if(track) track.innerHTML = testimonialCards + testimonialCards; 
+            if (track) track.innerHTML = testimonialCards + testimonialCards;
 
             // Values (ABOUT PAGE)
             document.getElementById('values-grid').innerHTML = valuesData.map((v, idx) => `
@@ -1994,7 +1927,7 @@
                 el.classList.remove('block');
             });
             const target = document.getElementById(`${pageId}-page`);
-            if(target) {
+            if (target) {
                 target.classList.remove('hidden');
                 target.classList.add('block');
                 target.classList.add('page-transition');
@@ -2012,7 +1945,7 @@
             modal.classList.add('modal-open');
             e.target.reset();
         }
-        
+
         // --- THEME LOGIC ---
         function toggleTheme() {
             const isDark = document.documentElement.classList.contains('dark');
@@ -2058,14 +1991,14 @@
             document.getElementById('mobile-menu-btn').addEventListener('click', () => {
                 document.getElementById('mobile-menu').classList.toggle('open');
             });
-            
+
             // Render content with initial animation classes
             renderStaticSections();
             renderFaculty();
             filterCourses('all');
             renderHomeCourses();
             filterGallery('all');
-            
+
             const hash = window.location.hash.slice(1) || 'home';
             navigateTo(hash);
 
@@ -2073,5 +2006,6 @@
             setTimeout(initAnimations, 100);
         });
     </script>
-    </body>
+</body>
+
 </html>
